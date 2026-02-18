@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,6 @@
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
 
-  <!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
@@ -19,288 +18,265 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
+	<script>
+		(function () {
+			try {
+				localStorage.setItem('bp-theme', 'dark');
+			} catch (error) {
+				// no-op
+			}
+			document.documentElement.setAttribute('data-theme', 'dark');
+		}());
+	</script>
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="assets/css/vendor/animate.css">
+	<link rel="stylesheet" href="assets/css/vendor/icomoon.css">
+	<link rel="stylesheet" href="assets/css/vendor/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/vendor/flexslider.css">
+	<link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/vendor/owl.theme.default.min.css">
+	<link rel="stylesheet" href="assets/css/app/style.css">
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
+	<script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
 	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
+	<script src="assets/js/vendor/respond.min.js"></script>
 	<![endif]-->
-
 	</head>
 	<body>
-	<div id="colorlib-page">
+	<a href="#colorlib-main" class="skip-link">Skip to main content</a>
+	<progress id="scroll-progress" max="100" value="0" aria-label="Scroll progress"></progress>
+	<div class="bg-layer" aria-hidden="true">
+		<canvas id="bg"></canvas>
+		<figure class="bg-overlay"></figure>
+	</div>
+	<div id="colorlib-page" role="document">
+		<div class="nav-backdrop" aria-hidden="true"></div>
 		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Bibesh Pyakurel</a></h1>
-				<span class="position"><a href="#"> Java • Spring Boot • SQL • Python • Azure</a></span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="experience">Work Experience</a></li>
-						<li><a href="#" data-nav-section="blog">Projects</a></li>
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="work">Publications</a></li>
-						<li><a href="#" data-nav-section="services">Certifications</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
+			<header class="site-header" role="banner">
+				<a href="index.html" class="site-header__brand" aria-label="Go to homepage">Bibesh Pyakurel</a>
+				<button type="button" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation menu"><i aria-hidden="true"></i></button>
+			</header>
+
+			<aside id="colorlib-aside" role="complementary" class="border" aria-label="Sidebar">
+				<header class="text-center sidebar-header" aria-label="Profile header">
+					<div class="author-img" style="background-image: url(assets/img/about.jpg);" role="img" aria-label="Portrait of Bibesh Pyakurel"></div>
+					<p id="colorlib-logo"><a href="index.html">Bibesh Pyakurel</a></p>
+				</header>
+
+				<nav id="colorlib-main-menu" role="navigation" class="navbar" aria-label="Primary navigation">
+					<div id="navbar" class="collapse">
+						<ul>
+							<li class="active"><a href="#" data-nav-section="home" aria-current="page">Home</a></li>
+							<li><a href="#" data-nav-section="about">About</a></li>
+							<li><a href="#" data-nav-section="education">Education</a></li>
+							<li><a href="#" data-nav-section="experience">Work Experience</a></li>
+							<li><a href="#" data-nav-section="blog">Projects</a></li>
+							<li><a href="#" data-nav-section="skills">Skills</a></li>
+							<li><a href="#" data-nav-section="work">Publications</a></li>
+							<li><a href="#" data-nav-section="services">Certifications</a></li>
+							<li><a href="#" data-nav-section="contact">Contact</a></li>
+						</ul>
+					</div>
+				</nav>
+
+				<footer class="colorlib-footer" aria-label="Sidebar footer">
+					<ul class="sidebar-social" aria-label="Social links">
+						<li><a href="https://www.linkedin.com/in/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="icon-social-linkedin" aria-hidden="true"></i></a></li>
+						<li><a href="https://github.com/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="icon-social-github" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.instagram.com/bbibeshh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i></a></li>
 					</ul>
-				</div>
-			</nav>
+				</footer>
+			</aside>
 
-			<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved.<br><a href="https://www.linkedin.com/in/bibeshpyakurel" target="_blank">LinkedIn</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span><a href="https://github.com/bibeshpyak" target="_blank">Github</a></span><span><a href="https://www.instagram.com/bbibeshh/" target="_blank">Instagram</a></span></small></p>
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
-
-		</aside>
-
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-					<li class="hero-try1" style="background-image: url(images/try1.JPEG);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Bibesh</h1>
+			<main id="colorlib-main" role="main" tabindex="-1">
+				<section id="colorlib-hero" class="js-fullheight section-shell section" data-section="home" aria-labelledby="home-title">
+					<header class="sr-only section-header">
+						<h2 id="home-title">Home</h2>
+					</header>
+					<div class="section-content-grid hero-grid">
+						<section class="flexslider js-fullheight" aria-label="Hero slideshow">
+							<ul class="slides">
+								<li class="hero-try1" style="background-image: url(assets/img/try1.JPEG);">
+									<div class="overlay"></div>
+									<article class="container-fluid">
+										<div class="row">
+											<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+												<div class="slider-text-inner js-fullheight">
+													<header class="desc">
+														<h1>Hi! <br>I'm Bibesh</h1>
+													</header>
+												</div>
 											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/try.JPEG);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>I am <br>a Computer Science Graduate</h1>
-												<h2>Software/Data Savvy</h2>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
-			</section>
+										</div>
+									</article>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</section>
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
+				<section class="colorlib-about section-shell section" data-section="about" aria-labelledby="about-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">About Me</span>
+							<h2 id="about-title" class="colorlib-heading section-title">Who Am I?</h2>
+						</header>
+						<div class="section-content-grid">
+							<article class="card about-core-card animate-box" data-animate-effect="fadeInLeft">
+								<div class="card-body about-desc">
+									<p>
+										<strong>Hi, I’m Bibesh Pyakurel</strong>, a Computer Science graduate from
+										<strong>
+											<a href="https://www.uwgb.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a>
+										</strong> with hands-on experience in data engineering, software development, and analytics.
+									</p>
 
-										<p>
-											<strong>Hi, I’m Bibesh Pyakurel</strong>, a Computer Science graduate from 
-											<strong>
-												<a href="https://www.uwgb.edu/" target="_blank">University of Wisconsin–Green Bay</a>
-											</strong> with hands-on experience in data engineering, software development, and analytics.
-										</p>
+									<p>
+										I enjoy building systems that turn raw data into meaningful insights and scalable services—whether
+										that’s designing Redis-backed metrics APIs, creating Power BI dashboards to support business decisions,
+										or developing full-stack web applications with real users in mind.
+									</p>
 
-										<p>
-											I enjoy building systems that turn raw data into meaningful insights and scalable services—whether 
-											that’s designing Redis-backed metrics APIs, creating Power BI dashboards to support business decisions, 
-											or developing full-stack web applications with real users in mind.
-										</p>
+									<p>
+										As an international graduate from Nepal, I bring a global perspective and a strong work ethic shaped by
+										adapting to new environments and solving unfamiliar problems. I care deeply about why systems are built—not
+										just how—and I aim to create solutions that are reliable, thoughtful, and impactful.
+									</p>
 
-										<p>
-											As an international graduate from Nepal, I bring a global perspective and a strong work ethic shaped by 
-											adapting to new environments and solving unfamiliar problems. I care deeply about why systems are built—not 
-											just how—and I aim to create solutions that are reliable, thoughtful, and impactful.
-										</p>
+									<p>
+										I’m currently seeking opportunities where I can continue learning, contribute to production-level systems,
+										and grow as a software or data engineer.
+									</p>
 
-										<p>
-											I’m currently seeking opportunities where I can continue learning, contribute to production-level systems, 
-											and grow as a software or data engineer.
-										</p>
-
-										<p>
-											<strong>Interests:</strong> Backend systems, data pipelines, analytics, distributed systems<br>
-											<strong>Tech:</strong> Java, Spring Boot, Redis, SQL, Power BI, JavaScript, Python
-										</p>
-									</div>
+									<p>
+										<strong>Interests:</strong> Backend systems, data pipelines, analytics, distributed systems<br>
+										<strong>Tech:</strong> Java, Spring Boot, Redis, SQL, Power BI, JavaScript, Python
+									</p>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-data"></i></span>
-										<h3>Data <br>Engineering</h3>
-									</div>
-								</div>
+							</article>
+
+							<div class="row cards-grid" aria-label="About capabilities">
 								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-bulb"></i></span>
+									<article class="services color-3 card about-skill-card about-skill-card-2">
+										<span class="icon2"><i class="icon-bulb" aria-hidden="true"></i></span>
 										<h3>Software Engineering</h3>
-									</div>
+									</article>
+								</div>
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
+									<article class="services color-1 card about-skill-card about-skill-card-1">
+										<span class="icon2"><i class="icon-data" aria-hidden="true"></i></span>
+										<h3>Data <br>Engineering</h3>
+									</article>
 								</div>
 								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-globe-outline"></i></span>
+									<article class="services color-2 card about-skill-card about-skill-card-3">
+										<span class="icon2"><i class="icon-globe-outline" aria-hidden="true"></i></span>
 										<h3>Web <br>Design</h3>
-									</div>
+									</article>
 								</div>
 								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
+									<article class="services color-4 card about-skill-card about-skill-card-4">
+										<span class="icon2"><i class="icon-phone3" aria-hidden="true"></i></span>
 										<h3>Application <br> Design</h3>
-									</div>
+									</article>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<div class="hire">
-									<h2>
-										Actively seeking entry-level software, data, or backend engineering roles
-										where I can learn, build, and make impact.
-									</h2>
-									<a href="#contact" class="btn-hire">Get in Touch</a>
-									</div>
-								</div>
-							</div>
+
+							<article class="hire card about-hire-card animate-box" data-animate-effect="fadeInLeft">
+								<h3>
+									Actively seeking entry-level software, data, or backend engineering roles
+									where I can learn, build, and make impact.
+								</h3>
+								<a href="#contact" class="btn btn-hire">Get in Touch</a>
+							</article>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
+				<section class="colorlib-education section-shell section" data-section="education" aria-labelledby="education-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">Education</span>
+							<h2 id="education-title" class="colorlib-heading section-title">Education</h2>
+						</header>
+						<div class="section-content-grid animate-box" data-animate-effect="fadeInLeft">
+							<article class="card education-card">
+								<div class="fancy-collapse-panel">
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default education-panel education-panel-1">
+											<div class="panel-heading" role="tab" id="headingTwo">
+												<h3 class="panel-title">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bachelor Degree of Computer Science
+													</a>
+												</h3>
+											</div>
+											<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+												<div class="panel-body">
+													<p>
+														I earned my Bachelor’s degree in Computer Science from
+														<strong>
+															<a href="https://www.uwgb.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a>
+														</strong>, where I built a strong foundation in software engineering, data systems, and problem-solving through coursework, projects, and hands-on experience.
+													</p>
 
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Education</span>
-							<h2 class="colorlib-heading animate-box">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bachelor Degree of Computer Science
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-											<div class="panel-body">
-												<p>
-													I earned my Bachelor’s degree in Computer Science from 
-													<strong>
-														<a href="https://www.uwgb.edu/" target="_blank">University of Wisconsin–Green Bay</a>
-													</strong>, where I built a strong foundation in software engineering, data systems, and problem-solving through coursework, projects, and hands-on experience.
-												</p>
+													<p>
+														Throughout my academic journey, I consistently demonstrated strong academic performance while balancing technical projects, internships, and extracurricular involvement.
+													</p>
 
-												<p>
-													Throughout my academic journey, I consistently demonstrated strong academic performance while balancing technical projects, internships, and extracurricular involvement.
-												</p>
-
-												<ul>
-													<li>Dean’s List every semester</li>
-													<li>High Honors (Fall 2022, Spring 2024); Honors (Spring 2023, Fall 2023)</li>
-													<li>GPA: 3.8 / 4.0</li>
-												</ul>
+													<ul>
+														<li>Dean’s List every semester</li>
+														<li>High Honors (Fall 2022, Spring 2024); Honors (Spring 2023, Fall 2023)</li>
+														<li>GPA: 3.8 / 4.0</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-default education-panel education-panel-2">
+											<div class="panel-heading" role="tab" id="headingFive">
+												<h3 class="panel-title">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">High School in Science Focus
+													</a>
+												</h3>
+											</div>
+											<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+												<div class="panel-body">
+													<p>I completed my high school with sciene focus from <strong><a href="https://www.trinity.edu.np/" target="_blank" rel="noopener noreferrer">Trinity International SS & College</a></strong>. It is the largest high school institution in Nepal with more than 95% of graduation rate. I graduated with more that 3000 students.</p>
+													<ul>
+														<li>Dean's List</li>
+														<li>Top 10 in class of 3k+ students</li>
+														<li>3.8/4.0 GPA</li>
+													</ul>
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFive">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">High School in Science Focus
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-									        <div class="panel-body">
-												<p>I completed my high school with sciene focus from <strong><a href="https://www.trinity.edu.np/" target="_blank">Trinity International SS & College</a></strong>. It is the largest high school institution in Nepal with more than 95% of graduation rate. I graduated with more that 3000 students.</p>
-												<ul>
-													<li>Dean's List</li>
-													<li>Top 10 in class of 3k+ students</li>
-													<li>3.8/4.0 GPA</li>
-												</ul>
-									        </div>
-									    </div>
-									</div>
 								</div>
-							</div>
+							</article>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Involvement</span>
-							<h2 class="colorlib-heading animate-box">Work Experience</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="timeline-centered">
-
-								<!-- Schneider -->
+				<section class="colorlib-experience section-shell section" data-section="experience" aria-labelledby="experience-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">Involvement</span>
+							<h2 id="experience-title" class="colorlib-heading section-title">Work Experience</h2>
+						</header>
+						<div class="section-content-grid">
+							<section class="timeline-centered" aria-label="Work timeline">
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-1">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Software Developer (Intern) |
-												<a href="https://www.se.com/" target="_blank">Schneider Electric</a>
+												<a href="https://www.se.com/" target="_blank" rel="noopener noreferrer">Schneider Electric</a>
 												<span>May 2025 – Aug 2025</span>
-											</h2>
+											</h3>
 											<p>
 												Developed a Redis Management Client Library in <strong>Spring Boot</strong> to retrieve Redis key metrics
 												and publish them to <strong>Dynatrace</strong> for real-time monitoring. Implemented scalable integration logic
@@ -312,18 +288,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<!-- Brown County -->
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-2">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Software Developer (Intern) |
-												<a href="https://www.browncountywi.gov/" target="_blank">Brown County</a>
+												<a href="https://www.browncountywi.gov/" target="_blank" rel="noopener noreferrer">Brown County</a>
 												<span>Feb 2025 – Apr 2025</span>
-											</h2>
+											</h3>
 											<p>
 												Collaborated on the development of an <strong>ERP system</strong> to support county operations.
 												Implemented and customized <strong>Odoo</strong> modules, developed backend functionality using <strong>Python</strong>,
@@ -334,18 +309,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<!-- Nepalese Students’ Association -->
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-4">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Founder &amp; President |
 												Nepalese Students’ Association – UW–Green Bay
 												<span>Aug 2024 – Aug 2025</span>
-											</h2>
+											</h3>
 											<p>
 												Founded and led a student organization focused on representing Nepalese students and fostering cultural exchange.
 												Planned and executed cultural and educational events, coordinated with campus stakeholders, and managed a team to
@@ -355,18 +329,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<!-- WiSys -->
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-5">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Research Assistant – Pavement Crack Detection |
-												<a href="https://www.wisys.org/" target="_blank">WiSys</a>
+												<a href="https://www.wisys.org/" target="_blank" rel="noopener noreferrer">WiSys</a>
 												<span>Sep 2024 – Dec 2024</span>
-											</h2>
+											</h3>
 											<p>
 												Assisted in developing a vision-based road crack detection system using <strong>deep learning</strong>.
 												Collected data and performed annotation using <strong>Label Studio</strong> to support model training.
@@ -376,18 +349,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<!-- Faith Technologies -->
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-3">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Data Engineer (Intern) |
-												<a href="https://www.faithtechinc.com/" target="_blank">Faith Technologies Incorporated</a>
+												<a href="https://www.faithtechinc.com/" target="_blank" rel="noopener noreferrer">Faith Technologies Incorporated</a>
 												<span>May 2024 – Aug 2024</span>
-											</h2>
+											</h3>
 											<p>
 												Analyzed operational datasets and developed/optimized <strong>ETL pipelines</strong> using <strong>Azure</strong>,
 												processing millions of records for business analytics. Delivered real-time reporting through <strong>Power BI</strong>
@@ -398,18 +370,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<!-- Resch School of Engineering -->
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-2">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Computer Science Intern (Cybersecurity) |
-												<a href="https://www.uwgb.edu/resch-school-of-engineering/" target="_blank">Resch School of Engineering</a>
+												<a href="https://www.uwgb.edu/resch-school-of-engineering/" target="_blank" rel="noopener noreferrer">Resch School of Engineering</a>
 												<span>Feb 2024 – May 2024</span>
-											</h2>
+											</h3>
 											<p>
 												Gained hands-on experience with cybersecurity labs on <strong>Linux</strong> systems (Ubuntu and Kali).
 												Performed controlled testing and analysis of key vulnerability classes including <strong>buffer overflows</strong>,
@@ -419,18 +390,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<!-- Resident Assistant -->
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-4">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Resident Assistant |
-												<a href="https://www.uwgb.edu/housing/" target="_blank">University of Wisconsin–Green Bay</a>
+												<a href="https://www.uwgb.edu/housing/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a>
 												<span>Jan 2023 – Dec 2025</span>
-											</h2>
+											</h3>
 											<p>
 												Supported student success and community well-being in residential housing through mentorship, conflict resolution,
 												and event planning. Partnered with campus staff to foster an inclusive environment and respond to resident needs.
@@ -439,18 +409,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<!-- The Weidner -->
 								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-5">
-											<i class="icon-pen2"></i>
+											<i class="icon-pen2" aria-hidden="true"></i>
 										</div>
-										<div class="timeline-label">
-											<h2>
+										<div class="timeline-label card">
+											<h3>
 												Student PEEP |
-												<a href="https://www.weidnercenter.com/" target="_blank">The Weidner Center</a>
+												<a href="https://www.weidnercenter.com/" target="_blank" rel="noopener noreferrer">The Weidner Center</a>
 												<span>Feb 2023 – Dec 2025</span>
-											</h2>
+											</h3>
 											<p>
 												Performed ELT on ticket buyer data to support accurate segmentation and seamless integration into <strong>Salesforce</strong>.
 												Contributed to ongoing updates of the official website and improved content delivery workflows to enable timely, real-time updates.
@@ -459,385 +428,426 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									</div>
 								</article>
 
-								<article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
+								<article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom" aria-hidden="true">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-none"></div>
 									</div>
 								</article>
-
-							</div>
+							</section>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
+				<section class="colorlib-blog section-shell section" data-section="blog" aria-labelledby="projects-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">My Initiatives</span>
+							<h2 id="projects-title" class="colorlib-heading section-title">Projects</h2>
+						</header>
+						<div class="section-content-grid">
+							<section class="projects-grid cards-layout" aria-label="Project cards">
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
+									<a href="blog.html" class="blog-img"><img src="assets/img/deeplearning.jfif" class="img-responsive" alt="Pavement Crack Detection" loading="lazy" decoding="async" width="1280" height="720"></a>
+									<div class="desc">
+										<h3><a href="blog.html">Pavement Crack Detection | WiSys Project</a></h3>
+										<p class="project-impact">Assisting in the development of Convolutional neural networks (CNN) models for crack detection.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">June 2023 - Present</span>
+											<span class="tech-tag chip">Deep Learning</span>
+										</div>
+										<ul class="project-highlights">
+											<li>Assisting in the development</li>
+											<li>Convolutional neural networks (CNN) models</li>
+											<li>for crack detection.</li>
+										</ul>
+									</div>
+								</article>
 
-			<section class="colorlib-blog" data-section="blog">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Initiatives</span>
-							<h2 class="colorlib-heading">Projects</h2>
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight">
+									<a href="blog.html" class="blog-img"><img src="assets/img/javagame.jfif" class="img-responsive" alt="Blackjack Game Development" loading="lazy" decoding="async" width="1280" height="720"></a>
+									<div class="desc">
+										<h3><a href="blog.html">Blackjack Game Development in Java Language</a></h3>
+										<p class="project-impact">Developed a collaborative java-based game with a user-friendly GUI using Scene Builder.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Fall 2023</span>
+											<span class="tech-tag chip">Jave Game Development</span>
+										</div>
+										<ul class="project-highlights">
+											<li>Developed a collaborative java-based game</li>
+											<li>user-friendly GUI</li>
+											<li>Scene Builder.</li>
+										</ul>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
+									<a href="blog.html" class="blog-img"><img src="assets/img/smartstudentapp.jfif" class="img-responsive" alt="Smart Student App" loading="lazy" decoding="async" width="1280" height="720"></a>
+									<div class="desc">
+										<h3><a href="blog.html">Smart Student App | Android Studio</a></h3>
+										<p class="project-impact">Designed a very simple multi-functioning app in Android Studio. Incorporated native features like emergency calling.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Fall 2023</span>
+											<span class="tech-tag chip">Application Development</span>
+										</div>
+										<ul class="project-highlights">
+											<li>Designed a very simple multi-functioning app in Android Studio.</li>
+											<li>Incorporated native features like emergency calling.</li>
+										</ul>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
+									<a href="blog.html" class="blog-img"><img src="assets/img/studentbudget.jfif" class="img-responsive" alt="Student Budget Calculator" loading="lazy" decoding="async" width="1280" height="720"></a>
+									<div class="desc">
+										<h3><a href="blog.html">Student Budget Calculator | Personal Project</a></h3>
+										<p class="project-impact">Designed a Java-based budget calculator to assist students in tracking their spending.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Fall 2023</span>
+											<span class="tech-tag chip">Java & Scene Builder</span>
+										</div>
+										<ul class="project-highlights">
+											<li>Designed a Java-based budget calculator</li>
+											<li>assist students in tracking their spending.</li>
+										</ul>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight">
+									<a href="blog.html" class="blog-img"><img src="assets/img/cybersecurity.jfif" class="img-responsive" alt="CyberSecurity Labs" loading="lazy" decoding="async" width="1280" height="720"></a>
+									<div class="desc">
+										<h3><a href="blog.html">CyberSecurity Labs | Intern Project</a></h3>
+										<p class="project-impact">Engaged in testing labs, exploring critical areas like Buffer Overflow vulnerabilities and atacks, Return-to-libc Attack and ROP. Made an instruction manual for both.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Spring 2024</span>
+											<span class="tech-tag chip">CyberSecurity</span>
+										</div>
+										<ul class="project-highlights">
+											<li>Buffer Overflow vulnerabilities and atacks</li>
+											<li>Return-to-libc Attack and ROP</li>
+											<li>Made an instruction manual for both.</li>
+										</ul>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
+									<a href="blog.html" class="blog-img"><img src="assets/img/database.jfif" class="img-responsive" alt="Database Design" loading="lazy" decoding="async" width="1280" height="720"></a>
+									<div class="desc">
+										<h3><a href="blog.html">Database Design | Class Project</a></h3>
+										<p class="project-impact">Designed a database of an online server, created and ER Diagram, and SQL statement.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Fall 2023</span>
+											<span class="tech-tag chip">Database Management & SQL</span>
+										</div>
+										<ul class="project-highlights">
+											<li>Designed a database of an online server</li>
+											<li>created and ER Diagram</li>
+											<li>SQL statement.</li>
+										</ul>
+									</div>
+								</article>
+							</section>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/deeplearning.jfif" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>June 2023 - Present</small> | <small> Deep Learning </small></span>
-									<h3><a href="blog.html">Pavement Crack Detection | <a href="https://www.wisys.org/" target="_blank">WiSys Project</a></a></h3>
-									<p>Assisting in the development of Convolutional neural networks (CNN) models for crack detection.</p>
+				</section>
+
+				<section class="colorlib-skills section-shell section" data-section="skills" aria-labelledby="skills-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">Core Focus</span>
+							<h2 id="skills-title" class="colorlib-heading section-title">Software, Data &amp; AI Skills</h2>
+						</header>
+						<div class="section-content-grid">
+							<article class="card animate-box" data-animate-effect="fadeInLeft">
+								<div class="card-body skills-body">
+									<p class="skills-intro">
+										My core strengths are in backend software development, data engineering, and applied AI—building scalable services,
+										reliable data pipelines, and analytics solutions that support real-world decisions.
+									</p>
+									<div class="skills-pills" aria-label="Skills highlights">
+										<span class="chip skills-pill">Backend Engineering</span>
+										<span class="chip skills-pill">Data Engineering</span>
+										<span class="chip skills-pill">Cloud &amp; Observability</span>
+										<span class="chip skills-pill">AI / ML</span>
+									</div>
+									<section class="row skills-grid" aria-label="Skills categories">
+										<article class="col-md-6 skills-column">
+											<section class="skills-domain" aria-label="Software Engineering">
+												<h3>Software Engineering (Backend &amp; APIs)</h3>
+												<ul>
+												<li>Java, Spring Boot</li>
+												<li>REST API Development</li>
+												<li>Redis (standalone &amp; clustered)</li>
+												<li>System Integration &amp; Troubleshooting</li>
+												<li>API Testing (Insomnia)</li>
+											</ul>
+											</section>
+
+											<section class="skills-domain" aria-label="Data Engineering and Analytics">
+												<h3>Data Engineering &amp; Analytics</h3>
+												<ul>
+												<li>SQL (SQL Server, PostgreSQL)</li>
+												<li>ETL / ELT Pipelines</li>
+												<li>Azure Data Factory</li>
+												<li>Data Modeling &amp; Warehousing</li>
+												<li>Power BI Dashboards &amp; Reporting</li>
+											</ul>
+											</section>
+
+											<section class="skills-domain" aria-label="Cloud and Observability">
+												<h3>Cloud &amp; Observability</h3>
+												<ul>
+												<li>Microsoft Azure</li>
+												<li>Monitoring &amp; Metrics (Dynatrace)</li>
+												<li>Docker, Kubernetes (Foundational)</li>
+											</ul>
+											</section>
+										</article>
+
+										<article class="col-md-6 skills-column">
+											<section class="skills-domain" aria-label="AI and Machine Learning">
+												<h3>AI &amp; Machine Learning</h3>
+												<ul>
+												<li>Machine Learning &amp; Model Evaluation</li>
+												<li>Deep Learning (CNNs)</li>
+												<li>Data Annotation (Label Studio)</li>
+												<li>Microsoft OpenAI / Copilot Studio (AI Agents)</li>
+											</ul>
+											</section>
+
+											<section class="skills-domain" aria-label="Web and Frontend">
+												<h3>Web &amp; Frontend (Supporting Skills)</h3>
+												<ul>
+												<li>JavaScript, React</li>
+												<li>HTML / CSS</li>
+												<li>WordPress</li>
+											</ul>
+											</section>
+
+											<section class="skills-domain" aria-label="Security and Systems">
+												<h3>Security &amp; Systems (Supporting Skills)</h3>
+												<ul>
+												<li>Linux (Ubuntu, Kali Linux)</li>
+												<li>Vulnerability Labs: Buffer Overflow, ROP, Return-to-libc, Format String</li>
+											</ul>
+											</section>
+										</article>
+									</section>
 								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/javagame.jfif" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>Fall 2023</small> | <small>Jave Game Development</small></span>
-									<h3><a href="blog.html">Blackjack Game Development in Java Language</a></h3>
-									<p>Developed a collaborative java-based game with a user-friendly GUI using Scene Builder.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/smartstudentapp.jfif" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>Fall 2023</small> | <small>Application Development</small></span>
-									<h3><a href="blog.html">Smart Student App | Android Studio</a></h3>
-									<p>Designed a very simple multi-functioning app in Android Studio. Incorporated native features like emergency calling.</p>
-								</div>
-							</div>
+							</article>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/studentbudget.jfif" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>Fall 2023</small> | <small>Java & Scene Builder</small></span>
-									<h3><a href="blog.html">Student Budget Calculator | Personal Project</a></h3>
-									<p>Designed a Java-based budget calculator to assist students in tracking their spending.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/cybersecurity.jfif" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>Spring 2024</small> | <small>CyberSecurity</small></span>
-									<h3><a href="blog.html">CyberSecurity Labs | Intern Project</a></h3>
-									<p>Engaged in testing labs, exploring critical areas like Buffer Overflow vulnerabilities and atacks, Return-to-libc Attack and ROP. Made an instruction manual for both.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/database.jfif" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>Fall 2023</small> | <small>Database Management & SQL</small></span>
-									<h3><a href="blog.html">Database Design | Class Project</a></h3>
-									<p>Designed a database of an online server, created and ER Diagram, and SQL statement.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+				</section>
 
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Core Focus</span>
-							<h2 class="colorlib-heading animate-box">Software, Data &amp; AI Skills</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<p>
-								My core strengths are in backend software development, data engineering, and applied AI—building scalable services,
-								reliable data pipelines, and analytics solutions that support real-world decisions.
-							</p>
-
-							<div class="row">
-								<div class="col-md-6">
-
-									<strong>Software Engineering (Backend &amp; APIs):</strong>
-									<ul>
-										<li>Java, Spring Boot</li>
-										<li>REST API Development</li>
-										<li>Redis (standalone &amp; clustered)</li>
-										<li>System Integration &amp; Troubleshooting</li>
-										<li>API Testing (Insomnia)</li>
-									</ul>
-
-									<strong>Data Engineering &amp; Analytics:</strong>
-									<ul>
-										<li>SQL (SQL Server, PostgreSQL)</li>
-										<li>ETL / ELT Pipelines</li>
-										<li>Azure Data Factory</li>
-										<li>Data Modeling &amp; Warehousing</li>
-										<li>Power BI Dashboards &amp; Reporting</li>
-									</ul>
-
-									<strong>Cloud &amp; Observability:</strong>
-									<ul>
-										<li>Microsoft Azure</li>
-										<li>Monitoring &amp; Metrics (Dynatrace)</li>
-										<li>Docker, Kubernetes (Foundational)</li>
-									</ul>
-
-								</div>
-
-								<div class="col-md-6">
-
-									<strong>AI &amp; Machine Learning:</strong>
-									<ul>
-										<li>Machine Learning &amp; Model Evaluation</li>
-										<li>Deep Learning (CNNs)</li>
-										<li>Data Annotation (Label Studio)</li>
-										<li>Microsoft OpenAI / Copilot Studio (AI Agents)</li>
-									</ul>
-
-									<strong>Web &amp; Frontend (Supporting Skills):</strong>
-									<ul>
-										<li>JavaScript, React</li>
-										<li>HTML / CSS</li>
-										<li>WordPress</li>
-									</ul>
-
-									<strong>Security &amp; Systems (Supporting Skills):</strong>
-									<ul>
-										<li>Linux (Ubuntu, Kali Linux)</li>
-										<li>Vulnerability Labs: Buffer Overflow, ROP, Return-to-libc, Format String</li>
-									</ul>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</section>
-
-			
-			<section class="colorlib-work" data-section="work">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Writing Skills</span>
-							<h2 class="colorlib-heading animate-box">Published Books</h2>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<h4>Dive into the Heart of Reality: Unveiling Romance, Society, and Inequality in यथार्थ |<span> Nov 18, 2020</span></h4>
-									<p>In यथार्थ (Reality), I explore the complex tapestry of life, revealing the deep truths about love, society, and inequality. Through heartfelt stories, I invite you to embark on a journey that challenges our understanding of the world.
-										This book isn't just about romance; it's about the everyday struggles we all face. From the euphoria of love to the constraints of societal norms, "Reality" provides an honest look at what it means to be human. 
+				<section class="colorlib-work section-shell section" data-section="work" aria-labelledby="work-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">My Writing Skills</span>
+							<h2 id="work-title" class="colorlib-heading section-title">Published Books</h2>
+							<p class="publication-intro">A glimpse into my published Nepali poetry work, story-driven themes, and reader engagement moments.</p>
+						</header>
+						<div class="section-content-grid">
+							<article class="card publication-feature animate-box" data-animate-effect="fadeInLeft">
+								<div class="card-body">
+									<h3>Dive into the Heart of Reality: Unveiling Romance, Society, and Inequality in यथार्थ <span class="publication-date">Nov 18, 2020</span></h3>
+									<p class="publication-summary">In यथार्थ (Reality), I explore the complex tapestry of life, revealing the deep truths about love, society, and inequality. Through heartfelt stories, I invite you to embark on a journey that challenges our understanding of the world.
+										This book isn't just about romance; it's about the everyday struggles we all face. From the euphoria of love to the constraints of societal norms, "Reality" provides an honest look at what it means to be human.
 										Prepare to be captivated by a narrative that sparks conversation and fosters empathy. "यथार्थ" isn't just a book; it's a mirror reflecting our world and the changes we need to make.</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/book.JPG);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Day of Book Published</a></h3>
-										<span>Bibesh's 100+ Nepali Poems</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 1k+</a></span>
-											<span><a href="#"><i class="icon-heart"></i>100+</a></span>
-										</p>
+								</div>
+							</article>
+
+							<div class="row cards-grid publication-grid" aria-label="Publication visuals">
+								<article class="project card publication-card animate-box" data-animate-effect="fadeInLeft" data-publication-label="Launch Day" style="background-image: url(assets/img/book.JPG);">
+									<div class="desc publication-desc">
+										<div class="con">
+											<h3><a href="work.html">Day of Book Published</a></h3>
+											<span class="publication-subtitle">Bibesh's 100+ Nepali Poems</span>
+											<p class="icon publication-stats">
+												<span><a href="#" aria-label="Share"><i class="icon-share3" aria-hidden="true"></i></a></span>
+											</p>
+										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/book2.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Reading Book</a></h3>
-										<span>Bibesh's 100+ Nepali Poems</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i>1k+</a></span>
-											<span><a href="#"><i class="icon-heart"></i>100+</a></span>
-										</p>
+								</article>
+								<article class="project card publication-card animate-box" data-animate-effect="fadeInRight" data-publication-label="Reader Session" style="background-image: url(assets/img/book2.jpg);">
+									<div class="desc publication-desc">
+										<div class="con">
+											<h3><a href="work.html">Reading Book</a></h3>
+											<span class="publication-subtitle">Bibesh's 100+ Nepali Poems</span>
+											<p class="icon publication-stats">
+												<span><a href="#" aria-label="Share"><i class="icon-share3" aria-hidden="true"></i></a></span>
+											</p>
+										</div>
 									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="colorlib-services section-shell section" data-section="services" aria-labelledby="services-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">My Credentials</span>
+							<h2 id="services-title" class="colorlib-heading section-title">Certifications</h2>
+							<p class="certification-intro">Industry-recognized credentials that validate my software, cloud, and data foundations.</p>
+						</header>
+						<div class="section-content-grid">
+							<div class="row row-pt-md cards-grid cert-grid" aria-label="Certification cards">
+								<div class="col-md-4 text-center animate-box">
+									<article class="services color-1 card cert-card">
+										<span class="icon">
+											<i class="icon-bulb" aria-hidden="true"></i>
+										</span>
+										<div class="desc">
+											<h3>Learn SQL</h3>
+											<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/042a4e5884e3eb6ea1f2a12be6abb851" target="_blank" rel="noopener noreferrer">View Certificate</a>
+										</div>
+									</article>
+								</div>
+								<div class="col-md-4 text-center animate-box">
+									<article class="services color-2 card cert-card">
+										<span class="icon">
+											<i class="icon-data" aria-hidden="true"></i>
+										</span>
+										<div class="desc">
+											<h3>Generative AI & the Azure Bot AI Service</h3>
+											<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/df277d579540475bbd7447dbc682259a" target="_blank" rel="noopener noreferrer">View Certificate</a>
+										</div>
+									</article>
+								</div>
+								<div class="col-md-4 text-center animate-box">
+									<article class="services color-3 card cert-card">
+										<span class="icon">
+											<i class="icon-phone3" aria-hidden="true"></i>
+										</span>
+										<div class="desc">
+											<h3>Microsoft Azure Fundamentals: Monitoring Azure Services</h3>
+											<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/2f40b697e3fc4a81ac61fa0df206df87" target="_blank" rel="noopener noreferrer">View Certificate</a>
+										</div>
+									</article>
+								</div>
+								<div class="col-md-4 text-center animate-box">
+									<article class="services color-4 card cert-card">
+										<span class="icon">
+											<i class="icon-layers2" aria-hidden="true"></i>
+										</span>
+										<div class="desc">
+											<h3>How to Make a Website with NameCheap</h3>
+											<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/df765ae3c535f37c36b83eaeae2b88b6" target="_blank" rel="noopener noreferrer">View Certificate</a>
+										</div>
+									</article>
+								</div>
+								<div class="col-md-4 text-center animate-box">
+									<article class="services color-5 card cert-card">
+										<span class="icon">
+											<i class="icon-data" aria-hidden="true"></i>
+										</span>
+										<div class="desc">
+											<h3>What is Data Science?</h3>
+											<a href="https://coursera.org/share/3b4ffa33ef7198dcf9aea3f49f203d59" target="_blank" rel="noopener noreferrer">View Certificate</a>
+										</div>
+									</article>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-
-
-
-
-			<section class="colorlib-services" data-section="services">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Credentials</span>
-							<h2 class="colorlib-heading">Certifications</h2>
-						</div>
+				<section id="colorlib-counter" class="colorlib-counters section-shell section" aria-labelledby="counter-title" style="background-image: url(assets/img/background.jfif);" data-stellar-background-ratio="0.5">
+					<h2 id="counter-title" class="sr-only">Portfolio Metrics</h2>
+					<div class="overlay"></div>
+					<div class="colorlib-narrow-content container">
+						<section class="row" aria-label="Counters">
+							<div class="col-md-3 text-center animate-box">
+								<span class="colorlib-counter js-counter" data-from="0" data-to="8" data-speed="5000" data-refresh-interval="50"></span>
+								<span class="colorlib-counter-label">Work Experiences</span>
+							</div>
+							<div class="col-md-3 text-center animate-box">
+								<span class="colorlib-counter js-counter" data-from="0" data-to="6" data-speed="5000" data-refresh-interval="50"></span>
+								<span class="colorlib-counter-label">Projects</span>
+							</div>
+							<div class="col-md-3 text-center animate-box">
+								<span class="colorlib-counter js-counter" data-from="0" data-to="35" data-speed="5000" data-refresh-interval="50"></span>
+								<span class="colorlib-counter-label">Skills</span>
+							</div>
+							<div class="col-md-3 text-center animate-box">
+								<span class="colorlib-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
+								<span class="colorlib-counter-label">Certifications</span>
+							</div>
+						</section>
 					</div>
-					<div class="row row-pt-md">
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-1">
-								<span class="icon">
-									<i class="icon-bulb"></i>
-								</span>
-								<div class="desc">
-									<h3>Learn SQL</h3>
-									<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/042a4e5884e3eb6ea1f2a12be6abb851" target="_blank">View Certificate</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Generative AI & the Azure Bot AI Service</h3>
-									<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/df277d579540475bbd7447dbc682259a" target="_blank">View Certificate</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-3">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Microsoft Azure Fundamentals: Monitoring Azure Services</h3>
-									<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/2f40b697e3fc4a81ac61fa0df206df87" target="_blank">View Certificate</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-4">
-								<span class="icon">
-									<i class="icon-layers2"></i>
-								</span>
-								<div class="desc">
-									<h3>How to Make a Website with NameCheap</h3>
-									<a href="https://www.codecademy.com/profiles/BibeshPyakurel/certificates/df765ae3c535f37c36b83eaeae2b88b6" target="_blank">View Certificate</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-5">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>What is Data Science?</h3>
-									<a href="https://coursera.org/share/3b4ffa33ef7198dcf9aea3f49f203d59" target="_blank">View Certificate</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/background.jfif);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Work Experiences</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="6" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Projects</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="25" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Skills</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Certifications</span>
-						</div>
-					</div>
-				</div>
-			</div>
+				</section>
 
+				<section id="contact" class="colorlib-contact section-shell section" data-section="contact" aria-labelledby="contact-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">Get in Touch</span>
+							<h2 id="contact-title" class="colorlib-heading section-title">Contact</h2>
+						</header>
+						<div class="section-content-grid">
+							<div class="row cards-grid" aria-label="Contact cards">
+								<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+									<article class="card contact-hero-card">
+										<div class="card-body contact-hero-body">
+											<span class="heading-meta section-eyebrow">Let's Connect</span>
+											<h3>Open to software, backend, and data opportunities</h3>
+											<p>I’m currently looking for roles where I can build impactful products, collaborate with strong teams, and keep growing as an engineer.</p>
+											<div class="contact-actions" aria-label="Quick contact actions">
+												<a href="mailto:bibespyakurel1100@gmail.com" class="btn btn-hire">Email Me</a>
+												<a href="tel:+12402547082" class="btn">Call Me</a>
+											</div>
+											<ul class="contact-social" aria-label="Social links">
+												<li><a href="https://www.linkedin.com/in/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="icon-social-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+												<li><a href="https://github.com/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="icon-social-github" aria-hidden="true"></i><span>GitHub</span></a></li>
+												<li><a href="https://www.instagram.com/bbibeshh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+											</ul>
+										</div>
+									</article>
+								</div>
 
-			<section id="contact" class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="#"><a href="mailto:bibespyakurel1100@gmail.com">bibespyakurel1100@gmail.com</a></a></p>
-								</div>
-							</div>
+								<address class="col-md-6 contact-details-stack">
+									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
+										<div class="colorlib-icon">
+											<i class="icon-globe-outline" aria-hidden="true"></i>
+										</div>
+										<div class="colorlib-text">
+											<p><a href="mailto:bibespyakurel1100@gmail.com">bibespyakurel1100@gmail.com</a></p>
+										</div>
+									</article>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>United States of America</p>
-								</div>
-							</div>
+									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
+										<div class="colorlib-icon">
+											<img src="assets/img/loc.png" alt="Location pin" loading="lazy" decoding="async">
+										</div>
+										<div class="colorlib-text">
+											<p>United States of America</p>
+										</div>
+									</article>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="tel://">+1(240)254-7082</a></p>
-								</div>
+									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
+										<div class="colorlib-icon">
+											<i class="icon-phone" aria-hidden="true"></i>
+										</div>
+										<div class="colorlib-text">
+											<p><a href="tel:+12402547082">+1(240)254-7082</a></p>
+										</div>
+									</article>
+								</address>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</main>
+		</div>
+	</div>
 
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
+	<script src="assets/js/vendor/jquery.min.js"></script>
+	<script src="assets/js/vendor/jquery.easing.1.3.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/jquery.waypoints.min.js"></script>
+	<script src="assets/js/vendor/jquery.flexslider-min.js"></script>
+	<script src="assets/js/vendor/owl.carousel.min.js"></script>
+	<script src="assets/js/vendor/jquery.countTo.js"></script>
+	<script src="assets/js/app/main.js"></script>
+	<script src="assets/js/app/google_map.js"></script>
 	</body>
 </html>
