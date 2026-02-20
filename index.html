@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" data-github-username="bibeshpyakurel">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,8 +25,7 @@
 		(function () {
 			var storageKey = 'bp-theme';
 			var allowedThemes = ['slate', 'aurora', 'paper', 'hc'];
-			var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			var theme = systemPrefersDark ? 'slate' : 'paper';
+			var theme = 'hc';
 			try {
 				var savedTheme = localStorage.getItem(storageKey);
 				if (allowedThemes.indexOf(savedTheme) > -1) {
@@ -97,21 +96,17 @@
 	<link rel="stylesheet" href="assets/css/vendor/icomoon.css">
 	<link rel="stylesheet" href="assets/css/vendor/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/vendor/flexslider.css">
-	<link rel="stylesheet" href="assets/css/app/style.css">
+	<link rel="stylesheet" href="assets/css/site/portfolio.css">
 
-	<script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
-	<!--[if lt IE 9]>
-	<script src="assets/js/vendor/respond.min.js"></script>
-	<![endif]-->
 	</head>
 	<body>
-	<a href="#colorlib-main" class="skip-link">Skip to main content</a>
+	<a href="#bp-main" class="skip-link">Skip to main content</a>
 	<progress id="scroll-progress" max="100" value="0" aria-label="Scroll progress"></progress>
 	<figure class="bg-layer" aria-hidden="true">
 		<canvas id="bg"></canvas>
 		<figure class="bg-overlay"></figure>
 	</figure>
-	<article id="colorlib-page" role="document">
+	<article id="bp-page" role="document">
 		<figure class="nav-backdrop" aria-hidden="true"></figure>
 		<section class="container-wrap" aria-label="Site layout">
 			<header class="site-header" role="banner">
@@ -122,13 +117,13 @@
 					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="paper" aria-pressed="false">Paper</button>
 					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="hc" aria-pressed="false">HC</button>
 				</nav>
-				<button type="button" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation menu"><i aria-hidden="true"></i></button>
+				<button type="button" class="js-bp-nav-toggle bp-nav-toggle" data-toggle="collapse" data-target="#bp-navbar" aria-expanded="false" aria-controls="bp-navbar" aria-label="Toggle navigation menu"><i aria-hidden="true"></i></button>
 			</header>
 
-			<aside id="colorlib-aside" role="complementary" class="border" aria-label="Sidebar">
+			<aside id="bp-aside" role="complementary" class="border" aria-label="Sidebar">
 				<header class="text-center sidebar-header" aria-label="Profile header">
 					<div class="author-img" style="background-image: url(assets/img/about-opt.jpg);" role="img" aria-label="Portrait of Bibesh Pyakurel"></div>
-					<p id="colorlib-logo"><a href="index.html">Bibesh Pyakurel</a></p>
+					<p id="bp-logo"><a href="index.html">Bibesh Pyakurel</a></p>
 					<nav class="theme-switcher" aria-label="Theme picker">
 						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="slate" aria-pressed="false">Slate</button>
 						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="aurora" aria-pressed="false">Aurora</button>
@@ -137,8 +132,8 @@
 					</nav>
 				</header>
 
-				<nav id="colorlib-main-menu" role="navigation" class="navbar" aria-label="Primary navigation">
-					<section id="navbar" class="collapse" aria-label="Main menu links">
+				<nav id="bp-main-menu" role="navigation" class="navbar" aria-label="Primary navigation">
+					<section id="bp-navbar" class="collapse" aria-label="Main menu links">
 						<ul>
 							<li class="active"><a href="#" data-nav-section="home" aria-current="page">Home</a></li>
 							<li><a href="#" data-nav-section="about">About</a></li>
@@ -148,13 +143,13 @@
 							<li><a href="#" data-nav-section="skills">Skills</a></li>
 							<li><a href="#" data-nav-section="work">Publications</a></li>
 							<li><a href="#" data-nav-section="services">Certifications</a></li>
-							<li><a href="#" data-nav-section="metrics">Metrics</a></li>
+							<li><a href="#" data-nav-section="metrics">GitHub Metrics</a></li>
 							<li><a href="#" data-nav-section="contact">Contact</a></li>
 						</ul>
 					</section>
 				</nav>
 
-				<footer class="colorlib-footer" aria-label="Sidebar footer">
+				<footer class="bp-footer" aria-label="Sidebar footer">
 					<ul class="sidebar-social" aria-label="Social links">
 						<li><a href="https://www.linkedin.com/in/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="icon-social-linkedin" aria-hidden="true"></i></a></li>
 						<li><a href="https://github.com/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="icon-social-github" aria-hidden="true"></i></a></li>
@@ -163,8 +158,8 @@
 				</footer>
 			</aside>
 
-			<main id="colorlib-main" role="main" tabindex="-1">
-				<section id="colorlib-hero" class="js-fullheight section-shell section" data-section="home" aria-labelledby="home-title">
+			<main id="bp-main" role="main" tabindex="-1">
+				<section id="bp-hero" class="js-fullheight section-shell section" data-section="home" aria-labelledby="home-title">
 					<header class="sr-only section-header">
 						<h2 id="home-title">Home</h2>
 					</header>
@@ -194,14 +189,14 @@
 					</article>
 				</section>
 
-				<section class="colorlib-about section-shell section" data-section="about" aria-labelledby="about-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-about section-shell section" data-section="about" aria-labelledby="about-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">About Me</span>
-							<h2 id="about-title" class="colorlib-heading section-title">Who Am I?</h2>
+							<h2 id="about-title" class="bp-heading section-title">Who Am I?</h2>
 						</header>
 						<div class="section-content-grid">
-							<article class="card about-core-card animate-box" data-animate-effect="fadeInLeft">
+							<article class="card about-core-card reveal-item" data-animate-effect="fadeInLeft">
 								<div class="card-body about-desc">
 									<p>
 										<strong>Hi, I’m Bibesh Pyakurel</strong>, a Computer Science graduate from
@@ -235,25 +230,25 @@
 							</article>
 
 							<div class="cards-grid about-cap-grid" aria-label="About capabilities">
-								<div class="animate-box about-cap-item" data-animate-effect="fadeInTop">
+								<div class="reveal-item about-cap-item" data-animate-effect="fadeInTop">
 									<article class="services color-3 card about-skill-card about-skill-card-2">
 										<span class="icon2"><i class="icon-bulb" aria-hidden="true"></i></span>
 										<h3>Software Engineering</h3>
 									</article>
 								</div>
-								<div class="animate-box about-cap-item" data-animate-effect="fadeInLeft">
+								<div class="reveal-item about-cap-item" data-animate-effect="fadeInLeft">
 									<article class="services color-1 card about-skill-card about-skill-card-1">
 										<span class="icon2"><i class="icon-data" aria-hidden="true"></i></span>
 										<h3>Data <br>Engineering</h3>
 									</article>
 								</div>
-								<div class="animate-box about-cap-item" data-animate-effect="fadeInRight">
+								<div class="reveal-item about-cap-item" data-animate-effect="fadeInRight">
 									<article class="services color-2 card about-skill-card about-skill-card-3">
 										<span class="icon2"><i class="icon-globe-outline" aria-hidden="true"></i></span>
 										<h3>Web <br>Design</h3>
 									</article>
 								</div>
-								<div class="animate-box about-cap-item" data-animate-effect="fadeInBottom">
+								<div class="reveal-item about-cap-item" data-animate-effect="fadeInBottom">
 									<article class="services color-4 card about-skill-card about-skill-card-4">
 										<span class="icon2"><i class="icon-phone3" aria-hidden="true"></i></span>
 										<h3>Application <br> Design</h3>
@@ -261,7 +256,7 @@
 								</div>
 							</div>
 
-							<article class="hire card about-hire-card animate-box" data-animate-effect="fadeInLeft">
+							<article class="hire card about-hire-card reveal-item" data-animate-effect="fadeInLeft">
 								<h3>
 									Actively seeking entry-level software, data, or backend engineering roles
 									where I can learn, build, and make impact.
@@ -272,13 +267,13 @@
 					</div>
 				</section>
 
-				<section class="colorlib-education section-shell section" data-section="education" aria-labelledby="education-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-education section-shell section" data-section="education" aria-labelledby="education-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">Education</span>
-							<h2 id="education-title" class="colorlib-heading section-title">Education</h2>
+							<h2 id="education-title" class="bp-heading section-title">Education</h2>
 						</header>
-						<div class="section-content-grid animate-box" data-animate-effect="fadeInLeft">
+						<div class="section-content-grid reveal-item" data-animate-effect="fadeInLeft">
 							<article class="card education-card">
 								<div class="fancy-collapse-panel">
 									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -335,15 +330,15 @@
 					</div>
 				</section>
 
-				<section class="colorlib-experience section-shell section" data-section="experience" aria-labelledby="experience-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-experience section-shell section" data-section="experience" aria-labelledby="experience-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">Involvement</span>
-							<h2 id="experience-title" class="colorlib-heading section-title">Work Experience</h2>
+							<h2 id="experience-title" class="bp-heading section-title">Work Experience</h2>
 						</header>
 						<div class="section-content-grid">
 							<section class="timeline-centered" aria-label="Work timeline">
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-1">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -365,7 +360,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInRight">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-2">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -386,7 +381,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInTop">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-4">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -406,7 +401,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-5">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -426,7 +421,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-3">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -447,7 +442,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInRight">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-2">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -467,7 +462,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInTop">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-4">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -486,7 +481,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+								<article class="timeline-entry reveal-item" data-animate-effect="fadeInLeft">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-5">
 											<i class="icon-pen2" aria-hidden="true"></i>
@@ -505,7 +500,7 @@
 									</div>
 								</article>
 
-								<article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom" aria-hidden="true">
+								<article class="timeline-entry begin reveal-item" data-animate-effect="fadeInBottom" aria-hidden="true">
 									<div class="timeline-entry-inner">
 										<div class="timeline-icon color-none"></div>
 									</div>
@@ -515,11 +510,11 @@
 					</div>
 				</section>
 
-				<section class="colorlib-blog section-shell section" data-section="blog" aria-labelledby="projects-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-blog section-shell section" data-section="blog" aria-labelledby="projects-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">My Initiatives</span>
-							<h2 id="projects-title" class="colorlib-heading section-title">Projects</h2>
+							<h2 id="projects-title" class="bp-heading section-title">Projects</h2>
 						</header>
 						<div class="section-content-grid">
 							<section class="projects-controls card" aria-label="Project filters">
@@ -536,7 +531,7 @@
 								<p id="project-results-status" class="project-results-status" aria-live="polite"></p>
 							</section>
 							<section class="projects-grid cards-layout" aria-label="Project cards">
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="ai data" data-project-search="pavement crack detection wisys cnn deep learning">
+								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="ai data" data-project-search="pavement crack detection wisys cnn deep learning">
 									<a href="blog.html" class="blog-img">
 										<picture>
 											<img src="assets/img/deeplearning-opt.jpg" srcset="assets/img/deeplearning-opt.jpg 1x, assets/img/deeplearning.jfif 2x" class="img-responsive" alt="Pavement Crack Detection" loading="lazy" decoding="async" width="1280" height="720">
@@ -557,7 +552,7 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="blackjack java game scene builder gui">
+								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="blackjack java game scene builder gui">
 									<a href="blog.html" class="blog-img">
 										<picture>
 											<img src="assets/img/javagame-opt.jpg" srcset="assets/img/javagame-opt.jpg 1x, assets/img/javagame.jfif 2x" class="img-responsive" alt="Blackjack Game Development" loading="lazy" decoding="async" width="1280" height="720">
@@ -578,7 +573,7 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="web" data-project-search="smart student app android studio mobile">
+								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="web" data-project-search="smart student app android studio mobile">
 									<a href="blog.html" class="blog-img">
 										<picture>
 											<img src="assets/img/smartstudentapp-opt.jpg" srcset="assets/img/smartstudentapp-opt.jpg 1x, assets/img/smartstudentapp.jfif 2x" class="img-responsive" alt="Smart Student App" loading="lazy" decoding="async" width="1280" height="720">
@@ -598,7 +593,7 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="backend data" data-project-search="student budget calculator java scene builder finance">
+								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="backend data" data-project-search="student budget calculator java scene builder finance">
 									<a href="blog.html" class="blog-img">
 										<picture>
 											<img src="assets/img/studentbudget-opt.jpg" srcset="assets/img/studentbudget-opt.jpg 1x, assets/img/studentbudget.jfif 2x" class="img-responsive" alt="Student Budget Calculator" loading="lazy" decoding="async" width="1280" height="720">
@@ -618,7 +613,7 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="cybersecurity labs buffer overflow rop return to libc linux">
+								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="cybersecurity labs buffer overflow rop return to libc linux">
 									<a href="blog.html" class="blog-img">
 										<picture>
 											<img src="assets/img/cybersecurity-opt.jpg" srcset="assets/img/cybersecurity-opt.jpg 1x, assets/img/cybersecurity.jfif 2x" class="img-responsive" alt="CyberSecurity Labs" loading="lazy" decoding="async" width="1280" height="720">
@@ -639,7 +634,7 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="data backend" data-project-search="database design sql er diagram server">
+								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="data backend" data-project-search="database design sql er diagram server">
 									<a href="blog.html" class="blog-img">
 										<picture>
 											<img src="assets/img/database-opt.jpg" srcset="assets/img/database-opt.jpg 1x, assets/img/database.jfif 2x" class="img-responsive" alt="Database Design" loading="lazy" decoding="async" width="1280" height="720">
@@ -665,14 +660,14 @@
 					</div>
 				</section>
 
-				<section class="colorlib-skills section-shell section" data-section="skills" aria-labelledby="skills-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-skills section-shell section" data-section="skills" aria-labelledby="skills-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">Core Focus</span>
-							<h2 id="skills-title" class="colorlib-heading section-title">Software, Data &amp; AI Skills</h2>
+							<h2 id="skills-title" class="bp-heading section-title">Software, Data &amp; AI Skills</h2>
 						</header>
 						<div class="section-content-grid">
-							<article class="card animate-box" data-animate-effect="fadeInLeft">
+							<article class="card reveal-item" data-animate-effect="fadeInLeft">
 								<div class="card-body skills-body">
 									<p class="skills-intro">
 										My core strengths are in backend software development, data engineering, and applied AI—building scalable services,
@@ -749,15 +744,15 @@
 					</div>
 				</section>
 
-				<section class="colorlib-work section-shell section" data-section="work" aria-labelledby="work-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-work section-shell section" data-section="work" aria-labelledby="work-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">My Writing Skills</span>
-							<h2 id="work-title" class="colorlib-heading section-title">Published Books</h2>
+							<h2 id="work-title" class="bp-heading section-title">Published Books</h2>
 							<p class="publication-intro">A glimpse into my published Nepali poetry work, story-driven themes, and reader engagement moments.</p>
 						</header>
 						<div class="section-content-grid">
-							<article class="card publication-feature animate-box" data-animate-effect="fadeInLeft">
+							<article class="card publication-feature reveal-item" data-animate-effect="fadeInLeft">
 								<div class="card-body">
 									<h3>Dive into the Heart of Reality: Unveiling Romance, Society, and Inequality in यथार्थ <span class="publication-date">Nov 18, 2020</span></h3>
 									<p class="publication-summary">In यथार्थ (Reality), I explore the complex tapestry of life, revealing the deep truths about love, society, and inequality. Through heartfelt stories, I invite you to embark on a journey that challenges our understanding of the world.
@@ -767,23 +762,23 @@
 							</article>
 
 							<div class="cards-grid publication-grid publication-grid--one-row" aria-label="Publication visuals">
-								<article class="project card publication-card animate-box" data-animate-effect="fadeInLeft" style="background-image: url(assets/img/book-opt.jpg);"></article>
-								<article class="project card publication-card animate-box" data-animate-effect="fadeInRight" style="background-image: url(assets/img/book2-opt.jpg);"></article>
+								<article class="project card publication-card reveal-item" data-animate-effect="fadeInLeft" style="background-image: url(assets/img/book-opt.jpg);"></article>
+								<article class="project card publication-card reveal-item" data-animate-effect="fadeInRight" style="background-image: url(assets/img/book2-opt.jpg);"></article>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<section class="colorlib-services section-shell section" data-section="services" aria-labelledby="services-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-services section-shell section" data-section="services" aria-labelledby="services-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">My Credentials</span>
-							<h2 id="services-title" class="colorlib-heading section-title">Certifications</h2>
+							<h2 id="services-title" class="bp-heading section-title">Certifications</h2>
 							<p class="certification-intro">Industry-recognized credentials that validate my software, cloud, and data foundations.</p>
 						</header>
 						<div class="section-content-grid">
 							<div class="row-pt-md cards-grid cert-grid cert-grid--wrap" aria-label="Certification cards">
-								<div class="text-center animate-box cert-grid-item">
+								<div class="text-center reveal-item cert-grid-item">
 									<article class="services color-1 card cert-card">
 										<span class="icon">
 											<i class="icon-bulb" aria-hidden="true"></i>
@@ -794,7 +789,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="text-center animate-box cert-grid-item">
+								<div class="text-center reveal-item cert-grid-item">
 									<article class="services color-2 card cert-card">
 										<span class="icon">
 											<i class="icon-data" aria-hidden="true"></i>
@@ -805,7 +800,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="text-center animate-box cert-grid-item">
+								<div class="text-center reveal-item cert-grid-item">
 									<article class="services color-3 card cert-card">
 										<span class="icon">
 											<i class="icon-phone3" aria-hidden="true"></i>
@@ -816,7 +811,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="text-center animate-box cert-grid-item">
+								<div class="text-center reveal-item cert-grid-item">
 									<article class="services color-4 card cert-card">
 										<span class="icon">
 											<i class="icon-layers2" aria-hidden="true"></i>
@@ -827,7 +822,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="text-center animate-box cert-grid-item">
+								<div class="text-center reveal-item cert-grid-item">
 									<article class="services color-5 card cert-card">
 										<span class="icon">
 											<i class="icon-data" aria-hidden="true"></i>
@@ -843,11 +838,11 @@
 					</div>
 				</section>
 
-				<section class="colorlib-metrics section-shell section" data-section="metrics" aria-labelledby="metrics-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section class="bp-metrics section-shell section" data-section="metrics" aria-labelledby="metrics-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">Live Snapshot</span>
-							<h2 id="metrics-title" class="colorlib-heading section-title">GitHub Metrics Dashboard</h2>
+							<h2 id="metrics-title" class="bp-heading section-title">GitHub Metrics Dashboard</h2>
 							<p class="metrics-intro">Auto-updated from GitHub API with local cache to limit repeated requests.</p>
 						</header>
 						<div class="section-content-grid">
@@ -857,15 +852,11 @@
 									<p class="metrics-value" data-metric="repos">--</p>
 								</article>
 								<article class="metrics-card card">
-									<h3>Total Stars</h3>
-									<p class="metrics-value" data-metric="stars">--</p>
-								</article>
-								<article class="metrics-card card">
-									<h3>Recent Push Commits (90 days)</h3>
+									<h3>Recent Push Commits (30 days)</h3>
 									<p class="metrics-value" data-metric="commits">--</p>
 								</article>
 								<article class="metrics-card card">
-									<h3>Top Language</h3>
+									<h3>Top Languages</h3>
 									<p class="metrics-value" data-metric="language">--</p>
 								</article>
 							</section>
@@ -874,15 +865,15 @@
 					</div>
 				</section>
 
-				<section id="contact" class="colorlib-contact section-shell section" data-section="contact" aria-labelledby="contact-title">
-					<div class="colorlib-narrow-content container">
-						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+				<section id="contact" class="bp-contact section-shell section" data-section="contact" aria-labelledby="contact-title">
+					<div class="bp-narrow-content container">
+						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">Get in Touch</span>
-							<h2 id="contact-title" class="colorlib-heading section-title">Contact</h2>
+							<h2 id="contact-title" class="bp-heading section-title">Contact</h2>
 						</header>
 						<div class="section-content-grid">
 							<div class="cards-grid contact-grid" aria-label="Contact cards">
-								<div class="animate-box contact-primary" data-animate-effect="fadeInLeft">
+								<div class="reveal-item contact-primary" data-animate-effect="fadeInLeft">
 									<article class="card contact-hero-card">
 										<div class="card-body contact-hero-body">
 											<span class="heading-meta section-eyebrow">Let's Connect</span>
@@ -902,31 +893,31 @@
 								</div>
 
 								<address class="contact-details-stack contact-details-grid">
-									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
-										<div class="colorlib-icon">
+									<article class="bp-feature bp-feature-sm reveal-item card" data-animate-effect="fadeInLeft">
+										<div class="bp-icon">
 											<i class="icon-globe-outline" aria-hidden="true"></i>
 										</div>
-										<div class="colorlib-text">
+										<div class="bp-text">
 											<p><a href="mailto:bibespyakurel1100@gmail.com">bibespyakurel1100@gmail.com</a></p>
 											<button type="button" class="copy-btn" data-copy-text="bibespyakurel1100@gmail.com" data-copy-label="Email">Copy Email</button>
 										</div>
 									</article>
 
-									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
-										<div class="colorlib-icon">
+									<article class="bp-feature bp-feature-sm reveal-item card" data-animate-effect="fadeInLeft">
+										<div class="bp-icon">
 											<img src="assets/img/loc.png" alt="Location pin" loading="lazy" decoding="async">
 										</div>
-										<div class="colorlib-text">
+										<div class="bp-text">
 											<p>United States of America</p>
 											<button type="button" class="copy-btn" data-copy-text="United States of America" data-copy-label="Location">Copy Location</button>
 										</div>
 									</article>
 
-									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
-										<div class="colorlib-icon">
+									<article class="bp-feature bp-feature-sm reveal-item card" data-animate-effect="fadeInLeft">
+										<div class="bp-icon">
 											<i class="icon-phone" aria-hidden="true"></i>
 										</div>
-										<div class="colorlib-text">
+										<div class="bp-text">
 											<p><a href="tel:+12402547082">+1(240)254-7082</a></p>
 											<button type="button" class="copy-btn" data-copy-text="+12402547082" data-copy-label="Phone">Copy Phone</button>
 										</div>
@@ -941,12 +932,10 @@
 	</article>
 
 	<script defer src="assets/js/vendor/jquery.min.js"></script>
-	<script defer src="assets/js/vendor/jquery.easing.1.3.js"></script>
 	<script defer src="assets/js/vendor/bootstrap.min.js"></script>
 	<script defer src="assets/js/vendor/jquery.waypoints.min.js"></script>
 	<script defer src="assets/js/vendor/jquery.flexslider-min.js"></script>
 	<script defer src="assets/js/vendor/jquery.countTo.js"></script>
-	<script defer src="assets/js/app/main.js"></script>
-	<script defer src="assets/js/app/google_map.js"></script>
+	<script defer src="assets/js/site/portfolio.js"></script>
 	</body>
 </html>

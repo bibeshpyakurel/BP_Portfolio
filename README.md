@@ -1,18 +1,74 @@
 # BP Portfolio
 
-Personal portfolio website showcasing projects, work experience, skills, publications, certifications, and contact details.
+Single-page portfolio site for software/data engineering roles, built as a static HTML/CSS/JS application and deployed on GitHub Pages.
 
-## Live Site
+## Architecture
 
-This repository is configured for GitHub Pages deployment via GitHub Actions.
+### Runtime model
+- `index.html` is the only page and source of all section content.
+- `assets/css/site/portfolio.css` contains design tokens, theme definitions, layout, and section-level overrides.
+- `assets/js/site/portfolio.js` owns all behavior:
+  - navigation/scroll interactions
+  - theme switching + persistence
+  - reveal/motion interactions
+  - project filtering/search
+  - copy-to-clipboard actions
+  - GitHub metrics fetch + cache
 
-## Project Type
+### External dependencies
+- Vendor JS/CSS are loaded from local `assets/.../vendor` paths (not CDN).
+- This keeps deploy simple (no build step) and avoids runtime dependency on third-party CDNs.
 
-- Static HTML5/CSS/JS site
-- No build step required
-- GitHub Pages compatible
+### Data flow
+- Most content is static and authored directly in `index.html`.
+- Dynamic data is limited to GitHub metrics:
+  - fetched client-side from GitHub public API
+  - cached in `localStorage` with TTL
+  - rendered into metric cards
 
-## Current Structure
+## Key Decisions
+
+1. Static-first deployment
+- Decision: no framework/build pipeline.
+- Why: low operational complexity, fast hosting on GitHub Pages, easy editing.
+- Tradeoff: larger manual CSS/JS maintenance surface.
+
+2. Theme system via HTML attribute
+- Decision: use `data-theme` on `<html>` and token-driven CSS.
+- Why: predictable theming and easy persistence.
+- Config source: `index.html` root attribute `data-github-username` (for metrics username).
+
+3. Single-file section composition
+- Decision: keep all sections in one document.
+- Why: straightforward portfolio browsing and anchor navigation.
+- Tradeoff: `index.html` is long and requires careful section-level discipline.
+
+4. Client-side GitHub metrics with pagination
+- Decision: metrics fetched in browser with paginated repo/events requests.
+- Why: improves accuracy for higher-activity accounts without backend.
+- Tradeoff: private data is not available without authenticated backend/token flow.
+
+5. Defensive overrides for layout stability
+- Decision: section-specific “hard lock” selectors for fragile areas (hero, contact, about, grids).
+- Why: ensures consistent rendering despite legacy/template CSS interactions.
+- Tradeoff: higher selector specificity and potential cascade complexity.
+
+## GitHub Metrics Design
+
+Implemented in `assets/js/site/portfolio.js` under `githubMetrics()`.
+
+- Username source: `<html data-github-username="...">`
+- Fetches:
+  - `GET /users/:username`
+  - paginated `GET /users/:username/repos?per_page=100`
+  - paginated `GET /users/:username/events/public?per_page=100`
+- Outputs:
+  - Total Public Repos
+  - Recent Push Commits (30 days)
+  - Top Languages (Top 3)
+- Cache key: `bp-github-metrics-v5`
+
+## Project Structure
 
 ```text
 .
@@ -21,52 +77,36 @@ This repository is configured for GitHub Pages deployment via GitHub Actions.
 ├── CONTENT_INVENTORY.md
 ├── assets/
 │   ├── css/
-│   │   ├── app/
-│   │   │   └── style.css
+│   │   ├── site/portfolio.css
 │   │   └── vendor/
 │   ├── js/
-│   │   ├── app/
-│   │   │   ├── main.js
-│   │   │   └── google_map.js
+│   │   ├── site/portfolio.js
 │   │   └── vendor/
 │   ├── img/
 │   └── fonts/
-└── .github/
-	└── workflows/
-		└── static.yml
+└── .github/workflows/static.yml
 ```
 
 ## Local Development
 
-Run with a local static server (recommended to avoid file path/browser restrictions):
-
 ```bash
-cd BP_Portfolio
 python3 -m http.server 8000
 ```
 
-Then open: `http://localhost:8000`
+Open `http://localhost:8000`.
 
 ## Editing Guide
 
-- Main page content and section markup: `index.html`
-- Custom styles and design tokens: `assets/css/app/style.css`
-- Site interactions/animations/navigation: `assets/js/app/main.js`
-- Optional map script (safe no-op when map/API absent): `assets/js/app/google_map.js`
-- Images/icons: `assets/img/`
-- Icon fonts: `assets/fonts/`
+- Page content/sections: `index.html`
+- Design tokens/layout/theme CSS: `assets/css/site/portfolio.css`
+- Behavior and integrations: `assets/js/site/portfolio.js`
+- GitHub username config: `index.html` (`data-github-username`)
 
-## Deployment (GitHub Pages)
+## Deployment
 
-Deployment is handled by `.github/workflows/static.yml`:
+GitHub Pages deploy is handled by `.github/workflows/static.yml` on push to `main`.
 
-- Trigger: push to `main`
-- Artifact path: repository root (`.`)
-- Published entry point: `index.html`
+## Known Tradeoffs
 
-## Notes
-
-- Keep asset paths relative (e.g., `assets/...`) to stay GitHub Pages-safe.
-- If adding new pages (e.g., `blog.html`, `work.html`), keep them at root level unless you also update links.
-- If adding a favicon, place it in a committed path and update the `<link rel="shortcut icon">` in `index.html`.
-
+- Large CSS file with historical overrides; continue gradual cleanup by section.
+- Single-page architecture is simple but can grow hard to maintain without modular CSS conventions.

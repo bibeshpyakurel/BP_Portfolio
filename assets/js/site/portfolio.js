@@ -119,8 +119,7 @@
 		};
 
 		var getSystemFallback = function() {
-			var mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-			return mediaQuery && mediaQuery.matches ? 'slate' : 'paper';
+			return 'hc';
 		};
 
 		var updateButtons = function(theme) {
@@ -432,7 +431,7 @@
 		if ( !isMobile.any() ) {
 			var applyHeroHeight = function() {
 				var heroHeight = Math.max($(window).height(), 560);
-				$('#colorlib-hero, #colorlib-hero .flexslider, #colorlib-hero .slides, #colorlib-hero .slides > li').css('min-height', heroHeight + 'px');
+				$('#bp-hero, #bp-hero .flexslider, #bp-hero .slides, #bp-hero .slides > li').css('min-height', heroHeight + 'px');
 			};
 			applyHeroHeight();
 			$(window).resize(function(){
@@ -471,8 +470,8 @@
 
 
 	var counterWayPoint = function() {
-		if ($('#colorlib-counter').length > 0 ) {
-			$('#colorlib-counter').waypoint( function( direction ) {
+		if ($('#bp-counter').length > 0 ) {
+			$('#bp-counter').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 					setTimeout( counter , 400);					
@@ -487,12 +486,12 @@
 		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 		if (reduceMotion) {
-			$('.animate-box').css('opacity', '1').addClass('animated');
+			$('.reveal-item').css('opacity', '1').addClass('animated');
 			return;
 		}
 
 		var i = 0;
-		$('.animate-box').waypoint( function( direction ) {
+		$('.reveal-item').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 				
@@ -501,7 +500,7 @@
 				$(this.element).addClass('item-animate');
 				setTimeout(function(){
 
-					$('body .animate-box.item-animate').each(function(k){
+					$('body .reveal-item.item-animate').each(function(k){
 						var el = $(this);
 						setTimeout( function () {
 							var effect = el.data('animate-effect');
@@ -528,9 +527,9 @@
 
 
 	var burgerMenu = function() {
-		var $toggle = $('.js-colorlib-nav-toggle');
-		var $menu = $('#navbar');
-		var $aside = $('#colorlib-aside');
+		var $toggle = $('.js-bp-nav-toggle');
+		var $menu = $('#bp-navbar');
+		var $aside = $('#bp-aside');
 		var lastFocusedElement = null;
 		var focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -561,7 +560,7 @@
 		$toggle.attr('aria-expanded', 'false');
 		$menu.attr('aria-hidden', 'true');
 
-		$('.js-colorlib-nav-toggle').on('click', function(event){
+		$('.js-bp-nav-toggle').on('click', function(event){
 			event.preventDefault();
 			var $this = $(this);
 
@@ -614,14 +613,14 @@
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
-	    var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
+	    var container = $("#bp-aside, .js-bp-nav-toggle");
 	    if (!container.is(e.target) && container.has(e.target).length === 0) {
 
 	    	if ( $('body').hasClass('offcanvas') ) {
 
 	    		$('body').removeClass('offcanvas');
-	    		$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
-	    		$('#navbar').attr('aria-hidden', 'true');
+	    		$('.js-bp-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
+	    		$('#bp-navbar').attr('aria-hidden', 'true');
 			
 	    	}
 	    	
@@ -632,8 +631,8 @@
 			if ( $('body').hasClass('offcanvas') ) {
 
 	    		$('body').removeClass('offcanvas');
-	    		$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
-	    		$('#navbar').attr('aria-hidden', 'true');
+	    		$('.js-bp-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
+	    		$('#bp-navbar').attr('aria-hidden', 'true');
 			
 	    	}
 		});
@@ -644,9 +643,9 @@
 
 		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-		$('#navbar a:not([class="external"])').click(function(event){
+		$('#bp-navbar a:not([class="external"])').click(function(event){
 			var section = $(this).data('nav-section'),
-				navbar = $('#navbar'),
+				navbar = $('#bp-navbar'),
 				$target = $('[data-section="' + section + '"]');
 
 				if ( $target.length ) {
@@ -666,9 +665,9 @@
 		    if ( navbar.is(':visible')) {
 		    	navbar.removeClass('in');
 		    	navbar.attr('aria-expanded', 'false');
-		    	$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
+		    	$('.js-bp-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
 		    	$('body').removeClass('offcanvas');
-		    	$('#navbar').attr('aria-hidden', 'true');
+		    	$('#bp-navbar').attr('aria-hidden', 'true');
 		    }
 
 		    event.preventDefault();
@@ -686,7 +685,7 @@
 			return;
 		}
 
-		var selector = '.section-header, .card, .services, .timeline-entry, .blog-entry, .colorlib-feature, .project, .metrics-card, .impact-metric-card, #colorlib-counter .col-md-3';
+		var selector = '.section-header, .card, .services, .timeline-entry, .blog-entry, .bp-feature, .project, .metrics-card, .impact-metric-card, #bp-counter .col-md-3';
 
 		sections.forEach(function(section) {
 			var revealItems = section.querySelectorAll(selector);
@@ -734,9 +733,9 @@
 	var motionExperience = function() {
 		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		var coarsePointer = window.matchMedia('(pointer: coarse)').matches;
-		var choreoTargets = document.querySelectorAll('#colorlib-main section, #colorlib-counter, .timeline-centered, .project-premium, .impact-metric-card, #colorlib-counter .col-md-3');
-		var delayedItems = document.querySelectorAll('.section-shell .colorlib-heading, .services, .timeline-label, .project-premium, .colorlib-feature, .impact-metric-card, #colorlib-counter .col-md-3, .blog-entry');
-		var tiltTargets = document.querySelectorAll('.services, .timeline-label, .project-premium, .colorlib-feature, .impact-metric-card, #colorlib-counter .col-md-3, .hire');
+		var choreoTargets = document.querySelectorAll('#bp-main section, #bp-counter, .timeline-centered, .project-premium, .impact-metric-card, #bp-counter .col-md-3');
+		var delayedItems = document.querySelectorAll('.section-shell .bp-heading, .services, .timeline-label, .project-premium, .bp-feature, .impact-metric-card, #bp-counter .col-md-3, .blog-entry');
+		var tiltTargets = document.querySelectorAll('.services, .timeline-label, .project-premium, .bp-feature, .impact-metric-card, #bp-counter .col-md-3, .hire');
 
 		if (!choreoTargets.length) {
 			return;
@@ -830,7 +829,7 @@
 	// Reflect scrolling in navigation
 	var navActive = function(section) {
 
-		var $menu = $('#navbar > ul');
+		var $menu = $('#bp-navbar > ul');
 		$menu.find('li').removeClass('active');
 		$menu.find('a').removeAttr('aria-current');
 		var $activeLink = $menu.find('a[data-nav-section="'+section+'"]');
@@ -1234,31 +1233,38 @@
 
 	var githubMetrics = function() {
 		var repoMetric = document.querySelector('[data-metric="repos"]');
-		var starsMetric = document.querySelector('[data-metric="stars"]');
 		var commitsMetric = document.querySelector('[data-metric="commits"]');
 		var languageMetric = document.querySelector('[data-metric="language"]');
 		var updatedLabel = document.getElementById('metrics-updated');
-		var username = 'bibeshpyakurel';
-		var cacheKey = 'bp-github-metrics-v1';
+		var username = (document.documentElement.getAttribute('data-github-username') || '').trim().replace(/^@/, '');
+		var cacheKey = 'bp-github-metrics-v5';
 		var cacheTtl = 1000 * 60 * 60 * 6;
-		var metricsSection = document.querySelector('.colorlib-metrics');
+		var metricsSection = document.querySelector('.bp-metrics');
 		var retryButton = null;
 		var trendNode = document.getElementById('metrics-trend-bars');
 
-		if (!repoMetric || !starsMetric || !commitsMetric || !languageMetric || !updatedLabel) {
+		if (!repoMetric || !commitsMetric || !languageMetric || !updatedLabel) {
+			return;
+		}
+		if (!username) {
+			updatedLabel.textContent = 'GitHub username is not configured.';
+			[repoMetric, commitsMetric, languageMetric].forEach(function(node) {
+				node.setAttribute('aria-busy', 'false');
+				node.textContent = 'N/A';
+			});
 			return;
 		}
 		if (!trendNode) {
 			trendNode = document.createElement('div');
 			trendNode.id = 'metrics-trend-bars';
 			trendNode.style.display = 'grid';
-			trendNode.style.gridTemplateColumns = 'repeat(4, minmax(0, 1fr))';
+			trendNode.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
 			trendNode.style.gap = '8px';
 			trendNode.style.marginTop = '10px';
 			updatedLabel.insertAdjacentElement('afterend', trendNode);
 		}
 
-		[repoMetric, starsMetric, commitsMetric, languageMetric].forEach(function(node) {
+		[repoMetric, commitsMetric, languageMetric].forEach(function(node) {
 			node.setAttribute('aria-busy', 'true');
 			node.textContent = '...';
 		});
@@ -1267,11 +1273,12 @@
 		}
 
 		var assignMetrics = function(data) {
-			repoMetric.textContent = String(data.repos);
-			starsMetric.textContent = String(data.stars);
+			var publicRepos = Number(data.repos || 0);
+			repoMetric.textContent = String(publicRepos);
 			commitsMetric.textContent = String(data.commits);
-			languageMetric.textContent = data.topLanguage || 'N/A';
-			[repoMetric, starsMetric, commitsMetric, languageMetric].forEach(function(node) {
+			var languagesText = data.topLanguages || data.topLanguage || 'N/A';
+			languageMetric.textContent = languagesText;
+			[repoMetric, commitsMetric, languageMetric].forEach(function(node) {
 				node.setAttribute('aria-busy', 'false');
 			});
 			if (metricsSection) {
@@ -1281,10 +1288,10 @@
 				retryButton.remove();
 				retryButton = null;
 			}
-			var values = [data.repos, data.stars, data.commits, data.topLanguage === 'N/A' ? 1 : 2];
+			var values = [publicRepos, data.commits, languagesText === 'N/A' ? 1 : 2];
 			var max = Math.max.apply(Math, values) || 1;
 			trendNode.innerHTML = '';
-			['Repos', 'Stars', 'Commits', 'Lang'].forEach(function(label, index) {
+			['Public', 'Commits', 'Lang'].forEach(function(label, index) {
 				var bar = document.createElement('div');
 				bar.style.background = 'rgba(255,255,255,0.06)';
 				bar.style.border = '1px solid rgba(255,255,255,0.12)';
@@ -1332,26 +1339,64 @@
 		}
 
 		var loadMetrics = function() {
-			var repoRequest = fetch('https://api.github.com/users/' + username + '/repos?per_page=100&sort=updated', { headers: { Accept: 'application/vnd.github+json' } });
-			var eventsRequest = fetch('https://api.github.com/users/' + username + '/events/public?per_page=100', { headers: { Accept: 'application/vnd.github+json' } });
-
-			Promise.all([repoRequest, eventsRequest]).then(function(responses) {
-				return Promise.all(responses.map(function(response) {
-					if (!response.ok) {
-						throw new Error('GitHub API request failed');
+			var headers = { Accept: 'application/vnd.github+json' };
+			var parseNextLink = function(linkHeader) {
+				if (!linkHeader) {
+					return null;
+				}
+				var parts = linkHeader.split(',');
+				for (var i = 0; i < parts.length; i++) {
+					var part = parts[i].trim();
+					if (part.indexOf('rel="next"') === -1) {
+						continue;
 					}
-					return response.json();
-				}));
-			}).then(function(payloads) {
-				var repos = payloads[0];
-				var events = payloads[1];
-				var stars = 0;
+					var match = part.match(/<([^>]+)>/);
+					return match ? match[1] : null;
+				}
+				return null;
+			};
+			var fetchAllPages = function(initialUrl, maxPages) {
+				var results = [];
+				var pageCount = 0;
+				var loop = function(url) {
+					if (!url || pageCount >= maxPages) {
+						return Promise.resolve(results);
+					}
+					pageCount += 1;
+					return fetch(url, { headers: headers }).then(function(response) {
+						if (!response.ok) {
+							throw new Error('GitHub API request failed');
+						}
+						var nextUrl = parseNextLink(response.headers.get('link'));
+						return response.json().then(function(payload) {
+							if (Array.isArray(payload)) {
+								results = results.concat(payload);
+							}
+							return loop(nextUrl);
+						});
+					});
+				};
+				return loop(initialUrl);
+			};
+			var userRequest = fetch('https://api.github.com/users/' + username, { headers: headers }).then(function(response) {
+				if (!response.ok) {
+					throw new Error('GitHub API request failed');
+				}
+				return response.json();
+			});
+			var repoRequest = fetchAllPages('https://api.github.com/users/' + username + '/repos?per_page=100&sort=updated', 10);
+			var eventsRequest = fetchAllPages('https://api.github.com/users/' + username + '/events/public?per_page=100', 5);
+
+			Promise.all([userRequest, repoRequest, eventsRequest]).then(function(payloads) {
+				var user = payloads[0];
+				var repos = payloads[1];
+				var events = payloads[2];
 				var languageTally = {};
 				var commits = 0;
-				var cutoff = Date.now() - (1000 * 60 * 60 * 24 * 90);
+				var pushEventCount = 0;
+				var cutoff = Date.now() - (1000 * 60 * 60 * 24 * 30);
 
 				repos.forEach(function(repo) {
-					stars += Number(repo.stargazers_count || 0);
 					if (repo.language) {
 						languageTally[repo.language] = (languageTally[repo.language] || 0) + 1;
 					}
@@ -1362,22 +1407,27 @@
 					if (event.type !== 'PushEvent' || eventTime < cutoff) {
 						return;
 					}
+					pushEventCount += 1;
 					var commitBatch = event.payload && event.payload.commits ? event.payload.commits.length : 0;
+					if (!commitBatch && event.payload && typeof event.payload.size === 'number') {
+						commitBatch = event.payload.size;
+					}
+					if (!commitBatch) {
+						commitBatch = 1;
+					}
 					commits += commitBatch;
 				});
 
-				var topLanguage = 'N/A';
-				Object.keys(languageTally).forEach(function(language) {
-					if (topLanguage === 'N/A' || languageTally[language] > languageTally[topLanguage]) {
-						topLanguage = language;
-					}
+				var sortedLanguages = Object.keys(languageTally).sort(function(a, b) {
+					return languageTally[b] - languageTally[a];
 				});
+				var topLanguages = sortedLanguages.slice(0, 3).join(', ') || 'N/A';
 
 				var metrics = {
-					repos: repos.length,
-					stars: stars,
-					commits: commits,
-					topLanguage: topLanguage
+					repos: Number(user.public_repos || repos.length || 0),
+					commits: commits || pushEventCount,
+					topLanguages: topLanguages,
+					topLanguage: sortedLanguages[0] || 'N/A'
 				};
 				var payload = { metrics: metrics, timestamp: new Date().toISOString() };
 
@@ -1385,7 +1435,7 @@
 				setUpdatedText(payload.timestamp, false);
 				saveCache(payload);
 			}).catch(function() {
-				[repoMetric, starsMetric, commitsMetric, languageMetric].forEach(function(node) {
+				[repoMetric, commitsMetric, languageMetric].forEach(function(node) {
 					node.setAttribute('aria-busy', 'false');
 				});
 				if (!cached) {
@@ -1408,8 +1458,8 @@
 
 	var keyboardShortcuts = function() {
 		var searchInput = document.getElementById('project-search');
-		var homeLink = document.querySelector('#navbar a[data-nav-section="home"]');
-		var projectLink = document.querySelector('#navbar a[data-nav-section="blog"]');
+		var homeLink = document.querySelector('#bp-navbar a[data-nav-section="home"]');
+		var projectLink = document.querySelector('#bp-navbar a[data-nav-section="blog"]');
 		var themeButtons = Array.prototype.slice.call(document.querySelectorAll('.js-theme-swatch'));
 		var themes = ['slate', 'aurora', 'paper', 'hc'];
 		var pendingG = false;
@@ -1648,9 +1698,9 @@
 		document.body.appendChild(overlay);
 
 		var commands = [
-			{ label: 'Go Home', run: function() { var el = document.querySelector('#navbar a[data-nav-section="home"]'); if (el) { el.click(); } } },
-			{ label: 'Go Projects', run: function() { var el = document.querySelector('#navbar a[data-nav-section="blog"]'); if (el) { el.click(); } } },
-			{ label: 'Go Contact', run: function() { var el = document.querySelector('#navbar a[data-nav-section="contact"]'); if (el) { el.click(); } } },
+			{ label: 'Go Home', run: function() { var el = document.querySelector('#bp-navbar a[data-nav-section="home"]'); if (el) { el.click(); } } },
+			{ label: 'Go Projects', run: function() { var el = document.querySelector('#bp-navbar a[data-nav-section="blog"]'); if (el) { el.click(); } } },
+			{ label: 'Go Contact', run: function() { var el = document.querySelector('#bp-navbar a[data-nav-section="contact"]'); if (el) { el.click(); } } },
 			{ label: 'Theme Slate', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="slate"]'); if (el) { el.click(); } } },
 			{ label: 'Theme Aurora', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="aurora"]'); if (el) { el.click(); } } },
 			{ label: 'Theme Paper', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="paper"]'); if (el) { el.click(); } } },
@@ -1771,7 +1821,7 @@
 		if (appState.reduceMotion || appState.coarsePointer) {
 			return;
 		}
-		var hero = document.querySelector('#colorlib-hero .slider-text-inner');
+		var hero = document.querySelector('#bp-hero .slider-text-inner');
 		var interactive = document.querySelectorAll('.btn, .btn-hire, .project-premium, .services');
 		var glow = document.createElement('div');
 		glow.style.position = 'fixed';
@@ -1917,7 +1967,7 @@
 
 	var sliderMain = function() {
 		
-	  	$('#colorlib-hero .flexslider').flexslider({
+	  	$('#bp-hero .flexslider').flexslider({
 			animation: "fade",
 			slideshowSpeed: 5000,
 			directionNav: true,
