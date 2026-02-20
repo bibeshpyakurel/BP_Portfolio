@@ -101,10 +101,10 @@
 	var themeController = function() {
 		var storageKey = 'bp-theme';
 		var themeButtons = document.querySelectorAll('.js-theme-swatch');
-		var themes = ['slate', 'neon', 'paper', 'hc'];
+		var themes = ['slate', 'aurora', 'paper', 'hc'];
 		var themeLabels = {
 			slate: 'Professional Slate',
-			neon: 'Data Neon',
+			aurora: 'Aurora Flux',
 			paper: 'Paper Serif',
 			hc: 'High Contrast'
 		};
@@ -188,6 +188,7 @@
 
 		var themeSettings = {
 			slate: { baseA: [12, 16, 24], baseB: [17, 28, 40], glow: [118, 184, 232], glowAlpha: 0.14, drift: 0.85, particleAlpha: 0.22 },
+			aurora: { baseA: [13, 11, 28], baseB: [21, 16, 46], glow: [108, 255, 214], glowAlpha: 0.18, drift: 0.98, particleAlpha: 0.25 },
 			neon: { baseA: [8, 15, 24], baseB: [10, 30, 38], glow: [112, 242, 220], glowAlpha: 0.2, drift: 1.1, particleAlpha: 0.27 },
 			paper: { baseA: [245, 242, 235], baseB: [238, 232, 222], glow: [169, 141, 104], glowAlpha: 0.06, drift: 0.2, particleAlpha: 0.1 },
 			hc: { baseA: [2, 2, 2], baseB: [8, 8, 8], glow: [0, 229, 255], glowAlpha: 0.12, drift: 0.45, particleAlpha: 0.2 }
@@ -685,7 +686,7 @@
 			return;
 		}
 
-		var selector = '.section-header, .card, .services, .timeline-entry, .blog-entry, .colorlib-feature, .project, .metrics-card, #colorlib-counter .col-md-3';
+		var selector = '.section-header, .card, .services, .timeline-entry, .blog-entry, .colorlib-feature, .project, .metrics-card, .impact-metric-card, #colorlib-counter .col-md-3';
 
 		sections.forEach(function(section) {
 			var revealItems = section.querySelectorAll(selector);
@@ -733,9 +734,9 @@
 	var motionExperience = function() {
 		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		var coarsePointer = window.matchMedia('(pointer: coarse)').matches;
-		var choreoTargets = document.querySelectorAll('#colorlib-main section, #colorlib-counter, .timeline-centered, .project-premium, #colorlib-counter .col-md-3');
-		var delayedItems = document.querySelectorAll('.section-shell .colorlib-heading, .services, .timeline-label, .project-premium, .colorlib-feature, #colorlib-counter .col-md-3, .blog-entry');
-		var tiltTargets = document.querySelectorAll('.services, .timeline-label, .project-premium, .colorlib-feature, #colorlib-counter .col-md-3, .hire');
+		var choreoTargets = document.querySelectorAll('#colorlib-main section, #colorlib-counter, .timeline-centered, .project-premium, .impact-metric-card, #colorlib-counter .col-md-3');
+		var delayedItems = document.querySelectorAll('.section-shell .colorlib-heading, .services, .timeline-label, .project-premium, .colorlib-feature, .impact-metric-card, #colorlib-counter .col-md-3, .blog-entry');
+		var tiltTargets = document.querySelectorAll('.services, .timeline-label, .project-premium, .colorlib-feature, .impact-metric-card, #colorlib-counter .col-md-3, .hire');
 
 		if (!choreoTargets.length) {
 			return;
@@ -1410,7 +1411,7 @@
 		var homeLink = document.querySelector('#navbar a[data-nav-section="home"]');
 		var projectLink = document.querySelector('#navbar a[data-nav-section="blog"]');
 		var themeButtons = Array.prototype.slice.call(document.querySelectorAll('.js-theme-swatch'));
-		var themes = ['slate', 'neon', 'paper', 'hc'];
+		var themes = ['slate', 'aurora', 'paper', 'hc'];
 		var pendingG = false;
 		var pendingTimer = null;
 		var openHints = function() {
@@ -1626,7 +1627,7 @@
 
 		var input = document.createElement('input');
 		input.type = 'search';
-		input.placeholder = 'Type command: go home, go projects, theme neon, density compact...';
+		input.placeholder = 'Type command: go home, go projects, theme aurora, density compact...';
 		input.style.width = '100%';
 		input.style.background = 'rgba(255,255,255,0.06)';
 		input.style.border = '1px solid rgba(255,255,255,0.14)';
@@ -1651,7 +1652,7 @@
 			{ label: 'Go Projects', run: function() { var el = document.querySelector('#navbar a[data-nav-section="blog"]'); if (el) { el.click(); } } },
 			{ label: 'Go Contact', run: function() { var el = document.querySelector('#navbar a[data-nav-section="contact"]'); if (el) { el.click(); } } },
 			{ label: 'Theme Slate', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="slate"]'); if (el) { el.click(); } } },
-			{ label: 'Theme Neon', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="neon"]'); if (el) { el.click(); } } },
+			{ label: 'Theme Aurora', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="aurora"]'); if (el) { el.click(); } } },
 			{ label: 'Theme Paper', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="paper"]'); if (el) { el.click(); } } },
 			{ label: 'Theme High Contrast', run: function() { var el = document.querySelector('.js-theme-swatch[data-theme-option="hc"]'); if (el) { el.click(); } } },
 			{ label: 'Density Comfortable', run: function() { document.documentElement.setAttribute('data-density', 'comfortable'); safeStorage.set('bp-density', 'comfortable'); } },

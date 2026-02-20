@@ -24,7 +24,7 @@
 	<script>
 		(function () {
 			var storageKey = 'bp-theme';
-			var allowedThemes = ['slate', 'neon', 'paper', 'hc'];
+			var allowedThemes = ['slate', 'aurora', 'paper', 'hc'];
 			var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 			var theme = systemPrefersDark ? 'slate' : 'paper';
 			try {
@@ -118,7 +118,7 @@
 				<a href="index.html" class="site-header__brand" aria-label="Go to homepage">Bibesh Pyakurel</a>
 				<nav class="theme-switcher" aria-label="Theme picker">
 					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="slate" aria-pressed="false">Slate</button>
-					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="neon" aria-pressed="false">Neon</button>
+					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="aurora" aria-pressed="false">Aurora</button>
 					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="paper" aria-pressed="false">Paper</button>
 					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="hc" aria-pressed="false">HC</button>
 				</nav>
@@ -131,7 +131,7 @@
 					<p id="colorlib-logo"><a href="index.html">Bibesh Pyakurel</a></p>
 					<nav class="theme-switcher" aria-label="Theme picker">
 						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="slate" aria-pressed="false">Slate</button>
-						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="neon" aria-pressed="false">Neon</button>
+						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="aurora" aria-pressed="false">Aurora</button>
 						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="paper" aria-pressed="false">Paper</button>
 						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="hc" aria-pressed="false">HC</button>
 					</nav>
@@ -175,20 +175,14 @@
 									<figure class="overlay"></figure>
 									<article class="container-fluid">
 										<div class="row">
-											<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 slider-text">
+											<div class="col-md-12 col-sm-12 col-xs-12 slider-text">
 												<div class="slider-text-inner">
 													<header class="desc">
 														<h1>Hi! <br>I'm Bibesh</h1>
 														<p class="hero-subtitle">Backend Engineer focused on data-driven systems and production-grade APIs.</p>
-														<article class="featured-flagship card" aria-label="Featured project">
-															<p class="featured-flagship__eyebrow">Featured Project</p>
-															<h3>Redis Observability SDK for Multi-Cluster Monitoring</h3>
-															<p>Spring Boot observability library for Redis clusters across on-prem and Azure, publishing real-time metrics into Dynatrace.</p>
-															<div class="featured-flagship__actions">
-																<a class="btn btn-hire" href="#projects-title">View Projects</a>
-																<a class="btn" href="#experience-title">See Experience</a>
-															</div>
-														</article>
+														<div class="hero-actions">
+															<a class="btn" href="#experience-title">See Experience</a>
+														</div>
 													</header>
 												</div>
 											</div>
@@ -240,26 +234,26 @@
 								</div>
 							</article>
 
-							<div class="row cards-grid about-cap-grid" aria-label="About capabilities">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
+							<div class="cards-grid about-cap-grid" aria-label="About capabilities">
+								<div class="animate-box about-cap-item" data-animate-effect="fadeInTop">
 									<article class="services color-3 card about-skill-card about-skill-card-2">
 										<span class="icon2"><i class="icon-bulb" aria-hidden="true"></i></span>
 										<h3>Software Engineering</h3>
 									</article>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
+								<div class="animate-box about-cap-item" data-animate-effect="fadeInLeft">
 									<article class="services color-1 card about-skill-card about-skill-card-1">
 										<span class="icon2"><i class="icon-data" aria-hidden="true"></i></span>
 										<h3>Data <br>Engineering</h3>
 									</article>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+								<div class="animate-box about-cap-item" data-animate-effect="fadeInRight">
 									<article class="services color-2 card about-skill-card about-skill-card-3">
 										<span class="icon2"><i class="icon-globe-outline" aria-hidden="true"></i></span>
 										<h3>Web <br>Design</h3>
 									</article>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
+								<div class="animate-box about-cap-item" data-animate-effect="fadeInBottom">
 									<article class="services color-4 card about-skill-card about-skill-card-4">
 										<span class="icon2"><i class="icon-phone3" aria-hidden="true"></i></span>
 										<h3>Application <br> Design</h3>
@@ -690,68 +684,64 @@
 										<span class="chip skills-pill">Cloud &amp; Observability</span>
 										<span class="chip skills-pill">AI / ML</span>
 									</div>
-									<section class="row skills-grid" aria-label="Skills categories">
-										<article class="col-md-6 skills-column">
-											<section class="skills-domain" aria-label="Software Engineering">
-												<h3>Software Engineering (Backend &amp; APIs)</h3>
-												<ul>
-												<li>Java, Spring Boot</li>
-												<li>REST API Development</li>
-												<li>Redis (standalone &amp; clustered)</li>
-												<li>System Integration &amp; Troubleshooting</li>
-												<li>API Testing (Insomnia)</li>
-											</ul>
-											</section>
+									<section class="skills-grid skills-grid--ordered" aria-label="Skills categories">
+										<section class="skills-domain" aria-label="Software Engineering">
+											<h3>Software Engineering (Backend &amp; APIs)</h3>
+											<ul>
+											<li>Java, Spring Boot</li>
+											<li>REST API Development</li>
+											<li>Redis (standalone &amp; clustered)</li>
+											<li>System Integration &amp; Troubleshooting</li>
+											<li>API Testing (Insomnia)</li>
+										</ul>
+										</section>
 
-											<section class="skills-domain" aria-label="Data Engineering and Analytics">
-												<h3>Data Engineering &amp; Analytics</h3>
-												<ul>
-												<li>SQL (SQL Server, PostgreSQL)</li>
-												<li>ETL / ELT Pipelines</li>
-												<li>Azure Data Factory</li>
-												<li>Data Modeling &amp; Warehousing</li>
-												<li>Power BI Dashboards &amp; Reporting</li>
-											</ul>
-											</section>
+										<section class="skills-domain" aria-label="Data Engineering and Analytics">
+											<h3>Data Engineering &amp; Analytics</h3>
+											<ul>
+											<li>SQL (SQL Server, PostgreSQL)</li>
+											<li>ETL / ELT Pipelines</li>
+											<li>Azure Data Factory</li>
+											<li>Data Modeling &amp; Warehousing</li>
+											<li>Power BI Dashboards &amp; Reporting</li>
+										</ul>
+										</section>
 
-											<section class="skills-domain" aria-label="Cloud and Observability">
-												<h3>Cloud &amp; Observability</h3>
-												<ul>
-												<li>Microsoft Azure</li>
-												<li>Monitoring &amp; Metrics (Dynatrace)</li>
-												<li>Docker, Kubernetes (Foundational)</li>
-											</ul>
-											</section>
-										</article>
+										<section class="skills-domain" aria-label="Cloud and Observability">
+											<h3>Cloud &amp; Observability</h3>
+											<ul>
+											<li>Microsoft Azure</li>
+											<li>Monitoring &amp; Metrics (Dynatrace)</li>
+											<li>Docker, Kubernetes (Foundational)</li>
+										</ul>
+										</section>
 
-										<article class="col-md-6 skills-column">
-											<section class="skills-domain" aria-label="AI and Machine Learning">
-												<h3>AI &amp; Machine Learning</h3>
-												<ul>
-												<li>Machine Learning &amp; Model Evaluation</li>
-												<li>Deep Learning (CNNs)</li>
-												<li>Data Annotation (Label Studio)</li>
-												<li>Microsoft OpenAI / Copilot Studio (AI Agents)</li>
-											</ul>
-											</section>
+										<section class="skills-domain" aria-label="AI and Machine Learning">
+											<h3>AI &amp; Machine Learning</h3>
+											<ul>
+											<li>Machine Learning &amp; Model Evaluation</li>
+											<li>Deep Learning (CNNs)</li>
+											<li>Data Annotation (Label Studio)</li>
+											<li>Microsoft OpenAI / Copilot Studio (AI Agents)</li>
+										</ul>
+										</section>
 
-											<section class="skills-domain" aria-label="Web and Frontend">
-												<h3>Web &amp; Frontend (Supporting Skills)</h3>
-												<ul>
-												<li>JavaScript, React</li>
-												<li>HTML / CSS</li>
-												<li>WordPress</li>
-											</ul>
-											</section>
+										<section class="skills-domain" aria-label="Web and Frontend">
+											<h3>Web &amp; Frontend (Supporting Skills)</h3>
+											<ul>
+											<li>JavaScript, React</li>
+											<li>HTML / CSS</li>
+											<li>WordPress</li>
+										</ul>
+										</section>
 
-											<section class="skills-domain" aria-label="Security and Systems">
-												<h3>Security &amp; Systems (Supporting Skills)</h3>
-												<ul>
-												<li>Linux (Ubuntu, Kali Linux)</li>
-												<li>Vulnerability Labs: Buffer Overflow, ROP, Return-to-libc, Format String</li>
-											</ul>
-											</section>
-										</article>
+										<section class="skills-domain" aria-label="Security and Systems">
+											<h3>Security &amp; Systems (Supporting Skills)</h3>
+											<ul>
+											<li>Linux (Ubuntu, Kali Linux)</li>
+											<li>Vulnerability Labs: Buffer Overflow, ROP, Return-to-libc, Format String</li>
+										</ul>
+										</section>
 									</section>
 								</div>
 							</article>
@@ -777,28 +767,8 @@
 							</article>
 
 							<div class="cards-grid publication-grid publication-grid--one-row" aria-label="Publication visuals">
-								<article class="project card publication-card animate-box" data-animate-effect="fadeInLeft" data-publication-label="Launch Day" style="background-image: url(assets/img/book-opt.jpg);">
-									<div class="desc publication-desc">
-										<div class="con">
-											<h3><a href="work.html">Day of Book Published</a></h3>
-											<span class="publication-subtitle">Bibesh's 100+ Nepali Poems</span>
-											<p class="icon publication-stats">
-												<span><a href="#" aria-label="Share"><i class="icon-share3" aria-hidden="true"></i></a></span>
-											</p>
-										</div>
-									</div>
-								</article>
-								<article class="project card publication-card animate-box" data-animate-effect="fadeInRight" data-publication-label="Reader Session" style="background-image: url(assets/img/book2-opt.jpg);">
-									<div class="desc publication-desc">
-										<div class="con">
-											<h3><a href="work.html">Reading Book</a></h3>
-											<span class="publication-subtitle">Bibesh's 100+ Nepali Poems</span>
-											<p class="icon publication-stats">
-												<span><a href="#" aria-label="Share"><i class="icon-share3" aria-hidden="true"></i></a></span>
-											</p>
-										</div>
-									</div>
-								</article>
+								<article class="project card publication-card animate-box" data-animate-effect="fadeInLeft" style="background-image: url(assets/img/book-opt.jpg);"></article>
+								<article class="project card publication-card animate-box" data-animate-effect="fadeInRight" style="background-image: url(assets/img/book2-opt.jpg);"></article>
 							</div>
 						</div>
 					</div>
@@ -812,8 +782,8 @@
 							<p class="certification-intro">Industry-recognized credentials that validate my software, cloud, and data foundations.</p>
 						</header>
 						<div class="section-content-grid">
-							<div class="row row-pt-md cards-grid cert-grid cert-grid--wrap" aria-label="Certification cards">
-								<div class="col-md-4 text-center animate-box">
+							<div class="row-pt-md cards-grid cert-grid cert-grid--wrap" aria-label="Certification cards">
+								<div class="text-center animate-box cert-grid-item">
 									<article class="services color-1 card cert-card">
 										<span class="icon">
 											<i class="icon-bulb" aria-hidden="true"></i>
@@ -824,7 +794,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="col-md-4 text-center animate-box">
+								<div class="text-center animate-box cert-grid-item">
 									<article class="services color-2 card cert-card">
 										<span class="icon">
 											<i class="icon-data" aria-hidden="true"></i>
@@ -835,7 +805,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="col-md-4 text-center animate-box">
+								<div class="text-center animate-box cert-grid-item">
 									<article class="services color-3 card cert-card">
 										<span class="icon">
 											<i class="icon-phone3" aria-hidden="true"></i>
@@ -846,7 +816,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="col-md-4 text-center animate-box">
+								<div class="text-center animate-box cert-grid-item">
 									<article class="services color-4 card cert-card">
 										<span class="icon">
 											<i class="icon-layers2" aria-hidden="true"></i>
@@ -857,7 +827,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="col-md-4 text-center animate-box">
+								<div class="text-center animate-box cert-grid-item">
 									<article class="services color-5 card cert-card">
 										<span class="icon">
 											<i class="icon-data" aria-hidden="true"></i>
@@ -904,31 +874,6 @@
 					</div>
 				</section>
 
-				<section id="colorlib-counter" class="colorlib-counters section-shell section" aria-labelledby="counter-title" style="background-image: url(assets/img/background.jfif);" data-stellar-background-ratio="0.5">
-					<h2 id="counter-title" class="sr-only">Portfolio Metrics</h2>
-					<div class="overlay"></div>
-					<div class="colorlib-narrow-content container">
-						<section class="row" aria-label="Counters">
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="8" data-speed="5000" data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Work Experiences</span>
-							</div>
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="6" data-speed="5000" data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Projects</span>
-							</div>
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="35" data-speed="5000" data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Skills</span>
-							</div>
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Certifications</span>
-							</div>
-						</section>
-					</div>
-				</section>
-
 				<section id="contact" class="colorlib-contact section-shell section" data-section="contact" aria-labelledby="contact-title">
 					<div class="colorlib-narrow-content container">
 						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
@@ -936,8 +881,8 @@
 							<h2 id="contact-title" class="colorlib-heading section-title">Contact</h2>
 						</header>
 						<div class="section-content-grid">
-							<div class="row cards-grid contact-grid" aria-label="Contact cards">
-								<div class="col-md-12 animate-box contact-primary" data-animate-effect="fadeInLeft">
+							<div class="cards-grid contact-grid" aria-label="Contact cards">
+								<div class="animate-box contact-primary" data-animate-effect="fadeInLeft">
 									<article class="card contact-hero-card">
 										<div class="card-body contact-hero-body">
 											<span class="heading-meta section-eyebrow">Let's Connect</span>
@@ -952,31 +897,11 @@
 												<li><a href="https://github.com/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="icon-social-github" aria-hidden="true"></i><span>GitHub</span></a></li>
 												<li><a href="https://www.instagram.com/bbibeshh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
 											</ul>
-											<form id="contact-form" class="contact-form" novalidate>
-												<h3>Send a Message</h3>
-												<div class="contact-form-field">
-													<label for="contact-name">Name</label>
-													<input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="contact-name-error">
-													<p id="contact-name-error" class="form-error" aria-live="polite"></p>
-												</div>
-												<div class="contact-form-field">
-													<label for="contact-email">Email</label>
-													<input id="contact-email" name="email" type="email" autocomplete="email" required aria-describedby="contact-email-error">
-													<p id="contact-email-error" class="form-error" aria-live="polite"></p>
-												</div>
-												<div class="contact-form-field">
-													<label for="contact-message">Message</label>
-													<textarea id="contact-message" name="message" rows="4" required minlength="20" aria-describedby="contact-message-error"></textarea>
-													<p id="contact-message-error" class="form-error" aria-live="polite"></p>
-												</div>
-												<button type="submit" class="btn btn-hire">Validate Message</button>
-												<p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
-											</form>
 										</div>
 									</article>
 								</div>
 
-								<address class="col-md-12 contact-details-stack contact-details-grid">
+								<address class="contact-details-stack contact-details-grid">
 									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
 										<div class="colorlib-icon">
 											<i class="icon-globe-outline" aria-hidden="true"></i>
