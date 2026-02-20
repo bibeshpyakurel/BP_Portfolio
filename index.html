@@ -3,40 +3,100 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bibesh Portfolio</title>
+	<title>Bibesh Pyakurel | Software Engineer &amp; Data Engineer Portfolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+	<meta name="description" content="Portfolio of Bibesh Pyakurel, a software and data engineering candidate focused on backend systems, Spring Boot APIs, Redis observability, and analytics-driven products." />
+	<meta name="keywords" content="Bibesh Pyakurel, software engineer portfolio, data engineer portfolio, Spring Boot, Java, Redis, SQL, Azure, backend engineer" />
+	<meta name="author" content="Bibesh Pyakurel" />
 
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Bibesh Pyakurel | Software Engineer &amp; Data Engineer Portfolio"/>
+	<meta property="og:image" content="https://bibeshpyakurel.github.io/BP_Portfolio/assets/img/about-opt.jpg"/>
+	<meta property="og:image:alt" content="Portrait of Bibesh Pyakurel"/>
+	<meta property="og:url" content="https://bibeshpyakurel.github.io/BP_Portfolio/"/>
+	<meta property="og:site_name" content="Bibesh Portfolio"/>
+	<meta property="og:description" content="Backend and data engineering portfolio featuring production-oriented projects in Java, Spring Boot, Redis, SQL, and Azure."/>
+	<meta name="twitter:title" content="Bibesh Pyakurel | Software Engineer &amp; Data Engineer Portfolio" />
+	<meta name="twitter:image" content="https://bibeshpyakurel.github.io/BP_Portfolio/assets/img/about-opt.jpg" />
+	<meta name="twitter:url" content="https://bibeshpyakurel.github.io/BP_Portfolio/" />
+	<meta name="twitter:description" content="Backend and data engineering portfolio with featured projects, experience, and technical skills." />
+	<meta name="twitter:card" content="summary_large_image" />
 	<script>
 		(function () {
+			var storageKey = 'bp-theme';
+			var allowedThemes = ['slate', 'neon', 'paper', 'hc'];
+			var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			var theme = systemPrefersDark ? 'slate' : 'paper';
 			try {
-				localStorage.setItem('bp-theme', 'dark');
+				var savedTheme = localStorage.getItem(storageKey);
+				if (allowedThemes.indexOf(savedTheme) > -1) {
+					theme = savedTheme;
+				}
 			} catch (error) {
 				// no-op
 			}
-			document.documentElement.setAttribute('data-theme', 'dark');
+			document.documentElement.setAttribute('data-theme', theme);
 		}());
 	</script>
 
 	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico" sizes="any">
+	<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" sizes="180x180">
+	<link rel="manifest" href="manifest.webmanifest">
+	<link rel="preload" as="image" href="assets/img/try1.JPEG">
+	<link rel="preload" as="image" href="assets/img/about-opt.jpg">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Person",
+				"name": "Bibesh Pyakurel",
+				"url": "https://bibeshpyakurel.github.io/BP_Portfolio/",
+				"image": "https://bibeshpyakurel.github.io/BP_Portfolio/assets/img/about-opt.jpg",
+				"jobTitle": "Software Engineer | Data Engineer",
+				"alumniOf": {
+					"@type": "CollegeOrUniversity",
+					"name": "University of Wisconsin–Green Bay"
+				},
+				"sameAs": [
+					"https://github.com/bibeshpyakurel/",
+					"https://www.linkedin.com/in/bibeshpyakurel/",
+					"https://www.instagram.com/bbibeshh/"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"name": "Bibesh Portfolio",
+				"url": "https://bibeshpyakurel.github.io/BP_Portfolio/",
+				"description": "Software and data engineering portfolio site for Bibesh Pyakurel."
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Redis Observability SDK for Multi-Cluster Monitoring",
+				"creator": {
+					"@type": "Person",
+					"name": "Bibesh Pyakurel"
+				},
+				"description": "Spring Boot library to collect Redis metrics and publish telemetry to Dynatrace across on-prem and Azure environments.",
+				"about": [
+					"Java",
+					"Spring Boot",
+					"Redis",
+					"Dynatrace",
+					"Observability"
+				],
+				"url": "https://bibeshpyakurel.github.io/BP_Portfolio/#projects-title"
+			}
+		]
+	}
+	</script>
 
 	<link rel="stylesheet" href="assets/css/vendor/animate.css">
 	<link rel="stylesheet" href="assets/css/vendor/icomoon.css">
 	<link rel="stylesheet" href="assets/css/vendor/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/vendor/flexslider.css">
-	<link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/vendor/owl.theme.default.min.css">
 	<link rel="stylesheet" href="assets/css/app/style.css">
 
 	<script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -47,26 +107,38 @@
 	<body>
 	<a href="#colorlib-main" class="skip-link">Skip to main content</a>
 	<progress id="scroll-progress" max="100" value="0" aria-label="Scroll progress"></progress>
-	<div class="bg-layer" aria-hidden="true">
+	<figure class="bg-layer" aria-hidden="true">
 		<canvas id="bg"></canvas>
 		<figure class="bg-overlay"></figure>
-	</div>
-	<div id="colorlib-page" role="document">
-		<div class="nav-backdrop" aria-hidden="true"></div>
-		<div class="container-wrap">
+	</figure>
+	<article id="colorlib-page" role="document">
+		<figure class="nav-backdrop" aria-hidden="true"></figure>
+		<section class="container-wrap" aria-label="Site layout">
 			<header class="site-header" role="banner">
 				<a href="index.html" class="site-header__brand" aria-label="Go to homepage">Bibesh Pyakurel</a>
+				<nav class="theme-switcher" aria-label="Theme picker">
+					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="slate" aria-pressed="false">Slate</button>
+					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="neon" aria-pressed="false">Neon</button>
+					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="paper" aria-pressed="false">Paper</button>
+					<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="hc" aria-pressed="false">HC</button>
+				</nav>
 				<button type="button" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation menu"><i aria-hidden="true"></i></button>
 			</header>
 
 			<aside id="colorlib-aside" role="complementary" class="border" aria-label="Sidebar">
 				<header class="text-center sidebar-header" aria-label="Profile header">
-					<div class="author-img" style="background-image: url(assets/img/about.jpg);" role="img" aria-label="Portrait of Bibesh Pyakurel"></div>
+					<div class="author-img" style="background-image: url(assets/img/about-opt.jpg);" role="img" aria-label="Portrait of Bibesh Pyakurel"></div>
 					<p id="colorlib-logo"><a href="index.html">Bibesh Pyakurel</a></p>
+					<nav class="theme-switcher" aria-label="Theme picker">
+						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="slate" aria-pressed="false">Slate</button>
+						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="neon" aria-pressed="false">Neon</button>
+						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="paper" aria-pressed="false">Paper</button>
+						<button type="button" class="theme-swatch js-theme-swatch" data-theme-option="hc" aria-pressed="false">HC</button>
+					</nav>
 				</header>
 
 				<nav id="colorlib-main-menu" role="navigation" class="navbar" aria-label="Primary navigation">
-					<div id="navbar" class="collapse">
+					<section id="navbar" class="collapse" aria-label="Main menu links">
 						<ul>
 							<li class="active"><a href="#" data-nav-section="home" aria-current="page">Home</a></li>
 							<li><a href="#" data-nav-section="about">About</a></li>
@@ -76,9 +148,10 @@
 							<li><a href="#" data-nav-section="skills">Skills</a></li>
 							<li><a href="#" data-nav-section="work">Publications</a></li>
 							<li><a href="#" data-nav-section="services">Certifications</a></li>
+							<li><a href="#" data-nav-section="metrics">Metrics</a></li>
 							<li><a href="#" data-nav-section="contact">Contact</a></li>
 						</ul>
-					</div>
+					</section>
 				</nav>
 
 				<footer class="colorlib-footer" aria-label="Sidebar footer">
@@ -95,17 +168,27 @@
 					<header class="sr-only section-header">
 						<h2 id="home-title">Home</h2>
 					</header>
-					<div class="section-content-grid hero-grid">
+					<article class="section-content-grid hero-grid">
 						<section class="flexslider js-fullheight" aria-label="Hero slideshow">
 							<ul class="slides">
 								<li class="hero-try1" style="background-image: url(assets/img/try1.JPEG);">
-									<div class="overlay"></div>
+									<figure class="overlay"></figure>
 									<article class="container-fluid">
 										<div class="row">
-											<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-												<div class="slider-text-inner js-fullheight">
+											<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 slider-text">
+												<div class="slider-text-inner">
 													<header class="desc">
 														<h1>Hi! <br>I'm Bibesh</h1>
+														<p class="hero-subtitle">Backend Engineer focused on data-driven systems and production-grade APIs.</p>
+														<article class="featured-flagship card" aria-label="Featured project">
+															<p class="featured-flagship__eyebrow">Featured Project</p>
+															<h3>Redis Observability SDK for Multi-Cluster Monitoring</h3>
+															<p>Spring Boot observability library for Redis clusters across on-prem and Azure, publishing real-time metrics into Dynatrace.</p>
+															<div class="featured-flagship__actions">
+																<a class="btn btn-hire" href="#projects-title">View Projects</a>
+																<a class="btn" href="#experience-title">See Experience</a>
+															</div>
+														</article>
 													</header>
 												</div>
 											</div>
@@ -114,7 +197,7 @@
 								</li>
 							</ul>
 						</section>
-					</div>
+					</article>
 				</section>
 
 				<section class="colorlib-about section-shell section" data-section="about" aria-labelledby="about-title">
@@ -157,7 +240,7 @@
 								</div>
 							</article>
 
-							<div class="row cards-grid" aria-label="About capabilities">
+							<div class="row cards-grid about-cap-grid" aria-label="About capabilities">
 								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
 									<article class="services color-3 card about-skill-card about-skill-card-2">
 										<span class="icon2"><i class="icon-bulb" aria-hidden="true"></i></span>
@@ -208,11 +291,11 @@
 										<div class="panel panel-default education-panel education-panel-1">
 											<div class="panel-heading" role="tab" id="headingTwo">
 												<h3 class="panel-title">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bachelor Degree of Computer Science
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Bachelor Degree of Computer Science
 													</a>
 												</h3>
 											</div>
-											<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+											<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 												<div class="panel-body">
 													<p>
 														I earned my Bachelor’s degree in Computer Science from
@@ -445,9 +528,26 @@
 							<h2 id="projects-title" class="colorlib-heading section-title">Projects</h2>
 						</header>
 						<div class="section-content-grid">
+							<section class="projects-controls card" aria-label="Project filters">
+								<div class="projects-controls__filters" role="group" aria-label="Project categories">
+									<button type="button" class="project-filter-btn active" data-project-filter="all" aria-pressed="true">All</button>
+									<button type="button" class="project-filter-btn" data-project-filter="backend" aria-pressed="false">Backend</button>
+									<button type="button" class="project-filter-btn" data-project-filter="data" aria-pressed="false">Data</button>
+									<button type="button" class="project-filter-btn" data-project-filter="ai" aria-pressed="false">AI</button>
+									<button type="button" class="project-filter-btn" data-project-filter="web" aria-pressed="false">Web</button>
+								</div>
+								<label for="project-search" class="sr-only">Search projects</label>
+								<input id="project-search" class="project-search-input" type="search" placeholder="Search projects by title, impact, or tech" autocomplete="off">
+								<p class="shortcut-hint"><kbd>/</kbd> focus search, <kbd>g</kbd> then <kbd>h</kbd> go Home</p>
+								<p id="project-results-status" class="project-results-status" aria-live="polite"></p>
+							</section>
 							<section class="projects-grid cards-layout" aria-label="Project cards">
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
-									<a href="blog.html" class="blog-img"><img src="assets/img/deeplearning.jfif" class="img-responsive" alt="Pavement Crack Detection" loading="lazy" decoding="async" width="1280" height="720"></a>
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="ai data" data-project-search="pavement crack detection wisys cnn deep learning">
+									<a href="blog.html" class="blog-img">
+										<picture>
+											<img src="assets/img/deeplearning-opt.jpg" srcset="assets/img/deeplearning-opt.jpg 1x, assets/img/deeplearning.jfif 2x" class="img-responsive" alt="Pavement Crack Detection" loading="lazy" decoding="async" width="1280" height="720">
+										</picture>
+									</a>
 									<div class="desc">
 										<h3><a href="blog.html">Pavement Crack Detection | WiSys Project</a></h3>
 										<p class="project-impact">Assisting in the development of Convolutional neural networks (CNN) models for crack detection.</p>
@@ -463,8 +563,12 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight">
-									<a href="blog.html" class="blog-img"><img src="assets/img/javagame.jfif" class="img-responsive" alt="Blackjack Game Development" loading="lazy" decoding="async" width="1280" height="720"></a>
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="blackjack java game scene builder gui">
+									<a href="blog.html" class="blog-img">
+										<picture>
+											<img src="assets/img/javagame-opt.jpg" srcset="assets/img/javagame-opt.jpg 1x, assets/img/javagame.jfif 2x" class="img-responsive" alt="Blackjack Game Development" loading="lazy" decoding="async" width="1280" height="720">
+										</picture>
+									</a>
 									<div class="desc">
 										<h3><a href="blog.html">Blackjack Game Development in Java Language</a></h3>
 										<p class="project-impact">Developed a collaborative java-based game with a user-friendly GUI using Scene Builder.</p>
@@ -480,8 +584,12 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
-									<a href="blog.html" class="blog-img"><img src="assets/img/smartstudentapp.jfif" class="img-responsive" alt="Smart Student App" loading="lazy" decoding="async" width="1280" height="720"></a>
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="web" data-project-search="smart student app android studio mobile">
+									<a href="blog.html" class="blog-img">
+										<picture>
+											<img src="assets/img/smartstudentapp-opt.jpg" srcset="assets/img/smartstudentapp-opt.jpg 1x, assets/img/smartstudentapp.jfif 2x" class="img-responsive" alt="Smart Student App" loading="lazy" decoding="async" width="1280" height="720">
+										</picture>
+									</a>
 									<div class="desc">
 										<h3><a href="blog.html">Smart Student App | Android Studio</a></h3>
 										<p class="project-impact">Designed a very simple multi-functioning app in Android Studio. Incorporated native features like emergency calling.</p>
@@ -496,8 +604,12 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
-									<a href="blog.html" class="blog-img"><img src="assets/img/studentbudget.jfif" class="img-responsive" alt="Student Budget Calculator" loading="lazy" decoding="async" width="1280" height="720"></a>
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="backend data" data-project-search="student budget calculator java scene builder finance">
+									<a href="blog.html" class="blog-img">
+										<picture>
+											<img src="assets/img/studentbudget-opt.jpg" srcset="assets/img/studentbudget-opt.jpg 1x, assets/img/studentbudget.jfif 2x" class="img-responsive" alt="Student Budget Calculator" loading="lazy" decoding="async" width="1280" height="720">
+										</picture>
+									</a>
 									<div class="desc">
 										<h3><a href="blog.html">Student Budget Calculator | Personal Project</a></h3>
 										<p class="project-impact">Designed a Java-based budget calculator to assist students in tracking their spending.</p>
@@ -512,8 +624,12 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight">
-									<a href="blog.html" class="blog-img"><img src="assets/img/cybersecurity.jfif" class="img-responsive" alt="CyberSecurity Labs" loading="lazy" decoding="async" width="1280" height="720"></a>
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="cybersecurity labs buffer overflow rop return to libc linux">
+									<a href="blog.html" class="blog-img">
+										<picture>
+											<img src="assets/img/cybersecurity-opt.jpg" srcset="assets/img/cybersecurity-opt.jpg 1x, assets/img/cybersecurity.jfif 2x" class="img-responsive" alt="CyberSecurity Labs" loading="lazy" decoding="async" width="1280" height="720">
+										</picture>
+									</a>
 									<div class="desc">
 										<h3><a href="blog.html">CyberSecurity Labs | Intern Project</a></h3>
 										<p class="project-impact">Engaged in testing labs, exploring critical areas like Buffer Overflow vulnerabilities and atacks, Return-to-libc Attack and ROP. Made an instruction manual for both.</p>
@@ -529,8 +645,12 @@
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft">
-									<a href="blog.html" class="blog-img"><img src="assets/img/database.jfif" class="img-responsive" alt="Database Design" loading="lazy" decoding="async" width="1280" height="720"></a>
+								<article class="blog-entry card project-premium animate-box" data-animate-effect="fadeInLeft" data-project-category="data backend" data-project-search="database design sql er diagram server">
+									<a href="blog.html" class="blog-img">
+										<picture>
+											<img src="assets/img/database-opt.jpg" srcset="assets/img/database-opt.jpg 1x, assets/img/database.jfif 2x" class="img-responsive" alt="Database Design" loading="lazy" decoding="async" width="1280" height="720">
+										</picture>
+									</a>
 									<div class="desc">
 										<h3><a href="blog.html">Database Design | Class Project</a></h3>
 										<p class="project-impact">Designed a database of an online server, created and ER Diagram, and SQL statement.</p>
@@ -546,6 +666,7 @@
 									</div>
 								</article>
 							</section>
+							<p class="project-empty-state card" id="project-empty-state" hidden>No projects match this filter yet. Try a broader search.</p>
 						</div>
 					</div>
 				</section>
@@ -655,8 +776,8 @@
 								</div>
 							</article>
 
-							<div class="row cards-grid publication-grid" aria-label="Publication visuals">
-								<article class="project card publication-card animate-box" data-animate-effect="fadeInLeft" data-publication-label="Launch Day" style="background-image: url(assets/img/book.JPG);">
+							<div class="cards-grid publication-grid publication-grid--one-row" aria-label="Publication visuals">
+								<article class="project card publication-card animate-box" data-animate-effect="fadeInLeft" data-publication-label="Launch Day" style="background-image: url(assets/img/book-opt.jpg);">
 									<div class="desc publication-desc">
 										<div class="con">
 											<h3><a href="work.html">Day of Book Published</a></h3>
@@ -667,7 +788,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="project card publication-card animate-box" data-animate-effect="fadeInRight" data-publication-label="Reader Session" style="background-image: url(assets/img/book2.jpg);">
+								<article class="project card publication-card animate-box" data-animate-effect="fadeInRight" data-publication-label="Reader Session" style="background-image: url(assets/img/book2-opt.jpg);">
 									<div class="desc publication-desc">
 										<div class="con">
 											<h3><a href="work.html">Reading Book</a></h3>
@@ -691,7 +812,7 @@
 							<p class="certification-intro">Industry-recognized credentials that validate my software, cloud, and data foundations.</p>
 						</header>
 						<div class="section-content-grid">
-							<div class="row row-pt-md cards-grid cert-grid" aria-label="Certification cards">
+							<div class="row row-pt-md cards-grid cert-grid cert-grid--wrap" aria-label="Certification cards">
 								<div class="col-md-4 text-center animate-box">
 									<article class="services color-1 card cert-card">
 										<span class="icon">
@@ -752,6 +873,37 @@
 					</div>
 				</section>
 
+				<section class="colorlib-metrics section-shell section" data-section="metrics" aria-labelledby="metrics-title">
+					<div class="colorlib-narrow-content container">
+						<header class="section-header section-header-block animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta section-eyebrow">Live Snapshot</span>
+							<h2 id="metrics-title" class="colorlib-heading section-title">GitHub Metrics Dashboard</h2>
+							<p class="metrics-intro">Auto-updated from GitHub API with local cache to limit repeated requests.</p>
+						</header>
+						<div class="section-content-grid">
+							<section class="metrics-grid" aria-label="GitHub metrics cards">
+								<article class="metrics-card card">
+									<h3>Total Public Repos</h3>
+									<p class="metrics-value" data-metric="repos">--</p>
+								</article>
+								<article class="metrics-card card">
+									<h3>Total Stars</h3>
+									<p class="metrics-value" data-metric="stars">--</p>
+								</article>
+								<article class="metrics-card card">
+									<h3>Recent Push Commits (90 days)</h3>
+									<p class="metrics-value" data-metric="commits">--</p>
+								</article>
+								<article class="metrics-card card">
+									<h3>Top Language</h3>
+									<p class="metrics-value" data-metric="language">--</p>
+								</article>
+							</section>
+							<p class="metrics-meta" id="metrics-updated" aria-live="polite">Loading GitHub metrics...</p>
+						</div>
+					</div>
+				</section>
+
 				<section id="colorlib-counter" class="colorlib-counters section-shell section" aria-labelledby="counter-title" style="background-image: url(assets/img/background.jfif);" data-stellar-background-ratio="0.5">
 					<h2 id="counter-title" class="sr-only">Portfolio Metrics</h2>
 					<div class="overlay"></div>
@@ -784,8 +936,8 @@
 							<h2 id="contact-title" class="colorlib-heading section-title">Contact</h2>
 						</header>
 						<div class="section-content-grid">
-							<div class="row cards-grid" aria-label="Contact cards">
-								<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="row cards-grid contact-grid" aria-label="Contact cards">
+								<div class="col-md-12 animate-box contact-primary" data-animate-effect="fadeInLeft">
 									<article class="card contact-hero-card">
 										<div class="card-body contact-hero-body">
 											<span class="heading-meta section-eyebrow">Let's Connect</span>
@@ -800,17 +952,38 @@
 												<li><a href="https://github.com/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="icon-social-github" aria-hidden="true"></i><span>GitHub</span></a></li>
 												<li><a href="https://www.instagram.com/bbibeshh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
 											</ul>
+											<form id="contact-form" class="contact-form" novalidate>
+												<h3>Send a Message</h3>
+												<div class="contact-form-field">
+													<label for="contact-name">Name</label>
+													<input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="contact-name-error">
+													<p id="contact-name-error" class="form-error" aria-live="polite"></p>
+												</div>
+												<div class="contact-form-field">
+													<label for="contact-email">Email</label>
+													<input id="contact-email" name="email" type="email" autocomplete="email" required aria-describedby="contact-email-error">
+													<p id="contact-email-error" class="form-error" aria-live="polite"></p>
+												</div>
+												<div class="contact-form-field">
+													<label for="contact-message">Message</label>
+													<textarea id="contact-message" name="message" rows="4" required minlength="20" aria-describedby="contact-message-error"></textarea>
+													<p id="contact-message-error" class="form-error" aria-live="polite"></p>
+												</div>
+												<button type="submit" class="btn btn-hire">Validate Message</button>
+												<p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
+											</form>
 										</div>
 									</article>
 								</div>
 
-								<address class="col-md-6 contact-details-stack">
+								<address class="col-md-12 contact-details-stack contact-details-grid">
 									<article class="colorlib-feature colorlib-feature-sm animate-box card" data-animate-effect="fadeInLeft">
 										<div class="colorlib-icon">
 											<i class="icon-globe-outline" aria-hidden="true"></i>
 										</div>
 										<div class="colorlib-text">
 											<p><a href="mailto:bibespyakurel1100@gmail.com">bibespyakurel1100@gmail.com</a></p>
+											<button type="button" class="copy-btn" data-copy-text="bibespyakurel1100@gmail.com" data-copy-label="Email">Copy Email</button>
 										</div>
 									</article>
 
@@ -820,6 +993,7 @@
 										</div>
 										<div class="colorlib-text">
 											<p>United States of America</p>
+											<button type="button" class="copy-btn" data-copy-text="United States of America" data-copy-label="Location">Copy Location</button>
 										</div>
 									</article>
 
@@ -829,6 +1003,7 @@
 										</div>
 										<div class="colorlib-text">
 											<p><a href="tel:+12402547082">+1(240)254-7082</a></p>
+											<button type="button" class="copy-btn" data-copy-text="+12402547082" data-copy-label="Phone">Copy Phone</button>
 										</div>
 									</article>
 								</address>
@@ -837,17 +1012,16 @@
 					</div>
 				</section>
 			</main>
-		</div>
-	</div>
+		</section>
+	</article>
 
-	<script src="assets/js/vendor/jquery.min.js"></script>
-	<script src="assets/js/vendor/jquery.easing.1.3.js"></script>
-	<script src="assets/js/vendor/bootstrap.min.js"></script>
-	<script src="assets/js/vendor/jquery.waypoints.min.js"></script>
-	<script src="assets/js/vendor/jquery.flexslider-min.js"></script>
-	<script src="assets/js/vendor/owl.carousel.min.js"></script>
-	<script src="assets/js/vendor/jquery.countTo.js"></script>
-	<script src="assets/js/app/main.js"></script>
-	<script src="assets/js/app/google_map.js"></script>
+	<script defer src="assets/js/vendor/jquery.min.js"></script>
+	<script defer src="assets/js/vendor/jquery.easing.1.3.js"></script>
+	<script defer src="assets/js/vendor/bootstrap.min.js"></script>
+	<script defer src="assets/js/vendor/jquery.waypoints.min.js"></script>
+	<script defer src="assets/js/vendor/jquery.flexslider-min.js"></script>
+	<script defer src="assets/js/vendor/jquery.countTo.js"></script>
+	<script defer src="assets/js/app/main.js"></script>
+	<script defer src="assets/js/app/google_map.js"></script>
 	</body>
 </html>
