@@ -1238,7 +1238,6 @@
 		var updatedLabel = document.getElementById('metrics-updated');
 		var username = (document.documentElement.getAttribute('data-github-username') || '').trim().replace(/^@/, '');
 		var cacheKey = 'bp-github-metrics-v5';
-		var cacheTtl = 1000 * 60 * 60 * 6;
 		var metricsSection = document.querySelector('.bp-metrics');
 		var retryButton = null;
 		var trendNode = document.getElementById('metrics-trend-bars');
@@ -1332,10 +1331,6 @@
 		if (cached && cached.metrics) {
 			assignMetrics(cached.metrics);
 			setUpdatedText(cached.timestamp, true);
-		}
-
-		if (cached && Date.now() - new Date(cached.timestamp).getTime() < cacheTtl) {
-			return;
 		}
 
 		var loadMetrics = function() {
