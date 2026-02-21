@@ -2612,13 +2612,20 @@ kbd {
   margin: 0;
   padding: 0;
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
+.contact-social li {
+  min-width: 0;
+}
+
 .contact-social a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-pill);
