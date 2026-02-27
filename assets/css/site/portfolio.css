@@ -2626,9 +2626,11 @@ kbd {
 }
 
 .contact-social a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-pill);
