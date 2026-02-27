@@ -531,127 +531,330 @@
 								<p id="project-results-status" class="project-results-status" aria-live="polite"></p>
 							</section>
 							<section class="projects-grid cards-layout" aria-label="Project cards">
-								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="ai data" data-project-search="pavement crack detection wisys cnn deep learning">
-									<a href="blog.html" class="blog-img">
-										<picture>
-											<img src="assets/img/deeplearning-opt.jpg" srcset="assets/img/deeplearning-opt.jpg 1x, assets/img/deeplearning.jfif 2x" class="img-responsive" alt="Pavement Crack Detection" loading="lazy" decoding="async" width="1280" height="720">
-										</picture>
-									</a>
-									<div class="desc">
-										<h3><a href="blog.html">Pavement Crack Detection | WiSys Project</a></h3>
-										<p class="project-impact">Assisting in the development of Convolutional neural networks (CNN) models for crack detection.</p>
-										<div class="tech-tags" aria-label="Tech tags">
-											<span class="tech-tag chip">June 2023 - Present</span>
-											<span class="tech-tag chip">Deep Learning</span>
+								<article class="blog-entry card project-premium project-trainlytics project-detailed reveal-item" data-animate-effect="fadeInRight" data-project-category="backend data ai web" data-project-search="trainlytics multi-tenant next.js supabase postgres rls openai analytics github actions ci cd">
+									<aside class="project-side-panel" aria-label="Trainlytics project snapshot">
+										<p class="project-side-title">Trainlytics Snapshot</p>
+										<p><strong>Focus:</strong> Multi-tenant fitness analytics platform</p>
+										<p><strong>Stack:</strong> Next.js, Supabase, PostgreSQL, OpenAI API</p>
+										<p><strong>Outcome:</strong> Secure user isolation with AI-assisted insights</p>
+										<div class="project-side-actions" aria-label="Trainlytics links">
+											<a class="btn btn-ghost project-side-link" href="https://github.com/bibeshpyakurel/Trainlytics" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+											<a class="btn btn-primary project-side-link" href="https://trainlytics-two.vercel.app/login/" target="_blank" rel="noopener noreferrer">Live App</a>
 										</div>
+									</aside>
+									<div class="desc">
+										<h3><a href="blog.html">Trainlytics – Multi-Tenant Full-Stack Fitness Analytics Platform (Next.js + Supabase + AI)</a></h3>
+										<p class="project-impact">Production-structured platform with authenticated user isolation, analytics dashboards, and AI-driven fitness insights.</p>
+										<p>Built for secure multi-tenant usage: workout tracking, bodyweight and calorie logs, trend analytics, and context-aware recommendations.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Next.js</span>
+											<span class="tech-tag chip">Supabase</span>
+											<span class="tech-tag chip">OpenAI API</span>
+										</div>
+										<p><strong>Key Features</strong></p>
 										<ul class="project-highlights">
-											<li>Assisting in the development</li>
-											<li>Convolutional neural networks (CNN) models</li>
-											<li>for crack detection.</li>
+											<li>Multi-tenant architecture with Postgres Row Level Security (RLS) for strict per-user data isolation.</li>
+											<li>Modular feature-first codebase structure across app/, features/, lib/, and db/ layers.</li>
+											<li>AI insights endpoint with validation, rate limiting, and timeout handling.</li>
+											<li>Protected and public route contracts enforced through centralized proxy patterns.</li>
+											<li>CI-backed migration planning and validation for stable schema evolution.</li>
 										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Implemented Supabase Auth with OTP verification, session preflight checks, and secure signout flow.</li>
+											<li>Built dashboard analytics using Recharts with strength, muscle-group, and energy balance trends.</li>
+											<li>Added runtime monitoring endpoint for client/server error reporting.</li>
+											<li>Integrated GitHub Actions CI for lint, typecheck, unit tests, and DB plan validation.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Demonstrates production-level security, modular system design, and reliability-first backend engineering.</p>
+										<p><strong>Skills:</strong> Next.js · React.js · TypeScript · Tailwind CSS · Supabase · PostgreSQL · Row Level Security (RLS) · REST APIs · OpenAI API · GitHub Actions · CI/CD · Vitest · Playwright · Database Design · Full-Stack Development · System Architecture · Authentication Systems</p>
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="blackjack java game scene builder gui">
-									<a href="blog.html" class="blog-img">
-										<picture>
-											<img src="assets/img/javagame-opt.jpg" srcset="assets/img/javagame-opt.jpg 1x, assets/img/javagame.jfif 2x" class="img-responsive" alt="Blackjack Game Development" loading="lazy" decoding="async" width="1280" height="720">
-										</picture>
-									</a>
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInLeft" data-project-category="ai data" data-project-search="music emotion prediction machine learning decision tree knn kmeans pca scikit-learn pandas numpy">
+									<aside class="project-side-panel" aria-label="Music emotion prediction snapshot">
+										<p class="project-side-title">ML Snapshot</p>
+										<p><strong>Focus:</strong> Predicting emotional response to music</p>
+										<p><strong>Dataset:</strong> 278k+ tracks with audio features</p>
+										<div class="project-side-actions" aria-label="Music emotion predictor links">
+											<a class="btn btn-ghost project-side-link" href="https://github.com/bibeshpyakurel/Music-Emotion-Predictor" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+										</div>
+									</aside>
+									<div class="desc">
+										<h3><a href="blog.html">Music Emotion Prediction using Machine Learning</a></h3>
+										<p class="project-impact">Developed a machine learning pipeline to predict emotional responses to music using audio features from a 278k+ track dataset.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Machine Learning</span>
+											<span class="tech-tag chip">Scikit-Learn</span>
+											<span class="tech-tag chip">PCA</span>
+										</div>
+										<p><strong>Key Features</strong></p>
+										<ul class="project-highlights">
+											<li>End-to-end preprocessing pipeline for large-scale numeric audio features.</li>
+											<li>Supervised classification workflows using Decision Tree and KNN models.</li>
+											<li>Unsupervised clustering workflow using KMeans for emotion grouping exploration.</li>
+											<li>PCA-based dimensionality reduction and cluster visualization for interpretability.</li>
+										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Extracted top features influencing mood, such as valence, energy, tempo, and danceability, using feature importance from decision trees.</li>
+											<li>Visualized confusion matrices and PCA-based clustering to interpret model performance and emotion grouping.</li>
+											<li>Evaluated models with accuracy metrics and Adjusted Rand Index to assess classification vs. clustering alignment.</li>
+											<li>Preprocessed and normalized high-dimensional audio data for scalable analysis and visualization.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Achieved clear, interpretable emotion groupings and demonstrated effective use of classical ML techniques for music mood analysis.</p>
+										<p><strong>Skills:</strong> Machine Learning · Pandas · NumPy · Scikit-Learn · Principal Component Analysis · Model Evaluation · Data Interpretation · Information Visualization</p>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInRight" data-project-category="ai data backend" data-project-search="resume job description matching system python nlp cosine similarity scikit-learn pypdf2 nltk text matching automation">
+									<aside class="project-side-panel" aria-label="Resume and job description matching snapshot">
+										<p class="project-side-title">NLP Snapshot</p>
+										<p><strong>Focus:</strong> Resume-to-job fit scoring automation</p>
+										<p><strong>Stack:</strong> Python, NLP, Scikit-learn, NLTK</p>
+										<div class="project-side-actions" aria-label="Resume matching links">
+											<a class="btn btn-ghost project-side-link" href="https://github.com/bibeshpyakurel/Resume-Job-Description-Matching-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+										</div>
+									</aside>
+									<div class="desc">
+										<h3><a href="blog.html">Resume &amp; Job Description Matching System</a></h3>
+										<p class="project-impact">Built a Python-based automation tool to match resumes against job descriptions using natural language processing.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Python</span>
+											<span class="tech-tag chip">NLP</span>
+											<span class="tech-tag chip">Scikit-learn</span>
+										</div>
+										<p><strong>Key Features</strong></p>
+										<ul class="project-highlights">
+											<li>Automated PDF resume parsing and text cleaning pipeline.</li>
+											<li>Keyword and cosine-similarity scoring against job description text.</li>
+											<li>Batch resume processing with ranked match-percentage output.</li>
+											<li>NLP preprocessing pipeline using NLTK and Scikit-learn utilities.</li>
+										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Delivered a repeatable screening flow that reduces manual first-pass review effort.</li>
+											<li>Improved consistency in candidate-job alignment through quantitative scoring.</li>
+											<li>Built a practical, extensible baseline for recruiting automation use cases.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Delivered a practical screening workflow that improves resume shortlisting consistency and speeds up initial candidate-job fit analysis.</p>
+										<p><strong>Skills:</strong> Python · NLP · Resume Parsing · Cosine Similarity · Scikit-learn · Text Matching · PyPDF2 · Data Automation</p>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInLeft" data-project-category="backend web" data-project-search="typing speed game javafx java monkeytype wpm accuracy mvc timers threading file handling ux ui">
+									<aside class="project-side-panel" aria-label="Typing speed game snapshot">
+										<p class="project-side-title">JavaFX Snapshot</p>
+										<p><strong>Focus:</strong> Typing accuracy and WPM training</p>
+										<p><strong>Stack:</strong> Java, JavaFX, MVC</p>
+									</aside>
+									<div class="desc">
+										<h3><a href="blog.html">Typing Speed Game in JavaFX</a></h3>
+										<p class="project-impact">Built a desktop typing trainer inspired by Monkeytype, focused on real-time feedback for speed, accuracy, and consistency.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Java</span>
+											<span class="tech-tag chip">JavaFX</span>
+											<span class="tech-tag chip">MVC</span>
+										</div>
+										<p><strong>Key Features</strong></p>
+										<ul class="project-highlights">
+											<li>Real-time typing engine with word-by-word validation and countdown timers.</li>
+											<li>MVC architecture separating UI state, input logic, and scoring rules.</li>
+											<li>Session controls including reset flow, difficulty options, and dynamic timing.</li>
+											<li>Custom word-list ingestion with file handling for flexible content.</li>
+										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Calculated WPM, accuracy, and error count in real time and at session completion.</li>
+											<li>Delivered interactive UX with responsive feedback while typing.</li>
+											<li>Built maintainable OOP code structure for future feature extension.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Created a reliable typing-practice game that improves user feedback quality for speed and accuracy training.</p>
+										<p><strong>Skills:</strong> Java · JavaFX · File Handling</p>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInLeft" data-project-category="ai data" data-project-search="pavement crack detection wisys hybrid deep learning label studio latex overleaf cnn comparative analysis">
+									<aside class="project-side-panel" aria-label="Pavement crack detection snapshot">
+										<p class="project-side-title">Research Snapshot</p>
+										<p><strong>Role:</strong> WiSys Part-time Research Contributor</p>
+										<p><strong>Location:</strong> Green Bay, WI (Remote)</p>
+									</aside>
+									<div class="desc">
+										<h3><a href="blog.html">Pavement Crack Detection Project | WiSys</a></h3>
+										<p class="project-impact">Assisted in the development of a vision-based system for road crack detection using hybrid deep learning architecture.</p>
+										<div class="tech-tags" aria-label="Tech tags">
+											<span class="tech-tag chip">Green Bay, WI · Remote</span>
+											<span class="tech-tag chip">Deep Learning</span>
+											<span class="tech-tag chip">Label Studio</span>
+											<span class="tech-tag chip">LaTeX / Overleaf</span>
+										</div>
+										<p><strong>Key Features</strong></p>
+										<ul class="project-highlights">
+											<li>Hybrid deep learning workflow for image-based pavement defect detection.</li>
+											<li>Data collection and annotation process using Label Studio for training readiness.</li>
+											<li>Research documentation workflow in LaTeX/Overleaf for technical reporting.</li>
+										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Contributed to comparative analysis across model approaches.</li>
+											<li>Improved data quality and labeling consistency for model experimentation.</li>
+											<li>Supported publication-oriented documentation for project findings.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Contributed to a stronger research workflow for crack detection through cleaner labeled data, model experimentation, and publication support.</p>
+										<p><strong>Skills:</strong> Deep Learning · Machine Learning · Comparative Analysis · Label Studio · Convolutional Neural Networks (CNN) · LaTeX · Overleaf</p>
+									</div>
+								</article>
+
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="blackjack java game scene builder gui">
+									<aside class="project-side-panel" aria-label="Blackjack game snapshot">
+										<p class="project-side-title">Game Snapshot</p>
+										<p><strong>Focus:</strong> Java desktop game experience</p>
+										<p><strong>Stack:</strong> Java, Scene Builder, GUI workflows</p>
+										<p><strong>Outcome:</strong> Collaborative playable blackjack app</p>
+									</aside>
 									<div class="desc">
 										<h3><a href="blog.html">Blackjack Game Development in Java Language</a></h3>
-										<p class="project-impact">Developed a collaborative java-based game with a user-friendly GUI using Scene Builder.</p>
+										<p class="project-impact">Developed a Java desktop Blackjack game with interactive gameplay, betting logic, and GUI-driven player actions.</p>
 										<div class="tech-tags" aria-label="Tech tags">
-											<span class="tech-tag chip">Fall 2023</span>
-											<span class="tech-tag chip">Jave Game Development</span>
+											<span class="tech-tag chip">Java Game Development</span>
 										</div>
+										<p><strong>Key Features</strong></p>
 										<ul class="project-highlights">
-											<li>Developed a collaborative java-based game</li>
-											<li>user-friendly GUI</li>
-											<li>Scene Builder.</li>
+											<li>Card engine with deck operations, hand evaluation, and dealer/player game rules.</li>
+											<li>GUI-based controls for hit/stand flows, score display, and round state transitions.</li>
+											<li>Game-state lifecycle management across deal, play, outcome, and reset phases.</li>
 										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Delivered a playable Blackjack application with stable game rules and user-friendly interactions.</li>
+											<li>Improved maintainability through modular classes for deck, hand, and game controller logic.</li>
+											<li>Demonstrated practical desktop game architecture and event-driven UI development.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Built a complete interactive desktop game that demonstrates robust game logic and reusable JavaFX architecture.</p>
+										<p><strong>Skills:</strong> Java · JavaFX · Scene Builder · OOP · Event Handling</p>
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="web" data-project-search="smart student app android studio mobile">
-									<a href="blog.html" class="blog-img">
-										<picture>
-											<img src="assets/img/smartstudentapp-opt.jpg" srcset="assets/img/smartstudentapp-opt.jpg 1x, assets/img/smartstudentapp.jfif 2x" class="img-responsive" alt="Smart Student App" loading="lazy" decoding="async" width="1280" height="720">
-										</picture>
-									</a>
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInLeft" data-project-category="web" data-project-search="smart student app android studio mobile">
+									<aside class="project-side-panel" aria-label="Smart student app snapshot">
+										<p class="project-side-title">Mobile Snapshot</p>
+										<p><strong>Focus:</strong> Student utility mobile app</p>
+										<p><strong>Stack:</strong> Android Studio, native features</p>
+										<p><strong>Outcome:</strong> Practical day-to-day student support</p>
+									</aside>
 									<div class="desc">
 										<h3><a href="blog.html">Smart Student App | Android Studio</a></h3>
 										<p class="project-impact">Designed a very simple multi-functioning app in Android Studio. Incorporated native features like emergency calling.</p>
 										<div class="tech-tags" aria-label="Tech tags">
-											<span class="tech-tag chip">Fall 2023</span>
 											<span class="tech-tag chip">Application Development</span>
 										</div>
+										<p><strong>Key Features</strong></p>
 										<ul class="project-highlights">
-											<li>Designed a very simple multi-functioning app in Android Studio.</li>
-											<li>Incorporated native features like emergency calling.</li>
+											<li>Multi-utility mobile interface tailored to student day-to-day workflows.</li>
+											<li>Native Android feature integration including one-tap emergency calling.</li>
+											<li>Simple navigation flow focused on fast access to essential actions.</li>
 										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Demonstrated practical mobile product thinking for student-centered usability.</li>
+											<li>Converted functional requirements into a working Android prototype.</li>
+											<li>Showed ability to combine utility and safety features in one app experience.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Delivered an easy-to-use mobile utility prototype that demonstrates practical feature integration for student workflows.</p>
+										<p><strong>Skills:</strong> Android Studio · Mobile App Development · UI Design · Native Feature Integration</p>
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="backend data" data-project-search="student budget calculator java scene builder finance">
-									<a href="blog.html" class="blog-img">
-										<picture>
-											<img src="assets/img/studentbudget-opt.jpg" srcset="assets/img/studentbudget-opt.jpg 1x, assets/img/studentbudget.jfif 2x" class="img-responsive" alt="Student Budget Calculator" loading="lazy" decoding="async" width="1280" height="720">
-										</picture>
-									</a>
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInLeft" data-project-category="backend data" data-project-search="student budget calculator java scene builder finance">
+									<aside class="project-side-panel" aria-label="Student budget calculator snapshot">
+										<p class="project-side-title">Finance Snapshot</p>
+										<p><strong>Focus:</strong> Student spending visibility</p>
+										<p><strong>Stack:</strong> Java, Scene Builder</p>
+										<p><strong>Outcome:</strong> Simpler budgeting decisions</p>
+									</aside>
 									<div class="desc">
 										<h3><a href="blog.html">Student Budget Calculator | Personal Project</a></h3>
-										<p class="project-impact">Designed a Java-based budget calculator to assist students in tracking their spending.</p>
+										<p class="project-impact">Built a budgeting application to help students track expenses, compare spending against limits, and improve monthly financial planning.</p>
 										<div class="tech-tags" aria-label="Tech tags">
-											<span class="tech-tag chip">Fall 2023</span>
 											<span class="tech-tag chip">Java & Scene Builder</span>
 										</div>
+										<p><strong>Key Features</strong></p>
 										<ul class="project-highlights">
-											<li>Designed a Java-based budget calculator</li>
-											<li>assist students in tracking their spending.</li>
+											<li>Expense-entry workflow with category grouping and per-category totals.</li>
+											<li>Budget calculation engine for tracking remaining balance and spending trends.</li>
+											<li>Input validation layer for missing, invalid, and non-numeric values.</li>
 										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Created a practical budgeting tool that helps users monitor where money is going.</li>
+											<li>Enabled clearer decision-making through category-wise spending visibility.</li>
+											<li>Delivered a clean, extensible code structure for future features (savings goals, reports).</li>
+										</ul>
+										<p><strong>Outcome:</strong> Delivered a user-friendly budgeting tool that supports better spending awareness and planning discipline for students.</p>
+										<p><strong>Skills:</strong> Java · JavaFX · Scene Builder · Budget Modeling · Input Validation</p>
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="cybersecurity labs buffer overflow rop return to libc linux">
-									<a href="blog.html" class="blog-img">
-										<picture>
-											<img src="assets/img/cybersecurity-opt.jpg" srcset="assets/img/cybersecurity-opt.jpg 1x, assets/img/cybersecurity.jfif 2x" class="img-responsive" alt="CyberSecurity Labs" loading="lazy" decoding="async" width="1280" height="720">
-										</picture>
-									</a>
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInRight" data-project-category="backend" data-project-search="cybersecurity labs buffer overflow rop return to libc linux">
+									<aside class="project-side-panel" aria-label="Cybersecurity labs snapshot">
+										<p class="project-side-title">Security Snapshot</p>
+										<p><strong>Focus:</strong> Exploit and defense fundamentals</p>
+										<p><strong>Stack:</strong> Linux labs, ROP, return-to-libc</p>
+										<p><strong>Outcome:</strong> Hands-on vulnerability analysis</p>
+									</aside>
 									<div class="desc">
 										<h3><a href="blog.html">CyberSecurity Labs | Intern Project</a></h3>
-										<p class="project-impact">Engaged in testing labs, exploring critical areas like Buffer Overflow vulnerabilities and atacks, Return-to-libc Attack and ROP. Made an instruction manual for both.</p>
+										<p class="project-impact">Completed hands-on offensive security labs focused on memory corruption, exploit construction, and Linux-based vulnerability analysis.</p>
 										<div class="tech-tags" aria-label="Tech tags">
-											<span class="tech-tag chip">Spring 2024</span>
 											<span class="tech-tag chip">CyberSecurity</span>
 										</div>
+										<p><strong>Key Features</strong></p>
 										<ul class="project-highlights">
-											<li>Buffer Overflow vulnerabilities and atacks</li>
-											<li>Return-to-libc Attack and ROP</li>
-											<li>Made an instruction manual for both.</li>
+											<li>Hands-on Linux lab environments for controlled vulnerability exploitation practice.</li>
+											<li>Attack-method exploration including buffer overflow, return-to-libc, and ROP techniques.</li>
+											<li>Technical write-ups documenting exploit setup, execution path, and lessons learned.</li>
 										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Improved exploit debugging capability through stack and control-flow analysis.</li>
+											<li>Built a practical understanding of exploit mechanics and defensive awareness for unsafe code patterns.</li>
+											<li>Delivered repeatable lab guides that improved clarity for future learners and collaborators.</li>
+											<li>Strengthened systems-level reasoning around process memory and program execution.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Built strong foundational security testing skills and produced reusable attack analysis documentation for knowledge transfer.</p>
+										<p><strong>Skills:</strong> Linux · Buffer Overflow · Return-to-libc · ROP · Vulnerability Analysis · Security Documentation</p>
 									</div>
 								</article>
 
-								<article class="blog-entry card project-premium reveal-item" data-animate-effect="fadeInLeft" data-project-category="data backend" data-project-search="database design sql er diagram server">
-									<a href="blog.html" class="blog-img">
-										<picture>
-											<img src="assets/img/database-opt.jpg" srcset="assets/img/database-opt.jpg 1x, assets/img/database.jfif 2x" class="img-responsive" alt="Database Design" loading="lazy" decoding="async" width="1280" height="720">
-										</picture>
-									</a>
+								<article class="blog-entry card project-premium project-detailed reveal-item" data-animate-effect="fadeInLeft" data-project-category="data backend" data-project-search="database design sql er diagram server">
+									<aside class="project-side-panel" aria-label="Database design snapshot">
+										<p class="project-side-title">Data Snapshot</p>
+										<p><strong>Focus:</strong> Relational schema design</p>
+										<p><strong>Stack:</strong> SQL, ER modeling</p>
+										<p><strong>Outcome:</strong> Structured server-side data model</p>
+									</aside>
 									<div class="desc">
 										<h3><a href="blog.html">Database Design | Class Project</a></h3>
-										<p class="project-impact">Designed a database of an online server, created and ER Diagram, and SQL statement.</p>
+										<p class="project-impact">Designed and implemented a relational database for an online service system, from entity modeling to executable SQL schema and queries.</p>
 										<div class="tech-tags" aria-label="Tech tags">
-											<span class="tech-tag chip">Fall 2023</span>
 											<span class="tech-tag chip">Database Management & SQL</span>
 										</div>
+										<p><strong>Key Features</strong></p>
 										<ul class="project-highlights">
-											<li>Designed a database of an online server</li>
-											<li>created and ER Diagram</li>
-											<li>SQL statement.</li>
+											<li>Entity-relationship modeling with clear relationship and cardinality design.</li>
+											<li>Normalized relational schema with keys, constraints, and integrity checks.</li>
+											<li>SQL query set for core data retrieval, filtering, and reporting workflows.</li>
 										</ul>
+										<p><strong>Key Highlights</strong></p>
+										<ul class="project-highlights">
+											<li>Validated data consistency and relationship correctness across test records.</li>
+											<li>Delivered a structured database blueprint with a reliable schema and logical data relationships.</li>
+											<li>Improved query accuracy and maintainability through normalized design decisions.</li>
+											<li>Demonstrated end-to-end database design capability from concept to implementation.</li>
+										</ul>
+										<p><strong>Outcome:</strong> Produced a stable, scalable relational data model ready for application-level integration and reporting use cases.</p>
+										<p><strong>Skills:</strong> SQL · Database Design · ER Diagrams · Relational Modeling · Normalization</p>
 									</div>
 								</article>
 							</section>
@@ -684,10 +887,17 @@
 											<h3>Software Engineering (Backend &amp; APIs)</h3>
 											<ul>
 											<li>Java, Spring Boot</li>
+											<li>Python, C#, C++</li>
+											<li>Scala</li>
 											<li>REST API Development</li>
+											<li>Node.js, .NET</li>
 											<li>Redis (standalone &amp; clustered)</li>
 											<li>System Integration &amp; Troubleshooting</li>
 											<li>API Testing (Insomnia)</li>
+											<li>Supabase, Authentication Systems, Row Level Security (RLS)</li>
+											<li>System Architecture, Full-Stack Development</li>
+											<li>CI/CD, GitHub Actions, Jenkins, Vitest, Playwright</li>
+											<li>Testing, Agile (Scrum)</li>
 										</ul>
 										</section>
 
@@ -695,17 +905,24 @@
 											<h3>Data Engineering &amp; Analytics</h3>
 											<ul>
 											<li>SQL (SQL Server, PostgreSQL)</li>
+											<li>NoSQL, MongoDB</li>
+											<li>Snowflake, BigQuery</li>
 											<li>ETL / ELT Pipelines</li>
+											<li>ETL Development, Data Pipelines, Workflow Automation</li>
 											<li>Azure Data Factory</li>
+											<li>PySpark, Pandas, NumPy</li>
+											<li>Data Transformation, Large-Scale Data Processing</li>
 											<li>Data Modeling &amp; Warehousing</li>
 											<li>Power BI Dashboards &amp; Reporting</li>
+											<li>Database Design</li>
 										</ul>
 										</section>
 
 										<section class="skills-domain" aria-label="Cloud and Observability">
 											<h3>Cloud &amp; Observability</h3>
 											<ul>
-											<li>Microsoft Azure</li>
+											<li>Microsoft Azure, AWS</li>
+											<li>Git, GitHub, Jira</li>
 											<li>Monitoring &amp; Metrics (Dynatrace)</li>
 											<li>Docker, Kubernetes (Foundational)</li>
 										</ul>
@@ -715,16 +932,20 @@
 											<h3>AI &amp; Machine Learning</h3>
 											<ul>
 											<li>Machine Learning &amp; Model Evaluation</li>
+											<li>Scikit-learn, TensorFlow, PyTorch</li>
 											<li>Deep Learning (CNNs)</li>
 											<li>Data Annotation (Label Studio)</li>
 											<li>Microsoft OpenAI / Copilot Studio (AI Agents)</li>
+											<li>OpenAI API</li>
 										</ul>
 										</section>
 
 										<section class="skills-domain" aria-label="Web and Frontend">
 											<h3>Web &amp; Frontend (Supporting Skills)</h3>
 											<ul>
-											<li>JavaScript, React</li>
+											<li>JavaScript</li>
+											<li>Next.js, React, TypeScript</li>
+											<li>Tailwind CSS</li>
 											<li>HTML / CSS</li>
 											<li>WordPress</li>
 										</ul>
@@ -737,6 +958,7 @@
 											<li>Vulnerability Labs: Buffer Overflow, ROP, Return-to-libc, Format String</li>
 										</ul>
 										</section>
+
 									</section>
 								</div>
 							</article>
