@@ -2028,9 +2028,29 @@ html[data-theme="paper"] #bp-aside {
 }
 
 .projects-controls {
-  padding: var(--space-2);
+  padding: var(--space-1);
   display: grid;
   gap: var(--space-1);
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface-muted) 86%, transparent);
+}
+
+/* Keep project filters visible; do not hide via generic card reveal staging */
+.projects-controls.reveal-ready,
+.projects-controls.reveal-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.bp-blog .section-content-grid {
+  gap: var(--space-1);
+}
+
+.projects-controls__title {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .projects-controls__filters {
@@ -2041,7 +2061,7 @@ html[data-theme="paper"] #bp-aside {
 
 .project-filter-btn {
   background: var(--color-surface-muted);
-  color: var(--color-text-muted);
+  color: var(--color-text);
   border-color: var(--color-line);
   padding: 8px 12px;
 }
@@ -2086,6 +2106,7 @@ kbd {
   margin: 0;
   color: var(--color-text-muted);
   font-size: var(--text-xs);
+  min-height: 1.4em;
 }
 
 .project-empty-state {
