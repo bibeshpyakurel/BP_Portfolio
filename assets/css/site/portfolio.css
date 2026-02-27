@@ -3023,6 +3023,11 @@ kbd {
   opacity: 1;
 }
 
+/* Paper theme: use a softer/darker cursor glow to avoid harsh brightness */
+html[data-theme="paper"] .motion-tilt::after {
+  background: radial-gradient(190px circle at var(--glow-x) var(--glow-y), rgba(43, 36, 27, 0.18), transparent 70%);
+}
+
 @media screen and (max-width: 768px) {
   .bp-services .row.row-pt-md.cert-grid {
     display: grid;
