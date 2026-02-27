@@ -908,23 +908,14 @@
 			return (value || '').toLowerCase().trim();
 		};
 
-		var fuzzyMatch = function(text, query) {
+		var matchesQuery = function(searchable, query) {
 			if (!query) {
-				return { matched: true, score: 0, indices: [] };
+				return true;
 			}
-			var t = normalize(text);
-			var q = normalize(query);
-			var qi = 0;
-			var score = 0;
-			var indices = [];
-			for (var i = 0; i < t.length && qi < q.length; i++) {
-				if (t[i] === q[qi]) {
-					indices.push(i);
-					score += (indices.length > 1 && indices[indices.length - 2] + 1 === i) ? 2 : 1;
-					qi += 1;
-				}
-			}
-			return { matched: qi === q.length, score: score, indices: indices };
+			var terms = query.split(/\s+/).filter(Boolean);
+			return terms.every(function(term) {
+				return searchable.indexOf(term) > -1;
+			});
 		};
 
 		var setURLState = function() {
@@ -978,30 +969,20 @@
 			var query = normalize(searchInput.value);
 			activeQuery = query;
 			var visibleCount = 0;
-			var scored = [];
 
 			cards.forEach(function(card) {
 				var categories = normalize(card.getAttribute('data-project-category')).split(/\s+/).filter(Boolean);
 				var searchable = normalize(card.getAttribute('data-project-search') + ' ' + card.textContent);
 				var matchCategory = activeFilter === 'all' || categories.indexOf(activeFilter) > -1;
-				var fuzz = fuzzyMatch(searchable, query);
-				var matchQuery = !query || searchable.indexOf(query) > -1 || fuzz.matched;
+				var matchQuery = matchesQuery(searchable, query);
 				var isVisible = matchCategory && matchQuery;
 
 				card.hidden = !isVisible;
 				card.classList.toggle('project-hidden', !isVisible);
 				if (isVisible) {
 					visibleCount += 1;
-					scored.push({ card: card, score: fuzz.score });
 				}
 				highlightProjectTitle(card, query);
-			});
-
-			scored.sort(function(a, b) {
-				return b.score - a.score;
-			});
-			scored.forEach(function(entry) {
-				entry.card.parentNode.appendChild(entry.card);
 			});
 			cardList = Array.prototype.slice.call(cards).filter(function(card) {
 				return !card.hidden;
@@ -1043,6 +1024,10 @@
 		});
 
 		searchInput.addEventListener('keydown', function(event) {
+			if (event.key === 'Enter') {
+				event.preventDefault();
+				return;
+			}
 			if (!cardList.length) {
 				return;
 			}
@@ -1055,12 +1040,6 @@
 				event.preventDefault();
 				setActiveCard(Math.max(navIndex - 1, 0));
 				cardList[navIndex].scrollIntoView({ block: 'nearest' });
-			}
-			if (event.key === 'Enter' && navIndex > -1 && cardList[navIndex]) {
-				var link = cardList[navIndex].querySelector('.desc h3 a');
-				if (link) {
-					link.click();
-				}
 			}
 		});
 

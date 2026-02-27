@@ -518,6 +518,7 @@
 						</header>
 						<div class="section-content-grid">
 							<section class="projects-controls card" aria-label="Project filters">
+								<p class="projects-controls__title">Filter by category or search by keyword</p>
 								<div class="projects-controls__filters" role="group" aria-label="Project categories">
 									<button type="button" class="project-filter-btn active" data-project-filter="all" aria-pressed="true">All</button>
 									<button type="button" class="project-filter-btn" data-project-filter="backend" aria-pressed="false">Backend</button>
@@ -527,8 +528,7 @@
 								</div>
 								<label for="project-search" class="sr-only">Search projects</label>
 								<input id="project-search" class="project-search-input" type="search" placeholder="Search projects by title, impact, or tech" autocomplete="off">
-								<p class="shortcut-hint"><kbd>/</kbd> focus search, <kbd>g</kbd> then <kbd>h</kbd> go Home</p>
-								<p id="project-results-status" class="project-results-status" aria-live="polite"></p>
+								<p id="project-results-status" class="project-results-status" aria-live="polite">Showing all projects.</p>
 							</section>
 							<section class="projects-grid cards-layout" aria-label="Project cards">
 								<article class="blog-entry card project-premium project-trainlytics project-detailed reveal-item" data-animate-effect="fadeInRight" data-project-category="backend data ai web" data-project-search="trainlytics multi-tenant next.js supabase postgres rls openai analytics github actions ci cd">
