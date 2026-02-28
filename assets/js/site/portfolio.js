@@ -1216,7 +1216,7 @@
 		var languageMetric = document.querySelector('[data-metric="language"]');
 		var updatedLabel = document.getElementById('metrics-updated');
 		var username = (document.documentElement.getAttribute('data-github-username') || '').trim().replace(/^@/, '');
-		var cacheKey = 'bp-github-metrics-v5';
+		var cacheKey = 'bp-github-metrics-v6';
 		var metricsSection = document.querySelector('.bp-metrics');
 		var retryButton = null;
 		var trendNode = document.getElementById('metrics-trend-bars');
@@ -1382,9 +1382,10 @@
 						return;
 					}
 					pushEventCount += 1;
-					var commitBatch = event.payload && event.payload.commits ? event.payload.commits.length : 0;
-					if (!commitBatch && event.payload && typeof event.payload.size === 'number') {
-						commitBatch = event.payload.size;
+					// PushEvent.payload.commits can be truncated; payload.size is the full commit count.
+					var commitBatch = event.payload && typeof event.payload.size === 'number' ? event.payload.size : 0;
+					if (!commitBatch && event.payload && event.payload.commits) {
+						commitBatch = event.payload.commits.length;
 					}
 					if (!commitBatch) {
 						commitBatch = 1;

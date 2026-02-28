@@ -64,9 +64,9 @@ Implemented in `assets/js/site/portfolio.js` under `githubMetrics()`.
   - paginated `GET /users/:username/events/public?per_page=100`
 - Outputs:
   - Total Public Repos
-  - Recent Push Commits (30 days)
+  - Public Push Commits (30 days)
   - Top Languages (Top 3)
-- Cache key: `bp-github-metrics-v5`
+- Cache key: `bp-github-metrics-v6`
 
 ## Project Structure
 
