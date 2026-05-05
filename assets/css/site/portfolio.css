@@ -2306,6 +2306,13 @@ kbd {
   color: var(--color-text-muted);
 }
 
+.publication-divider {
+  grid-column: 2 / 12;
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 0;
+}
+
 .bp-work .publication-feature {
   position: relative;
   overflow: hidden;
@@ -4218,6 +4225,8 @@ html[data-theme="hc"] body {
 .project-side-panel {
   height: 100%;
   border-right: 1px solid rgba(var(--accent-rgb), 0.2);
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
   background: linear-gradient(165deg, rgba(var(--accent-rgb), 0.14), rgba(255, 255, 255, 0.02));
   padding: 12px;
   display: flex;
