@@ -2306,6 +2306,13 @@ kbd {
   color: var(--color-text-muted);
 }
 
+.publication-divider {
+  grid-column: 2 / 12;
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 0;
+}
+
 .bp-work .publication-feature {
   position: relative;
   overflow: hidden;
