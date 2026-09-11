@@ -164,6 +164,7 @@
 					<ul class="sidebar-social" aria-label="Social links">
 						<li><a href="https://www.linkedin.com/in/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="icon-social-linkedin" aria-hidden="true"></i></a></li>
 						<li><a href="https://github.com/bibeshpyakurel/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="icon-social-github" aria-hidden="true"></i></a></li>
+						<li id="google-scholar-link-item" hidden style="display:none"><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">Scholar</a></li>
 						<li><a href="https://www.instagram.com/bbibeshh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i></a></li>
 					</ul>
 				</footer>
@@ -535,6 +536,7 @@
 									<button type="button" class="project-filter-btn" data-project-filter="backend" aria-pressed="false">Backend</button>
 									<button type="button" class="project-filter-btn" data-project-filter="data" aria-pressed="false">Data</button>
 									<button type="button" class="project-filter-btn" data-project-filter="ai" aria-pressed="false">AI</button>
+									<button type="button" class="project-filter-btn" data-project-filter="research" aria-pressed="false">Research</button>
 									<button type="button" class="project-filter-btn" data-project-filter="web" aria-pressed="false">Web</button>
 								</div>
 								<label for="project-search" class="sr-only">Search projects</label>
@@ -1058,9 +1060,10 @@
 					<div class="bp-narrow-content container">
 						<header class="section-header section-header-block reveal-item" data-animate-effect="fadeInLeft">
 							<span class="heading-meta section-eyebrow">My Writing Skills</span>
-							<h2 id="work-title" class="bp-heading section-title">Published Books</h2>
-							<p class="publication-intro">A glimpse into my published Nepali poetry work, story-driven themes, and reader engagement moments.</p>
+							<h2 id="work-title" class="bp-heading section-title">Publications &amp; Writing</h2>
+							<p class="publication-intro">Research publications and selected creative writing.</p>
 						</header>
+						<div id="research-publications-grid" class="section-content-grid" aria-label="Research publications" hidden></div>
 						<div class="section-content-grid">
 							<article class="card publication-feature reveal-item" data-animate-effect="fadeInLeft">
 								<div class="card-body">
@@ -1264,6 +1267,8 @@
 	<script defer src="assets/js/vendor/jquery.waypoints.min.js"></script>
 	<script defer src="assets/js/vendor/jquery.flexslider-min.js"></script>
 	<script defer src="assets/js/vendor/jquery.countTo.js"></script>
+	<script defer src="assets/js/site/portfolio-data.js"></script>
+	<script defer src="assets/js/site/portfolio-content.js"></script>
 	<script defer src="assets/js/site/portfolio.js"></script>
 	</body>
 </html>
