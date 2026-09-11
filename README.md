@@ -20,7 +20,11 @@ Single-page portfolio site for software/data engineering roles, built as a stati
 - This keeps deploy simple (no build step) and avoids runtime dependency on third-party CDNs.
 
 ### Data flow
-- Most content is static and authored directly in `index.html`.
+- Career-facing content is stored in `data/portfolio.json` and rendered by
+  `assets/js/site/portfolio-content.js` before the main interaction script runs.
+- The private `Bibesh_Master_Documents` repository proposes reviewed updates to
+  this data file through a privacy-scoped AI workflow.
+- Existing static HTML remains a fallback if managed data cannot load.
 - Dynamic data is limited to GitHub metrics:
   - fetched client-side from GitHub public API
   - cached in `localStorage` with TTL
@@ -101,6 +105,15 @@ Open `http://localhost:8000`.
 - Design tokens/layout/theme CSS: `assets/css/site/portfolio.css`
 - Behavior and integrations: `assets/js/site/portfolio.js`
 - GitHub username config: `index.html` (`data-github-username`)
+- Managed experience, projects, research publications, skills, about text, and
+  Google Scholar link: `data/portfolio.json`
+
+Validate and rebuild managed data locally with:
+
+```bash
+node scripts/validate-portfolio.mjs data/portfolio.json
+node scripts/build-portfolio-data.mjs
+```
 
 ## Deployment
 

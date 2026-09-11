@@ -1,0 +1,24 @@
+import fs from "node:fs";
+
+const file = process.argv[2] || "data/portfolio.json";
+const data = JSON.parse(fs.readFileSync(file, "utf8"));
+const fail = (message) => { throw new Error(`Portfolio validation failed: ${message}`); };
+if (data.version !== 1) fail("version must be 1");
+if (!data.profile || !Array.isArray(data.profile.about) || !data.profile.about.length) fail("profile.about is required");
+for (const key of ["experience", "projects", "skills", "publications"]) if (!Array.isArray(data[key])) fail(`${key} must be an array`);
+const allIds = [...data.experience, ...data.projects, ...data.publications].map((item) => item.id);
+if (allIds.some((id) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id))) fail("all IDs must be lowercase kebab-case");
+if (new Set(allIds).size !== allIds.length) fail("IDs must be unique across managed content");
+const walk = (value, trail = "root") => {
+  if (typeof value === "string") {
+    if (/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(value)) fail(`${trail} contains an email address`);
+    if (/(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/.test(value)) fail(`${trail} contains a phone number`);
+    if (/\b(?:USCIS|SEVIS|I-?983|passport|alien registration|A-number)\b/i.test(value)) fail(`${trail} contains restricted language`);
+    if (/^(?!https:\/\/).+:\/\//.test(value)) fail(`${trail} contains a non-HTTPS URL`);
+  } else if (Array.isArray(value)) value.forEach((entry, index) => walk(entry, `${trail}[${index}]`));
+  else if (value && typeof value === "object") Object.entries(value).forEach(([key, entry]) => walk(entry, `${trail}.${key}`));
+};
+walk(data);
+const categories = new Set(["backend", "data", "ai", "web", "research", "security", "mobile"]);
+for (const project of data.projects) if (!project.name || !project.summary || project.categories.some((category) => !categories.has(category))) fail(`project ${project.id} is invalid`);
+console.log(`Validated ${data.experience.length} experiences, ${data.projects.length} projects, and ${data.publications.length} publications.`);
