@@ -109,6 +109,8 @@ Open `http://localhost:8000`.
 - GitHub username config: `index.html` (`data-github-username`)
 - Managed experience, projects, research publications, skills, about text, and
   Google Scholar link: `data/portfolio.json`
+- The research page also renders its paper list and research-profile links from
+  the same data after the first successful master-documents sync.
 - The research page's paper summaries and profile links are also written into
   `research.html`; update both places when a paper or profile URL changes.
 
