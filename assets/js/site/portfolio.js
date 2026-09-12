@@ -643,7 +643,7 @@
 
 		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-		$('#bp-navbar a:not([class="external"])').click(function(event){
+		$('#bp-navbar a[data-nav-section]').click(function(event){
 			var section = $(this).data('nav-section'),
 				navbar = $('#bp-navbar'),
 				$target = $('[data-section="' + section + '"]');
