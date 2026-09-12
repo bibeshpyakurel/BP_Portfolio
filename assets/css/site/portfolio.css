@@ -5139,6 +5139,45 @@ html[data-theme="hc"] .contact-details-grid .bp-icon img {
   color: var(--accent);
 }
 
+/* Keep the longer portfolio menu and social links within the sticky sidebar. */
+#bp-aside .sidebar-header,
+#bp-aside .bp-footer {
+  flex-shrink: 0;
+}
+
+#bp-aside #bp-main-menu {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+#google-scholar-link-item a {
+  width: auto;
+  min-width: 40px;
+  padding-inline: 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 992px) {
+  #bp-aside {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  #bp-aside #bp-main-menu {
+    flex: 0 0 auto;
+    overflow: visible;
+  }
+
+  #bp-navbar {
+    max-height: none;
+  }
+}
+
 .bp-work .research-preview {
   grid-column: 1 / -1;
   display: flex;
