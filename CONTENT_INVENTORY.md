@@ -15,7 +15,7 @@ This inventory captures the current site content in section order. Content wordi
   - `Work Experience`
   - `Projects`
   - `Skills`
-  - `Publications`
+  - `Research`
   - `Certifications`
   - `Contact`
 - Sidebar social links:
@@ -69,7 +69,7 @@ This inventory captures the current site content in section order. Content wordi
 - Meta: `Involvement`
 - Heading: `Work Experience`
 - Entry 1:
-  - `Software Developer (Intern) | Schneider Electric`
+  - `Software Developer (Intern) | Schneider`
   - `May 2025 – Aug 2025`
   - `Developed a Redis Management Client Library in Spring Boot to retrieve Redis key metrics and publish them to Dynatrace for real-time monitoring. Implemented scalable integration logic to dynamically support multiple Redis configurations across on-premise and Azure-hosted environments. Maintained and enhanced internal web applications (including UI improvements and bug fixes) using React, and supported application migration efforts to Microsoft Azure.`
 - Entry 2:
@@ -187,20 +187,11 @@ This inventory captures the current site content in section order. Content wordi
     - `Linux (Ubuntu, Kali Linux)`
     - `Vulnerability Labs: Buffer Overflow, ROP, Return-to-libc, Format String`
 
-## Section: Publications
-- Meta: `My Writing Skills`
-- Heading: `Published Books`
-- Main publication text:
-  - Title: `Dive into the Heart of Reality: Unveiling Romance, Society, and Inequality in यथार्थ | Nov 18, 2020`
-  - Body: `In यथार्थ (Reality), I explore the complex tapestry of life, revealing the deep truths about love, society, and inequality. Through heartfelt stories, I invite you to embark on a journey that challenges our understanding of the world. This book isn't just about romance; it's about the everyday struggles we all face. From the euphoria of love to the constraints of societal norms, "Reality" provides an honest look at what it means to be human. Prepare to be captivated by a narrative that sparks conversation and fosters empathy. "यथार्थ" isn't just a book; it's a mirror reflecting our world and the changes we need to make.`
-- Publication visual card 1:
-  - `Day of Book Published`
-  - `Bibesh's 100+ Nepali Poems`
-  - Stats: `1k+`, `100+`
-- Publication visual card 2:
-  - `Reading Book`
-  - `Bibesh's 100+ Nepali Poems`
-  - Stats: `1k+`, `100+`
+## Section: Research
+- Meta: `My Research`
+- Heading: `Research`
+- Content is sourced from `data/portfolio.json` publications, currently two arXiv preprints. Creative-writing and book entries are intentionally omitted.
+- The separate `research.html` page contains research interests, the two paper summaries, and Google Scholar, Semantic Scholar, LinkedIn, and GitHub links.
 
 ## Section: Certifications
 - Meta: `My Credentials`

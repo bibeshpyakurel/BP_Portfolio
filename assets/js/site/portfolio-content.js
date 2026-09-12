@@ -20,6 +20,10 @@
 			return href ? '<a class="btn btn-ghost project-side-link" href="' + href + '" target="_blank" rel="noopener noreferrer">' + labels[key] + "</a>" : "";
 		}).join("");
 	};
+	var setDisclosureState = function (button, expanded, openLabel, closedLabel) {
+		button.setAttribute("aria-expanded", expanded ? "true" : "false");
+		button.textContent = expanded ? openLabel : closedLabel;
+	};
 
 	var about = document.querySelector(".about-desc");
 	if (managedReady && about && data.profile.about.length) {
@@ -67,5 +71,103 @@
 		scholarLink.href = data.profile.links.googleScholar;
 		scholarItem.hidden = false;
 		scholarItem.style.display = "";
+	}
+
+	/* Progressive disclosure keeps the page scannable without removing detail. */
+	document.querySelectorAll(".timeline-label").forEach(function (label, index) {
+		var heading = label.querySelector(":scope > h3");
+		var detailNodes = Array.prototype.slice.call(label.children).filter(function (child) {
+			return child !== heading;
+		});
+		if (!heading || !detailNodes.length) return;
+
+		var panel = document.createElement("div");
+		var inner = document.createElement("div");
+		var button = document.createElement("button");
+		var panelId = "experience-details-" + (index + 1);
+		panel.className = "experience-details disclosure-panel";
+		panel.id = panelId;
+		panel.inert = true;
+		inner.className = "disclosure-panel__inner";
+		detailNodes.forEach(function (node) { inner.appendChild(node); });
+		panel.appendChild(inner);
+		button.type = "button";
+		button.className = "disclosure-toggle experience-toggle";
+		button.setAttribute("aria-controls", panelId);
+		setDisclosureState(button, false, "Hide details", "View details");
+		button.addEventListener("click", function () {
+			var expanded = button.getAttribute("aria-expanded") !== "true";
+			panel.inert = !expanded;
+			label.classList.toggle("is-expanded", expanded);
+			setDisclosureState(button, expanded, "Hide details", "View details");
+		});
+		label.appendChild(button);
+		label.appendChild(panel);
+	});
+
+	document.querySelectorAll(".project-premium").forEach(function (card, index) {
+		var description = card.querySelector(".desc");
+		var sidePanel = card.querySelector(".project-side-panel");
+		if (!description) return;
+
+		if (sidePanel) {
+			Array.prototype.slice.call(sidePanel.children).forEach(function (child) {
+				if (!child.classList.contains("project-side-title") && !child.classList.contains("project-side-actions")) {
+					child.classList.add("project-expanded-only");
+				}
+			});
+		}
+
+		var details = Array.prototype.slice.call(description.children).filter(function (child) {
+			return child.tagName !== "H3" && !child.classList.contains("project-impact") && !child.classList.contains("tech-tags");
+		});
+		var panel = document.createElement("div");
+		var inner = document.createElement("div");
+		var button = document.createElement("button");
+		var panelId = "project-details-" + (index + 1);
+		panel.className = "project-details disclosure-panel";
+		panel.id = panelId;
+		panel.inert = true;
+		inner.className = "disclosure-panel__inner project-details__inner";
+		details.forEach(function (node) { inner.appendChild(node); });
+		panel.appendChild(inner);
+		button.type = "button";
+		button.className = "disclosure-toggle project-detail-toggle";
+		button.setAttribute("aria-controls", panelId);
+		setDisclosureState(button, false, "Show less", "Explore project");
+		button.addEventListener("click", function () {
+			var expanded = button.getAttribute("aria-expanded") !== "true";
+			panel.inert = !expanded;
+			card.classList.toggle("project-expanded", expanded);
+			setDisclosureState(button, expanded, "Show less", "Explore project");
+		});
+		description.appendChild(button);
+		description.appendChild(panel);
+		card.classList.add("project-compact");
+	});
+
+	var skillItems = document.querySelectorAll(".bp-skills .skills-domain li");
+	var hiddenSkillItems = [];
+	document.querySelectorAll(".bp-skills .skills-domain").forEach(function (domain) {
+		Array.prototype.slice.call(domain.querySelectorAll("li")).forEach(function (item, index) {
+			if (index > 1) {
+				item.hidden = true;
+				hiddenSkillItems.push(item);
+			}
+		});
+	});
+	if (skillItems.length && hiddenSkillItems.length) {
+		var skillsGrid = document.querySelector(".bp-skills .skills-grid");
+		var skillsButton = document.createElement("button");
+		skillsButton.type = "button";
+		skillsButton.className = "disclosure-toggle skills-toggle";
+		setDisclosureState(skillsButton, false, "Show fewer skills", "See all skills (" + hiddenSkillItems.length + " more)");
+		skillsButton.addEventListener("click", function () {
+			var expanded = skillsButton.getAttribute("aria-expanded") !== "true";
+			hiddenSkillItems.forEach(function (item) { item.hidden = !expanded; });
+			document.querySelector(".bp-skills").classList.toggle("skills-expanded", expanded);
+			setDisclosureState(skillsButton, expanded, "Show fewer skills", "See all skills (" + hiddenSkillItems.length + " more)");
+		});
+		skillsGrid.insertAdjacentElement("afterend", skillsButton);
 	}
 })();

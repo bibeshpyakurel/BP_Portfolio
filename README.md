@@ -1,12 +1,13 @@
 # BP Portfolio
 
-Single-page portfolio site for software/data engineering roles, built as a static HTML/CSS/JS application and deployed on GitHub Pages.
+Portfolio site with an industry-facing homepage and a dedicated research page, built as a static HTML/CSS/JS application and deployed on GitHub Pages.
 
 ## Architecture
 
 ### Runtime model
-- `index.html` is the only page and source of all section content.
+- `index.html` is the industry-facing page; `research.html` is the academic-facing page.
 - `assets/css/site/portfolio.css` contains design tokens, theme definitions, layout, and section-level overrides.
+- `assets/css/site/research.css` styles the standalone research page.
 - `assets/js/site/portfolio.js` owns all behavior:
   - navigation/scroll interactions
   - theme switching + persistence
@@ -77,6 +78,7 @@ Implemented in `assets/js/site/portfolio.js` under `githubMetrics()`.
 ```text
 .
 ├── index.html
+├── research.html
 ├── README.md
 ├── CONTENT_INVENTORY.md
 ├── assets/
@@ -107,6 +109,8 @@ Open `http://localhost:8000`.
 - GitHub username config: `index.html` (`data-github-username`)
 - Managed experience, projects, research publications, skills, about text, and
   Google Scholar link: `data/portfolio.json`
+- The research page's paper summaries and profile links are also written into
+  `research.html`; update both places when a paper or profile URL changes.
 
 Validate and rebuild managed data locally with:
 

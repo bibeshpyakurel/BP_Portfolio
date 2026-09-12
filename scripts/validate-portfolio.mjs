@@ -12,7 +12,8 @@ if (new Set(allIds).size !== allIds.length) fail("IDs must be unique across mana
 const walk = (value, trail = "root") => {
   if (typeof value === "string") {
     if (/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(value)) fail(`${trail} contains an email address`);
-    if (/(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/.test(value)) fail(`${trail} contains a phone number`);
+    const isSemanticScholarAuthorUrl = /^https:\/\/(?:www\.)?semanticscholar\.org\/author\/[^/]+\/\d+\/?$/.test(value);
+    if (!isSemanticScholarAuthorUrl && /(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/.test(value)) fail(`${trail} contains a phone number`);
     if (/\b(?:USCIS|SEVIS|I-?983|passport|alien registration|A-number)\b/i.test(value)) fail(`${trail} contains restricted language`);
     if (/^(?!https:\/\/).+:\/\//.test(value)) fail(`${trail} contains a non-HTTPS URL`);
   } else if (Array.isArray(value)) value.forEach((entry, index) => walk(entry, `${trail}[${index}]`));

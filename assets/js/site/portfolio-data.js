@@ -14,7 +14,8 @@ globalThis.BP_PORTFOLIO_DATA = Object.freeze({
       "github": "https://github.com/bibeshpyakurel",
       "linkedin": "https://www.linkedin.com/in/bibeshpyakurel/",
       "portfolio": "https://bibesh.digital/",
-      "googleScholar": ""
+      "googleScholar": "https://scholar.google.com/citations?user=Kea7cmgAAAAJ&hl=en",
+      "semanticScholar": "https://www.semanticscholar.org/author/Bibesh-Pyakurel/2438713157"
     }
   },
   "experience": [
@@ -29,7 +30,7 @@ globalThis.BP_PORTFOLIO_DATA = Object.freeze({
       "highlights": [
         "Led pavement crack detection research published on arXiv using Mask R-CNN with a ResNet-101 FPN backbone.",
         "Achieved 84.23% precision, 90.04% recall, and 87.04% F1 on the UWGB-STREETCRACK dataset.",
-        "Benchmarking multimodal large language models on the SlapFinger dataset."
+        "Co-authored SLAPBench, a benchmark of multimodal large language models for four-finger SLAP fingerprint verification."
       ],
       "skills": [
         "Computer Vision",
@@ -61,7 +62,7 @@ globalThis.BP_PORTFOLIO_DATA = Object.freeze({
         "React",
         "Microsoft Azure"
       ],
-      "url": "https://www.se.com/"
+      "url": "https://schneider.com/"
     },
     {
       "id": "brown-county-software-developer",
@@ -301,6 +302,23 @@ globalThis.BP_PORTFOLIO_DATA = Object.freeze({
   ],
   "publications": [
     {
+      "id": "slapbench-fingerprint-verification",
+      "title": "SLAPBench: Benchmarking Multimodal Large Language Models for Four-Finger SLAP Fingerprint Verification",
+      "authors": [
+        "Bibesh Pyakurel",
+        "M. G. Sarwar Murshed"
+      ],
+      "venue": "arXiv preprint",
+      "status": "Preprint",
+      "date": "Jul 17, 2026",
+      "summary": "Introduces a benchmark of 7,832 four-finger SLAP fingerprint pairs and evaluates how prompting affects multimodal model verification behavior and fairness.",
+      "links": {
+        "doi": "https://doi.org/10.48550/arXiv.2607.15517",
+        "arxiv": "https://arxiv.org/abs/2607.15517",
+        "pdf": "https://arxiv.org/pdf/2607.15517"
+      }
+    },
+    {
       "id": "pixel-level-pavement-distress-assessment",
       "title": "Pixel-Level Pavement Distress Assessment Using Instance Segmentation",
       "authors": [
@@ -310,10 +328,10 @@ globalThis.BP_PORTFOLIO_DATA = Object.freeze({
         "Nazim Choudhury",
         "M. G. Sarwar Murshed"
       ],
-      "venue": "arXiv; submitted to IEEE ICMLA 2026",
-      "status": "Under review",
+      "venue": "arXiv preprint",
+      "status": "Preprint",
       "date": "May 25, 2026",
-      "summary": "Evaluates Mask R-CNN models on the field-collected UWGB-STREETCRACK dataset for pixel-level pavement distress assessment.",
+      "summary": "Evaluates Mask R-CNN instance segmentation on field-collected UWGB-StreetCrack images; the best model reached 87.04% F1 under the paper's bounding-box matching protocol.",
       "links": {
         "doi": "https://doi.org/10.48550/arXiv.2605.26095",
         "arxiv": "https://arxiv.org/abs/2605.26095",
