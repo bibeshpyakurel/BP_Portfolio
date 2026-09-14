@@ -19,6 +19,7 @@ const ICONS = {
   scholar: `<svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 0 6l8 5 6.5-4.06V12H16V6L8 1Zm-4.4 8.2V12c0 1.1 2 2.5 4.4 2.5s4.4-1.4 4.4-2.5V9.2L8 12 3.6 9.2Z"/></svg>`,
   sun: `<svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>`,
   moon: `<svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>`,
+  mail: `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`,
   menu: `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>`
 };
 
@@ -73,7 +74,7 @@ const header = (page) => `<a class="skip-link" href="#main">Skip to content</a>
   <div class="site-header__inner">
     <a class="brand" href="index.html">${esc(p.name)}</a>
     ${page === "index" ? `<nav class="site-nav" aria-label="Sections">
-      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a><a class="site-nav__switch" href="research.html">Research portfolio →</a>
+      <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a><a class="site-nav__switch" href="research.html">Research portfolio →</a>
     </nav>` : `<nav class="site-nav" aria-label="Sections">
       <a href="#interests">Interests</a><a href="#papers">Papers</a><a href="#profiles">Profiles</a><a class="site-nav__switch" href="index.html">Industry portfolio →</a>
     </nav>`}
@@ -159,7 +160,7 @@ ${header("index")}
       <h1 id="hero-title">${esc(p.hero)}</h1>
       <p class="lead">${esc(p.lead)}</p>
       <div class="actions">
-        <a class="button button--primary" href="#work">See selected work</a>
+        <a class="button button--primary" href="#projects">Selected projects</a>
         <a class="button" href="research.html">Read the research</a>
       </div>
       <ul class="hero__links" aria-label="Profiles">
@@ -178,8 +179,16 @@ ${header("index")}
     ${p.stats.map((s) => `<div class="stat reveal"><dt>${esc(s.label)}</dt><dd>${esc(s.value)}</dd></div>`).join("\n    ")}
   </dl>
 
-  <section id="work" class="section" aria-labelledby="selected-work-title">
-    ${heading("01", "Selected work", "Things I have built", "Products with real users and research that ships as code. Each one is on GitHub.")}
+  <section id="experience" class="section" aria-labelledby="experience-title">
+    ${heading("01", "Experience", "Where I have worked", "Five internships and a research lead role, across backend engineering, data platforms, and applied AI.")}
+    <ol class="timeline">
+      ${data.experience.map(timelineItem).join("\n      ")}
+    </ol>
+    ${data.alsoExperience?.length ? `<div class="also"><strong>Also:</strong> <ul>${data.alsoExperience.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div>` : ""}
+  </section>
+
+  <section id="projects" class="section" aria-labelledby="projects-title">
+    ${heading("02", "Projects", "Selected projects", "Products with real users and research that ships as code. Each one is on GitHub.")}
     <div class="work-grid">
       ${featured.map(workCard).join("\n      ")}
     </div>
@@ -189,14 +198,6 @@ ${header("index")}
         ${more.map(miniCard).join("\n        ")}
       </ul>
     </div>
-  </section>
-
-  <section id="experience" class="section" aria-labelledby="experience-title">
-    ${heading("02", "Experience", "Where I have worked", "Five internships and a research lead role, across backend engineering, data platforms, and applied AI.")}
-    <ol class="timeline">
-      ${data.experience.map(timelineItem).join("\n      ")}
-    </ol>
-    ${data.alsoExperience?.length ? `<div class="also"><strong>Also:</strong> <ul>${data.alsoExperience.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div>` : ""}
   </section>
 
   <section id="research" class="section" aria-labelledby="research-title">
@@ -241,23 +242,26 @@ ${header("index")}
   </section>
 
   <section id="contact" class="section" aria-labelledby="contact-title">
-    <div class="contact-card reveal">
-      <div>
+    <div class="contact reveal">
+      <div class="contact__intro">
         <p class="eyebrow">06 / Contact</p>
         <h2 id="contact-title">Let's build something that matters.</h2>
-        <p class="lead">${esc(p.availability)} The fastest way to reach me is email or LinkedIn.</p>
-        <div class="actions">
-          <a class="button button--primary" href="mailto:bibespyakurel1100@gmail.com">Email me</a>
-          <button class="button" type="button" data-copy="bibespyakurel1100@gmail.com" aria-describedby="copy-status">Copy address</button>
-        </div>
-        <p id="copy-status" class="copy-status" aria-live="polite"></p>
+        <p class="lead">${esc(p.availability)} Email is the fastest way to reach me; LinkedIn works too.</p>
       </div>
-      <div class="contact-links">
-        <a href="${url(p.links.linkedin)}" target="_blank" rel="noopener noreferrer"><span>LinkedIn <small>in/bibeshpyakurel</small></span>${ARROW}</a>
-        <a href="${url(p.links.github)}" target="_blank" rel="noopener noreferrer"><span>GitHub <small>@bibeshpyakurel</small></span>${ARROW}</a>
-        <a href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer"><span>Google Scholar</span>${ARROW}</a>
-        <a href="${url(p.links.semanticScholar)}" target="_blank" rel="noopener noreferrer"><span>Semantic Scholar</span>${ARROW}</a>
-      </div>
+      <ul class="contact-grid" aria-label="Ways to reach me">
+        <li><a class="contact-tile" href="mailto:bibespyakurel1100@gmail.com">${ICONS.mail}<span class="contact-tile__label">Email</span><span class="contact-tile__value">Send a message</span>${ARROW}</a></li>
+        <li><a class="contact-tile" href="${url(p.links.linkedin)}" target="_blank" rel="noopener noreferrer">${ICONS.linkedin}<span class="contact-tile__label">LinkedIn</span><span class="contact-tile__value">in/bibeshpyakurel</span>${ARROW}</a></li>
+        <li><a class="contact-tile" href="${url(p.links.github)}" target="_blank" rel="noopener noreferrer">${ICONS.github}<span class="contact-tile__label">GitHub</span><span class="contact-tile__value">@bibeshpyakurel</span>${ARROW}</a></li>
+        <li><a class="contact-tile" href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}<span class="contact-tile__label">Google Scholar</span><span class="contact-tile__value">Papers and citations</span>${ARROW}</a></li>
+      </ul>
+      <p class="contact__foot">
+        <button class="link-button" type="button" data-copy="bibespyakurel1100@gmail.com" aria-describedby="copy-status">Copy email address</button>
+        <span>·</span>
+        <a href="${url(p.links.semanticScholar)}" target="_blank" rel="noopener noreferrer">Semantic Scholar</a>
+        <span>·</span>
+        <span>${esc(p.location)}</span>
+      </p>
+      <p id="copy-status" class="copy-status" aria-live="polite"></p>
     </div>
   </section>
 </main>

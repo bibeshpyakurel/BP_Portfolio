@@ -38,7 +38,7 @@
   <div class="site-header__inner">
     <a class="brand" href="index.html">Bibesh Pyakurel</a>
     <nav class="site-nav" aria-label="Sections">
-      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a><a class="site-nav__switch" href="research.html">Research portfolio →</a>
+      <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a><a class="site-nav__switch" href="research.html">Research portfolio →</a>
     </nav>
     <div class="site-header__actions">
       <nav class="portfolio-switch" aria-label="Portfolio paths">
@@ -57,7 +57,7 @@
       <h1 id="hero-title">I build systems that connect software, data, and applied AI.</h1>
       <p class="lead">Computer science graduate from the University of Wisconsin–Green Bay. Five industry internships across backend engineering, cloud data pipelines, and AI integration, plus two arXiv preprints in computer vision and multimodal model evaluation. Currently leading applied research at UW–Green Bay.</p>
       <div class="actions">
-        <a class="button button--primary" href="#work">See selected work</a>
+        <a class="button button--primary" href="#projects">Selected projects</a>
         <a class="button" href="research.html">Read the research</a>
       </div>
       <ul class="hero__links" aria-label="Profiles">
@@ -79,10 +79,84 @@
     <div class="stat reveal"><dt>SLAPBench fingerprint pairs</dt><dd>7,832</dd></div>
   </dl>
 
-  <section id="work" class="section" aria-labelledby="selected-work-title">
+  <section id="experience" class="section" aria-labelledby="experience-title">
     <div class="section-heading reveal">
-  <p class="eyebrow">01 / Selected work</p>
-  <h2 id="selected-work-title">Things I have built</h2>
+  <p class="eyebrow">01 / Experience</p>
+  <h2 id="experience-title">Where I have worked</h2>
+  <p class="section-intro">Five internships and a research lead role, across backend engineering, data platforms, and applied AI.</p>
+</div>
+    <ol class="timeline">
+      <li class="timeline-item reveal">
+  <div class="timeline-item__when">Feb 2026 – Present<small>Green Bay, WI</small></div>
+  <div>
+    <h3>Research Lead <span>· <a href="https://www.uwgb.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a></span></h3>
+    <p class="timeline-item__summary">Leading applied AI research with Prof. M. G. Sarwar Murshed across pavement distress assessment and multimodal benchmark evaluation.</p>
+    <ul class="timeline-item__highlights"><li>First-authored SLAPBench, the first benchmark of multimodal LLMs for four-finger SLAP fingerprint verification: 7,832 NIST SD302b pairs, five models, three prompting strategies, and a demographic fairness probe.</li><li>Led the pavement crack detection study to an arXiv preprint. Mask R-CNN with a ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1 on UWGB-StreetCrack.</li></ul>
+    <ul class="chips" aria-label="Technologies"><li class="chip">Computer Vision</li><li class="chip">Mask R-CNN</li><li class="chip">Detectron2</li><li class="chip">Multimodal LLMs</li><li class="chip">Model Evaluation</li></ul>
+  </div>
+</li>
+      <li class="timeline-item reveal">
+  <div class="timeline-item__when">May 2025 – Aug 2025<small>Green Bay, WI · Hybrid</small></div>
+  <div>
+    <h3>Software Developer Intern <span>· <a href="https://schneider.com/" target="_blank" rel="noopener noreferrer">Schneider</a></span></h3>
+    <p class="timeline-item__summary">Built Redis observability tooling and supported an Azure migration for offer-management applications.</p>
+    <ul class="timeline-item__highlights"><li>Engineered a Spring Boot client library that collects Redis key metrics and publishes them to Dynatrace for real-time telemetry across on-premise and Azure-hosted Redis.</li><li>Designed integration logic that supports multiple Redis configurations dynamically, cutting deployment time by about 40% during the Azure migration.</li><li>Maintained the SNIConfig React application, fixing UI bugs and improving reliability in production workflows.</li></ul>
+    <ul class="chips" aria-label="Technologies"><li class="chip">Java</li><li class="chip">Spring Boot</li><li class="chip">Redis</li><li class="chip">Dynatrace</li><li class="chip">React</li><li class="chip">Microsoft Azure</li></ul>
+  </div>
+</li>
+      <li class="timeline-item reveal">
+  <div class="timeline-item__when">Feb 2025 – Apr 2025<small>Green Bay, WI · Remote</small></div>
+  <div>
+    <h3>Software Developer Intern <span>· <a href="https://www.browncountywi.gov/" target="_blank" rel="noopener noreferrer">Brown County</a></span></h3>
+    <p class="timeline-item__summary">Built ERP backend modules on Odoo for county operations.</p>
+    <ul class="timeline-item__highlights"><li>Implemented and integrated five Odoo modules in Python with PostgreSQL spanning HR, procurement, inventory, finance, and operations.</li><li>Refactored queries and data-access patterns to bring inter-module API response time from 125 ms to 100 ms.</li></ul>
+    <ul class="chips" aria-label="Technologies"><li class="chip">Python</li><li class="chip">Odoo</li><li class="chip">PostgreSQL</li><li class="chip">ERP</li></ul>
+  </div>
+</li>
+      <li class="timeline-item reveal">
+  <div class="timeline-item__when">Sep 2024 – Dec 2024<small>Green Bay, WI · Remote</small></div>
+  <div>
+    <h3>Research Assistant, Pavement Crack Detection <span>· <a href="https://www.wisys.org/" target="_blank" rel="noopener noreferrer">WiSys</a></span></h3>
+    <p class="timeline-item__summary">Contributed to a vision-based pavement crack detection system and its publication.</p>
+    <ul class="timeline-item__highlights"><li>Collected and annotated field imagery in Label Studio to build the UWGB-StreetCrack training set.</li><li>Trained and compared Mask R-CNN backbone variants in Detectron2 and supported the LaTeX write-up.</li></ul>
+    <ul class="chips" aria-label="Technologies"><li class="chip">Deep Learning</li><li class="chip">Label Studio</li><li class="chip">Detectron2</li><li class="chip">LaTeX</li></ul>
+  </div>
+</li>
+      <li class="timeline-item reveal">
+  <div class="timeline-item__when">May 2024 – Aug 2024<small>Menasha, WI · Hybrid</small></div>
+  <div>
+    <h3>Data Engineer Intern <span>· <a href="https://www.faithtechinc.com/" target="_blank" rel="noopener noreferrer">Faith Technologies Incorporated</a></span></h3>
+    <p class="timeline-item__summary">Built Azure data pipelines, analytics dashboards, predictive models, and internal AI agents.</p>
+    <ul class="timeline-item__highlights"><li>Built and optimized ETL/ELT pipelines in Azure Data Factory across five source systems, processing millions of records and cutting the reporting cycle from 3 hours to 30 minutes.</li><li>Delivered Power BI dashboards used by five business departments for day-to-day decisions.</li><li>Built an internal AI assistant with GPT-4 and Microsoft Copilot Studio that reduced employee lookup time by about 55%.</li></ul>
+    <ul class="chips" aria-label="Technologies"><li class="chip">Azure Data Factory</li><li class="chip">SQL</li><li class="chip">Power BI</li><li class="chip">Machine Learning</li><li class="chip">Copilot Studio</li></ul>
+  </div>
+</li>
+      <li class="timeline-item reveal">
+  <div class="timeline-item__when">Feb 2024 – May 2024<small>Green Bay, WI</small></div>
+  <div>
+    <h3>Computer Science Intern, Security <span>· <a href="https://www.uwgb.edu/resch-school-of-engineering/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a></span></h3>
+    <p class="timeline-item__summary">Ran offensive-security labs on Linux and documented them for future students.</p>
+    <ul class="timeline-item__highlights"><li>Completed labs on buffer overflow, return-to-libc, ROP, format-string, and race-condition vulnerabilities on Ubuntu and Kali Linux.</li><li>Wrote lab manuals covering exploit setup, execution path, and mitigation strategies.</li></ul>
+    <ul class="chips" aria-label="Technologies"><li class="chip">Linux</li><li class="chip">Vulnerability Analysis</li><li class="chip">Technical Writing</li></ul>
+  </div>
+</li>
+      <li class="timeline-item reveal">
+  <div class="timeline-item__when">Jan 2024 – May 2024<small>Green Bay, WI</small></div>
+  <div>
+    <h3>Teaching Assistant <span>· <a href="https://www.uwgb.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a></span></h3>
+    <p class="timeline-item__summary">Mentored students in Python, debugging, and data analysis.</p>
+    <ul class="timeline-item__highlights"><li>Led weekly lab sessions and office hours for 30+ students; the lab pass rate rose from 20% to 45%.</li></ul>
+    <ul class="chips" aria-label="Technologies"><li class="chip">Python</li><li class="chip">Teaching</li><li class="chip">Mentoring</li></ul>
+  </div>
+</li>
+    </ol>
+    <div class="also"><strong>Also:</strong> <ul><li>Founder &amp; President, Nepalese Students&#39; Association at UW–Green Bay (2024–2025)</li><li>Resident Assistant, UW–Green Bay Housing (2023–2025)</li><li>Student PEEP, The Weidner Center: ELT of ticket-buyer data into Salesforce and website updates (2023–2025)</li></ul></div>
+  </section>
+
+  <section id="projects" class="section" aria-labelledby="projects-title">
+    <div class="section-heading reveal">
+  <p class="eyebrow">02 / Projects</p>
+  <h2 id="projects-title">Selected projects</h2>
   <p class="section-intro">Products with real users and research that ships as code. Each one is on GitHub.</p>
 </div>
     <div class="work-grid">
@@ -198,80 +272,6 @@
     </div>
   </section>
 
-  <section id="experience" class="section" aria-labelledby="experience-title">
-    <div class="section-heading reveal">
-  <p class="eyebrow">02 / Experience</p>
-  <h2 id="experience-title">Where I have worked</h2>
-  <p class="section-intro">Five internships and a research lead role, across backend engineering, data platforms, and applied AI.</p>
-</div>
-    <ol class="timeline">
-      <li class="timeline-item reveal">
-  <div class="timeline-item__when">Feb 2026 – Present<small>Green Bay, WI</small></div>
-  <div>
-    <h3>Research Lead <span>· <a href="https://www.uwgb.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a></span></h3>
-    <p class="timeline-item__summary">Leading applied AI research with Prof. M. G. Sarwar Murshed across pavement distress assessment and multimodal benchmark evaluation.</p>
-    <ul class="timeline-item__highlights"><li>First-authored SLAPBench, the first benchmark of multimodal LLMs for four-finger SLAP fingerprint verification: 7,832 NIST SD302b pairs, five models, three prompting strategies, and a demographic fairness probe.</li><li>Led the pavement crack detection study to an arXiv preprint. Mask R-CNN with a ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1 on UWGB-StreetCrack.</li></ul>
-    <ul class="chips" aria-label="Technologies"><li class="chip">Computer Vision</li><li class="chip">Mask R-CNN</li><li class="chip">Detectron2</li><li class="chip">Multimodal LLMs</li><li class="chip">Model Evaluation</li></ul>
-  </div>
-</li>
-      <li class="timeline-item reveal">
-  <div class="timeline-item__when">May 2025 – Aug 2025<small>Green Bay, WI · Hybrid</small></div>
-  <div>
-    <h3>Software Developer Intern <span>· <a href="https://schneider.com/" target="_blank" rel="noopener noreferrer">Schneider</a></span></h3>
-    <p class="timeline-item__summary">Built Redis observability tooling and supported an Azure migration for offer-management applications.</p>
-    <ul class="timeline-item__highlights"><li>Engineered a Spring Boot client library that collects Redis key metrics and publishes them to Dynatrace for real-time telemetry across on-premise and Azure-hosted Redis.</li><li>Designed integration logic that supports multiple Redis configurations dynamically, cutting deployment time by about 40% during the Azure migration.</li><li>Maintained the SNIConfig React application, fixing UI bugs and improving reliability in production workflows.</li></ul>
-    <ul class="chips" aria-label="Technologies"><li class="chip">Java</li><li class="chip">Spring Boot</li><li class="chip">Redis</li><li class="chip">Dynatrace</li><li class="chip">React</li><li class="chip">Microsoft Azure</li></ul>
-  </div>
-</li>
-      <li class="timeline-item reveal">
-  <div class="timeline-item__when">Feb 2025 – Apr 2025<small>Green Bay, WI · Remote</small></div>
-  <div>
-    <h3>Software Developer Intern <span>· <a href="https://www.browncountywi.gov/" target="_blank" rel="noopener noreferrer">Brown County</a></span></h3>
-    <p class="timeline-item__summary">Built ERP backend modules on Odoo for county operations.</p>
-    <ul class="timeline-item__highlights"><li>Implemented and integrated five Odoo modules in Python with PostgreSQL spanning HR, procurement, inventory, finance, and operations.</li><li>Refactored queries and data-access patterns to bring inter-module API response time from 125 ms to 100 ms.</li></ul>
-    <ul class="chips" aria-label="Technologies"><li class="chip">Python</li><li class="chip">Odoo</li><li class="chip">PostgreSQL</li><li class="chip">ERP</li></ul>
-  </div>
-</li>
-      <li class="timeline-item reveal">
-  <div class="timeline-item__when">Sep 2024 – Dec 2024<small>Green Bay, WI · Remote</small></div>
-  <div>
-    <h3>Research Assistant, Pavement Crack Detection <span>· <a href="https://www.wisys.org/" target="_blank" rel="noopener noreferrer">WiSys</a></span></h3>
-    <p class="timeline-item__summary">Contributed to a vision-based pavement crack detection system and its publication.</p>
-    <ul class="timeline-item__highlights"><li>Collected and annotated field imagery in Label Studio to build the UWGB-StreetCrack training set.</li><li>Trained and compared Mask R-CNN backbone variants in Detectron2 and supported the LaTeX write-up.</li></ul>
-    <ul class="chips" aria-label="Technologies"><li class="chip">Deep Learning</li><li class="chip">Label Studio</li><li class="chip">Detectron2</li><li class="chip">LaTeX</li></ul>
-  </div>
-</li>
-      <li class="timeline-item reveal">
-  <div class="timeline-item__when">May 2024 – Aug 2024<small>Menasha, WI · Hybrid</small></div>
-  <div>
-    <h3>Data Engineer Intern <span>· <a href="https://www.faithtechinc.com/" target="_blank" rel="noopener noreferrer">Faith Technologies Incorporated</a></span></h3>
-    <p class="timeline-item__summary">Built Azure data pipelines, analytics dashboards, predictive models, and internal AI agents.</p>
-    <ul class="timeline-item__highlights"><li>Built and optimized ETL/ELT pipelines in Azure Data Factory across five source systems, processing millions of records and cutting the reporting cycle from 3 hours to 30 minutes.</li><li>Delivered Power BI dashboards used by five business departments for day-to-day decisions.</li><li>Built an internal AI assistant with GPT-4 and Microsoft Copilot Studio that reduced employee lookup time by about 55%.</li></ul>
-    <ul class="chips" aria-label="Technologies"><li class="chip">Azure Data Factory</li><li class="chip">SQL</li><li class="chip">Power BI</li><li class="chip">Machine Learning</li><li class="chip">Copilot Studio</li></ul>
-  </div>
-</li>
-      <li class="timeline-item reveal">
-  <div class="timeline-item__when">Feb 2024 – May 2024<small>Green Bay, WI</small></div>
-  <div>
-    <h3>Computer Science Intern, Security <span>· <a href="https://www.uwgb.edu/resch-school-of-engineering/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a></span></h3>
-    <p class="timeline-item__summary">Ran offensive-security labs on Linux and documented them for future students.</p>
-    <ul class="timeline-item__highlights"><li>Completed labs on buffer overflow, return-to-libc, ROP, format-string, and race-condition vulnerabilities on Ubuntu and Kali Linux.</li><li>Wrote lab manuals covering exploit setup, execution path, and mitigation strategies.</li></ul>
-    <ul class="chips" aria-label="Technologies"><li class="chip">Linux</li><li class="chip">Vulnerability Analysis</li><li class="chip">Technical Writing</li></ul>
-  </div>
-</li>
-      <li class="timeline-item reveal">
-  <div class="timeline-item__when">Jan 2024 – May 2024<small>Green Bay, WI</small></div>
-  <div>
-    <h3>Teaching Assistant <span>· <a href="https://www.uwgb.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin–Green Bay</a></span></h3>
-    <p class="timeline-item__summary">Mentored students in Python, debugging, and data analysis.</p>
-    <ul class="timeline-item__highlights"><li>Led weekly lab sessions and office hours for 30+ students; the lab pass rate rose from 20% to 45%.</li></ul>
-    <ul class="chips" aria-label="Technologies"><li class="chip">Python</li><li class="chip">Teaching</li><li class="chip">Mentoring</li></ul>
-  </div>
-</li>
-    </ol>
-    <div class="also"><strong>Also:</strong> <ul><li>Founder &amp; President, Nepalese Students&#39; Association at UW–Green Bay (2024–2025)</li><li>Resident Assistant, UW–Green Bay Housing (2023–2025)</li><li>Student PEEP, The Weidner Center: ELT of ticket-buyer data into Salesforce and website updates (2023–2025)</li></ul></div>
-  </section>
-
   <section id="research" class="section" aria-labelledby="research-title">
     <div class="section-heading reveal">
   <p class="eyebrow">03 / Research</p>
@@ -352,23 +352,26 @@
   </section>
 
   <section id="contact" class="section" aria-labelledby="contact-title">
-    <div class="contact-card reveal">
-      <div>
+    <div class="contact reveal">
+      <div class="contact__intro">
         <p class="eyebrow">06 / Contact</p>
         <h2 id="contact-title">Let's build something that matters.</h2>
-        <p class="lead">Open to software, backend, data, and applied-AI roles. The fastest way to reach me is email or LinkedIn.</p>
-        <div class="actions">
-          <a class="button button--primary" href="mailto:bibespyakurel1100@gmail.com">Email me</a>
-          <button class="button" type="button" data-copy="bibespyakurel1100@gmail.com" aria-describedby="copy-status">Copy address</button>
-        </div>
-        <p id="copy-status" class="copy-status" aria-live="polite"></p>
+        <p class="lead">Open to software, backend, data, and applied-AI roles. Email is the fastest way to reach me; LinkedIn works too.</p>
       </div>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/bibeshpyakurel/" target="_blank" rel="noopener noreferrer"><span>LinkedIn <small>in/bibeshpyakurel</small></span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
-        <a href="https://github.com/bibeshpyakurel" target="_blank" rel="noopener noreferrer"><span>GitHub <small>@bibeshpyakurel</small></span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
-        <a href="https://scholar.google.com/citations?user=Kea7cmgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><span>Google Scholar</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
-        <a href="https://www.semanticscholar.org/author/Bibesh-Pyakurel/2438713157" target="_blank" rel="noopener noreferrer"><span>Semantic Scholar</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a>
-      </div>
+      <ul class="contact-grid" aria-label="Ways to reach me">
+        <li><a class="contact-tile" href="mailto:bibespyakurel1100@gmail.com"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="contact-tile__label">Email</span><span class="contact-tile__value">Send a message</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a></li>
+        <li><a class="contact-tile" href="https://www.linkedin.com/in/bibeshpyakurel/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0ZM5 13H3V6h2v7ZM4 5a1.2 1.2 0 1 1 0-2.4A1.2 1.2 0 0 1 4 5Zm9 8h-2V9.6c0-.9-.3-1.5-1.1-1.5-.6 0-1 .4-1.1.8-.1.1-.1.4-.1.6V13H6.7V6h2v.9c.3-.4.9-1.1 2.1-1.1 1.5 0 2.6 1 2.6 3.1V13Z"/></svg><span class="contact-tile__label">LinkedIn</span><span class="contact-tile__value">in/bibeshpyakurel</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a></li>
+        <li><a class="contact-tile" href="https://github.com/bibeshpyakurel" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span class="contact-tile__label">GitHub</span><span class="contact-tile__value">@bibeshpyakurel</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a></li>
+        <li><a class="contact-tile" href="https://scholar.google.com/citations?user=Kea7cmgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 0 6l8 5 6.5-4.06V12H16V6L8 1Zm-4.4 8.2V12c0 1.1 2 2.5 4.4 2.5s4.4-1.4 4.4-2.5V9.2L8 12 3.6 9.2Z"/></svg><span class="contact-tile__label">Google Scholar</span><span class="contact-tile__value">Papers and citations</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a></li>
+      </ul>
+      <p class="contact__foot">
+        <button class="link-button" type="button" data-copy="bibespyakurel1100@gmail.com" aria-describedby="copy-status">Copy email address</button>
+        <span>·</span>
+        <a href="https://www.semanticscholar.org/author/Bibesh-Pyakurel/2438713157" target="_blank" rel="noopener noreferrer">Semantic Scholar</a>
+        <span>·</span>
+        <span>Green Bay, Wisconsin · United States</span>
+      </p>
+      <p id="copy-status" class="copy-status" aria-live="polite"></p>
     </div>
   </section>
 </main>
