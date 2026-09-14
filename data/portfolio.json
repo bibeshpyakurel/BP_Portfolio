@@ -16,10 +16,22 @@
       "I care about why a system exists as much as how it works. In 2020 I published यथार्थ (Reality), a Nepali book on love, society, and inequality. It taught me that empathy and nuance matter as much as functionality, and that the best solutions connect with people."
     ],
     "stats": [
-      { "value": "2", "label": "arXiv preprints" },
-      { "value": "5", "label": "industry internships" },
-      { "value": "87.04%", "label": "best crack-detection F1" },
-      { "value": "7,832", "label": "SLAPBench fingerprint pairs" }
+      {
+        "value": "2",
+        "label": "arXiv preprints"
+      },
+      {
+        "value": "5",
+        "label": "industry internships"
+      },
+      {
+        "value": "87.04%",
+        "label": "best crack-detection F1"
+      },
+      {
+        "value": "7,832",
+        "label": "SLAPBench fingerprint pairs"
+      }
     ],
     "education": {
       "degree": "B.S. Computer Science",
@@ -33,9 +45,18 @@
       ]
     },
     "beyond": [
-      { "title": "Author", "text": "Published यथार्थ (Reality) in 2020, a Nepali book exploring love, society, and inequality." },
-      { "title": "Community", "text": "Founded and led the Nepalese Students' Association at UW–Green Bay. Three years as a Resident Assistant." },
-      { "title": "Teaching", "text": "Teaching Assistant for Python labs, mentoring 30+ students and helping raise the lab pass rate from 20% to 45%." }
+      {
+        "title": "Author",
+        "text": "Published यथार्थ (Reality) in 2020, a Nepali book exploring love, society, and inequality."
+      },
+      {
+        "title": "Community",
+        "text": "Founded and led the Nepalese Students' Association at UW–Green Bay. Three years as a Resident Assistant."
+      },
+      {
+        "title": "Teaching",
+        "text": "Teaching Assistant for Python labs, mentoring 30+ students and helping raise the lab pass rate from 20% to 45%."
+      }
     ],
     "links": {
       "github": "https://github.com/bibeshpyakurel",
@@ -45,9 +66,18 @@
       "semanticScholar": "https://www.semanticscholar.org/author/Bibesh-Pyakurel/2438713157"
     },
     "researchInterests": [
-      { "title": "Computer vision for infrastructure", "text": "Instance segmentation and field-collected imagery for more precise pavement distress assessment." },
-      { "title": "Multimodal model evaluation", "text": "Benchmarks that reveal how prompting changes model behavior on demanding visual verification tasks." },
-      { "title": "Trustworthy biometric AI", "text": "Reliability, failure modes, and subgroup fairness in fingerprint verification with multimodal models." }
+      {
+        "title": "Computer vision for infrastructure",
+        "text": "Instance segmentation and field-collected imagery for more precise pavement distress assessment."
+      },
+      {
+        "title": "Multimodal model evaluation",
+        "text": "Benchmarks that reveal how prompting changes model behavior on demanding visual verification tasks."
+      },
+      {
+        "title": "Trustworthy biometric AI",
+        "text": "Reliability, failure modes, and subgroup fairness in fingerprint verification with multimodal models."
+      }
     ]
   },
   "experience": [
@@ -63,7 +93,13 @@
         "First-authored SLAPBench, the first benchmark of multimodal LLMs for four-finger SLAP fingerprint verification: 7,832 NIST SD302b pairs, five models, three prompting strategies, and a demographic fairness probe.",
         "Led the pavement crack detection study to an arXiv preprint. Mask R-CNN with a ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1 on UWGB-StreetCrack."
       ],
-      "skills": ["Computer Vision", "Mask R-CNN", "Detectron2", "Multimodal LLMs", "Model Evaluation"],
+      "skills": [
+        "Computer Vision",
+        "Mask R-CNN",
+        "Detectron2",
+        "Multimodal LLMs",
+        "Model Evaluation"
+      ],
       "url": "https://www.uwgb.edu/"
     },
     {
@@ -79,7 +115,14 @@
         "Designed integration logic that supports multiple Redis configurations dynamically, cutting deployment time by about 40% during the Azure migration.",
         "Maintained the SNIConfig React application, fixing UI bugs and improving reliability in production workflows."
       ],
-      "skills": ["Java", "Spring Boot", "Redis", "Dynatrace", "React", "Microsoft Azure"],
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "Redis",
+        "Dynatrace",
+        "React",
+        "Microsoft Azure"
+      ],
       "url": "https://schneider.com/"
     },
     {
@@ -94,7 +137,12 @@
         "Implemented and integrated five Odoo modules in Python with PostgreSQL spanning HR, procurement, inventory, finance, and operations.",
         "Refactored queries and data-access patterns to bring inter-module API response time from 125 ms to 100 ms."
       ],
-      "skills": ["Python", "Odoo", "PostgreSQL", "ERP"],
+      "skills": [
+        "Python",
+        "Odoo",
+        "PostgreSQL",
+        "ERP"
+      ],
       "url": "https://www.browncountywi.gov/"
     },
     {
@@ -109,7 +157,12 @@
         "Collected and annotated field imagery in Label Studio to build the UWGB-StreetCrack training set.",
         "Trained and compared Mask R-CNN backbone variants in Detectron2 and supported the LaTeX write-up."
       ],
-      "skills": ["Deep Learning", "Label Studio", "Detectron2", "LaTeX"],
+      "skills": [
+        "Deep Learning",
+        "Label Studio",
+        "Detectron2",
+        "LaTeX"
+      ],
       "url": "https://www.wisys.org/"
     },
     {
@@ -125,7 +178,13 @@
         "Delivered Power BI dashboards used by five business departments for day-to-day decisions.",
         "Built an internal AI assistant with GPT-4 and Microsoft Copilot Studio that reduced employee lookup time by about 55%."
       ],
-      "skills": ["Azure Data Factory", "SQL", "Power BI", "Machine Learning", "Copilot Studio"],
+      "skills": [
+        "Azure Data Factory",
+        "SQL",
+        "Power BI",
+        "Machine Learning",
+        "Copilot Studio"
+      ],
       "url": "https://www.faithtechinc.com/"
     },
     {
@@ -140,7 +199,11 @@
         "Completed labs on buffer overflow, return-to-libc, ROP, format-string, and race-condition vulnerabilities on Ubuntu and Kali Linux.",
         "Wrote lab manuals covering exploit setup, execution path, and mitigation strategies."
       ],
-      "skills": ["Linux", "Vulnerability Analysis", "Technical Writing"],
+      "skills": [
+        "Linux",
+        "Vulnerability Analysis",
+        "Technical Writing"
+      ],
       "url": "https://www.uwgb.edu/resch-school-of-engineering/"
     },
     {
@@ -154,7 +217,11 @@
       "highlights": [
         "Led weekly lab sessions and office hours for 30+ students; the lab pass rate rose from 20% to 45%."
       ],
-      "skills": ["Python", "Teaching", "Mentoring"],
+      "skills": [
+        "Python",
+        "Teaching",
+        "Mentoring"
+      ],
       "url": "https://www.uwgb.edu/"
     }
   ],
@@ -176,10 +243,29 @@
         "Full purchase-order lifecycle from draft through approval, partial receipt, completion, and cancellation, with a complete audit trail.",
         "Clean Architecture backend, Testcontainers integration tests against real PostgreSQL, Docker multi-stage builds, and GitHub Actions CI/CD."
       ],
-      "metric": { "value": "6", "label": "industry verticals seeded" },
-      "technologies": [".NET 9", "ASP.NET Core", "EF Core", "PostgreSQL", "React 19", "TypeScript", "Docker"],
-      "categories": ["backend", "data", "web"],
-      "links": { "github": "https://github.com/bibeshpyakurel/ClearERP", "live": "", "publication": "" }
+      "metric": {
+        "value": "6",
+        "label": "industry verticals seeded"
+      },
+      "technologies": [
+        ".NET 9",
+        "ASP.NET Core",
+        "EF Core",
+        "PostgreSQL",
+        "React 19",
+        "TypeScript",
+        "Docker"
+      ],
+      "categories": [
+        "backend",
+        "data",
+        "web"
+      ],
+      "links": {
+        "github": "https://github.com/bibeshpyakurel/ClearERP",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "trainlytics",
@@ -193,10 +279,30 @@
         "Dashboard analytics in Recharts for strength, muscle-group balance, and energy trends; AI insights endpoint with validation, rate limiting, and timeouts.",
         "CI runs lint, typecheck, unit tests, and database migration plan validation on every push."
       ],
-      "metric": { "value": "RLS", "label": "database-enforced isolation" },
-      "technologies": ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "OpenAI API", "Tailwind CSS", "GitHub Actions"],
-      "categories": ["backend", "data", "ai", "web"],
-      "links": { "github": "https://github.com/bibeshpyakurel/Trainlytics", "live": "https://trainlytics-two.vercel.app/login/", "publication": "" }
+      "metric": {
+        "value": "RLS",
+        "label": "database-enforced isolation"
+      },
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "OpenAI API",
+        "Tailwind CSS",
+        "GitHub Actions"
+      ],
+      "categories": [
+        "backend",
+        "data",
+        "ai",
+        "web"
+      ],
+      "links": {
+        "github": "https://github.com/bibeshpyakurel/Trainlytics",
+        "live": "https://trainlytics-two.vercel.app/login/",
+        "publication": ""
+      }
     },
     {
       "id": "slapbench",
@@ -210,10 +316,26 @@
         "Shows prompt-driven verification collapse under binary prompting and recovers discrimination with similarity-scoring prompts.",
         "Includes matched-resolution and demographic fairness probes over gender, race, and age."
       ],
-      "metric": { "value": "7,832", "label": "fingerprint pairs evaluated" },
-      "technologies": ["Python", "PyTorch", "Multimodal LLMs", "NIST SD302b", "Evaluation"],
-      "categories": ["research", "ai"],
-      "links": { "github": "https://github.com/bibeshpyakurel/SLAPBench", "live": "", "publication": "https://arxiv.org/abs/2607.15517" }
+      "metric": {
+        "value": "7,832",
+        "label": "fingerprint pairs evaluated"
+      },
+      "technologies": [
+        "Python",
+        "PyTorch",
+        "Multimodal LLMs",
+        "NIST SD302b",
+        "Evaluation"
+      ],
+      "categories": [
+        "research",
+        "ai"
+      ],
+      "links": {
+        "github": "https://github.com/bibeshpyakurel/SLAPBench",
+        "live": "",
+        "publication": "https://arxiv.org/abs/2607.15517"
+      }
     },
     {
       "id": "jobinsight",
@@ -227,10 +349,28 @@
         "Node.js/Express proxy keeps the OpenAI key server-side behind a Google OAuth gate; seven-day cache makes repeat views instant.",
         "GPT-4o-mini keeps each analysis under $0.0005."
       ],
-      "metric": { "value": "<$0.0005", "label": "cost per job analysis" },
-      "technologies": ["Chrome MV3", "JavaScript", "Node.js", "Express", "OpenAI API", "Google OAuth"],
-      "categories": ["ai", "backend", "web"],
-      "links": { "github": "https://github.com/bibeshpyakurel/JobInsight", "live": "", "publication": "" }
+      "metric": {
+        "value": "<$0.0005",
+        "label": "cost per job analysis"
+      },
+      "technologies": [
+        "Chrome MV3",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "OpenAI API",
+        "Google OAuth"
+      ],
+      "categories": [
+        "ai",
+        "backend",
+        "web"
+      ],
+      "links": {
+        "github": "https://github.com/bibeshpyakurel/JobInsight",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "pavement-distress-assessment",
@@ -240,9 +380,22 @@
       "date": "2024 – 2026",
       "summary": "Mask R-CNN instance segmentation on the field-collected UWGB-StreetCrack dataset; the ResNet-101 FPN backbone reached 87.04% F1.",
       "highlights": [],
-      "technologies": ["Python", "PyTorch", "Detectron2", "Label Studio"],
-      "categories": ["research", "ai", "data"],
-      "links": { "github": "", "live": "", "publication": "https://arxiv.org/abs/2605.26095" }
+      "technologies": [
+        "Python",
+        "PyTorch",
+        "Detectron2",
+        "Label Studio"
+      ],
+      "categories": [
+        "research",
+        "ai",
+        "data"
+      ],
+      "links": {
+        "github": "",
+        "live": "",
+        "publication": "https://arxiv.org/abs/2605.26095"
+      }
     },
     {
       "id": "music-emotion-predictor",
@@ -252,9 +405,21 @@
       "date": "Jan 2025 – May 2025",
       "summary": "Classifies 278K+ tracks into Calm, Sad, Energetic, and Happy with Decision Tree, KNN, and K-Means; evaluated with accuracy and Adjusted Rand Index, visualized with PCA.",
       "highlights": [],
-      "technologies": ["Python", "scikit-learn", "Pandas", "Matplotlib"],
-      "categories": ["ai", "data"],
-      "links": { "github": "https://github.com/bibeshpyakurel/Music-Emotion-Predictor", "live": "", "publication": "" }
+      "technologies": [
+        "Python",
+        "scikit-learn",
+        "Pandas",
+        "Matplotlib"
+      ],
+      "categories": [
+        "ai",
+        "data"
+      ],
+      "links": {
+        "github": "https://github.com/bibeshpyakurel/Music-Emotion-Predictor",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "resume-job-matcher",
@@ -264,9 +429,21 @@
       "date": "Sep 2024 – Dec 2024",
       "summary": "Parses PDF resumes, scores them against a job description with keyword matching and cosine similarity, and batch-ranks candidates.",
       "highlights": [],
-      "technologies": ["Python", "scikit-learn", "NLTK", "PyPDF2"],
-      "categories": ["ai", "data"],
-      "links": { "github": "https://github.com/bibeshpyakurel/Resume-Job-Description-Matching-System", "live": "", "publication": "" }
+      "technologies": [
+        "Python",
+        "scikit-learn",
+        "NLTK",
+        "PyPDF2"
+      ],
+      "categories": [
+        "ai",
+        "data"
+      ],
+      "links": {
+        "github": "https://github.com/bibeshpyakurel/Resume-Job-Description-Matching-System",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "script-viewer",
@@ -276,9 +453,18 @@
       "date": "2026",
       "summary": "Parses call-center script XML into JSON and renders it for review while preserving every element, attribute, namespace, and sibling order.",
       "highlights": [],
-      "technologies": ["TypeScript", "Vite"],
-      "categories": ["web"],
-      "links": { "github": "https://github.com/bibeshpyakurel/script-viewer", "live": "", "publication": "" }
+      "technologies": [
+        "TypeScript",
+        "Vite"
+      ],
+      "categories": [
+        "web"
+      ],
+      "links": {
+        "github": "https://github.com/bibeshpyakurel/script-viewer",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "cybersecurity-labs",
@@ -288,9 +474,19 @@
       "date": "Spring 2024",
       "summary": "Hands-on buffer overflow, return-to-libc, ROP, and format-string exploitation on Linux, written up as reusable lab manuals.",
       "highlights": [],
-      "technologies": ["Linux", "Kali", "GDB"],
-      "categories": ["security"],
-      "links": { "github": "", "live": "", "publication": "" }
+      "technologies": [
+        "Linux",
+        "Kali",
+        "GDB"
+      ],
+      "categories": [
+        "security"
+      ],
+      "links": {
+        "github": "",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "typing-speed-game",
@@ -300,9 +496,18 @@
       "date": "2024",
       "summary": "Monkeytype-inspired JavaFX trainer with real-time WPM, accuracy, and error tracking in an MVC structure.",
       "highlights": [],
-      "technologies": ["Java", "JavaFX"],
-      "categories": ["web"],
-      "links": { "github": "", "live": "", "publication": "" }
+      "technologies": [
+        "Java",
+        "JavaFX"
+      ],
+      "categories": [
+        "web"
+      ],
+      "links": {
+        "github": "",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "blackjack",
@@ -312,9 +517,18 @@
       "date": "Fall 2023",
       "summary": "Collaborative Java desktop Blackjack with a card engine, betting logic, and Scene Builder GUI.",
       "highlights": [],
-      "technologies": ["Java", "Scene Builder"],
-      "categories": ["web"],
-      "links": { "github": "", "live": "", "publication": "" }
+      "technologies": [
+        "Java",
+        "Scene Builder"
+      ],
+      "categories": [
+        "web"
+      ],
+      "links": {
+        "github": "",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "student-budget-calculator",
@@ -324,9 +538,18 @@
       "date": "Fall 2023",
       "summary": "Java budgeting tool with category grouping, remaining-balance tracking, and input validation.",
       "highlights": [],
-      "technologies": ["Java", "Scene Builder"],
-      "categories": ["web"],
-      "links": { "github": "", "live": "", "publication": "" }
+      "technologies": [
+        "Java",
+        "Scene Builder"
+      ],
+      "categories": [
+        "web"
+      ],
+      "links": {
+        "github": "",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "smart-student-app",
@@ -336,9 +559,18 @@
       "date": "Fall 2023",
       "summary": "Android utility app for students with native features such as one-tap emergency calling.",
       "highlights": [],
-      "technologies": ["Android Studio", "Java"],
-      "categories": ["mobile"],
-      "links": { "github": "", "live": "", "publication": "" }
+      "technologies": [
+        "Android Studio",
+        "Java"
+      ],
+      "categories": [
+        "mobile"
+      ],
+      "links": {
+        "github": "",
+        "live": "",
+        "publication": ""
+      }
     },
     {
       "id": "database-design",
@@ -348,39 +580,312 @@
       "date": "Fall 2023",
       "summary": "ER modeling, normalized schema with constraints, and a SQL query set for an online service system.",
       "highlights": [],
-      "technologies": ["SQL", "ER modeling"],
-      "categories": ["data"],
-      "links": { "github": "", "live": "", "publication": "" }
+      "technologies": [
+        "SQL",
+        "ER modeling"
+      ],
+      "categories": [
+        "data"
+      ],
+      "links": {
+        "github": "",
+        "live": "",
+        "publication": ""
+      }
     }
   ],
   "skills": [
-    { "category": "Backend & APIs", "items": ["Java", "Spring Boot", "C#", ".NET 9", "ASP.NET Core", "Python", "Node.js", "Express", "REST APIs", "Redis", "PostgreSQL", "SQL Server", "Supabase", "JWT / OAuth 2.0", "Row Level Security", "RBAC"] },
-    { "category": "Data Engineering", "items": ["Azure Data Factory", "ETL / ELT", "PySpark", "Pandas", "Data Modeling", "Data Warehousing", "Power BI", "Snowflake", "BigQuery"] },
-    { "category": "AI & Machine Learning", "items": ["PyTorch", "TensorFlow", "scikit-learn", "Detectron2", "Mask R-CNN", "Multimodal LLMs", "Model Evaluation", "OpenAI API", "Label Studio"] },
-    { "category": "Cloud, DevOps & Web", "items": ["Microsoft Azure", "AWS", "Docker", "Kubernetes", "GitHub Actions", "Dynatrace", "React", "Next.js", "TypeScript", "Tailwind CSS"] }
+    {
+      "category": "Backend & APIs",
+      "items": [
+        "Java",
+        "Spring Boot",
+        "C#",
+        ".NET 9",
+        "ASP.NET Core",
+        "Python",
+        "Node.js",
+        "Express",
+        "REST APIs",
+        "Redis",
+        "PostgreSQL",
+        "SQL Server",
+        "Supabase",
+        "JWT / OAuth 2.0",
+        "Row Level Security",
+        "RBAC"
+      ]
+    },
+    {
+      "category": "Data Engineering",
+      "items": [
+        "Azure Data Factory",
+        "ETL / ELT",
+        "PySpark",
+        "Pandas",
+        "Data Modeling",
+        "Data Warehousing",
+        "Power BI",
+        "Snowflake",
+        "BigQuery"
+      ]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "items": [
+        "PyTorch",
+        "TensorFlow",
+        "scikit-learn",
+        "Detectron2",
+        "Mask R-CNN",
+        "Multimodal LLMs",
+        "Model Evaluation",
+        "OpenAI API",
+        "Label Studio"
+      ]
+    },
+    {
+      "category": "Cloud, DevOps & Web",
+      "items": [
+        "Microsoft Azure",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "GitHub Actions",
+        "Dynatrace",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ]
+    }
   ],
   "publications": [
     {
       "id": "slapbench-fingerprint-verification",
       "title": "SLAPBench: Benchmarking Multimodal Large Language Models for Four-Finger SLAP Fingerprint Verification",
-      "authors": ["Bibesh Pyakurel", "M. G. Sarwar Murshed"],
+      "authors": [
+        "Bibesh Pyakurel",
+        "M. G. Sarwar Murshed"
+      ],
       "venue": "arXiv preprint",
       "status": "Preprint",
       "date": "Jul 17, 2026",
       "meta": "Jul 17, 2026 · arXiv preprint · cs.CV, cs.AI · first author",
       "summary": "Introduces the first benchmark for MLLM-based four-finger SLAP fingerprint verification on NIST SD302b: 7,832 pairs, five models, and zero-shot, task-description, and similarity-scoring prompts. Shows prompt-driven verification collapse and includes a demographic fairness probe.",
-      "links": { "doi": "https://doi.org/10.48550/arXiv.2607.15517", "arxiv": "https://arxiv.org/abs/2607.15517", "pdf": "https://arxiv.org/pdf/2607.15517", "code": "https://github.com/bibeshpyakurel/SLAPBench" }
+      "links": {
+        "doi": "https://doi.org/10.48550/arXiv.2607.15517",
+        "arxiv": "https://arxiv.org/abs/2607.15517",
+        "pdf": "https://arxiv.org/pdf/2607.15517",
+        "code": "https://github.com/bibeshpyakurel/SLAPBench"
+      },
+      "arxivId": "2607.15517",
+      "primaryClass": "cs.CV",
+      "year": "2026",
+      "bibkey": "pyakurel2026slapbench",
+      "tldr": "Prompting decides whether a multimodal model collapses on fingerprint verification; the model decides how well it can discriminate once the prompt lets it.",
+      "abstract": "Four-finger SLAP images are the standard biometric capture format at US border entry points, yet no benchmark existed to test whether multimodal large language models can reason about them. SLAPBench builds 7,832 exhaustive pairs from NIST SD302b (176 mated, 7,656 non-mated) and evaluates InternVL3-8B, Qwen2.5-VL-7B, Qwen3-VL-8B, Gemma-3-12B, and Claude Opus 4.8 under zero-shot, task-description, and similarity-scoring prompts. Task-description prompting collapses every open-source model to near-total false acceptance; similarity scoring removes the collapse and exposes large differences in discrimination between models. The paper adds matched-resolution and demographic fairness probes over gender, race, and age, and treats a perfect AUC from one model as a diagnostic result because the dataset cannot rule out near-duplicate detection for mated pairs.",
+      "results": [
+        {
+          "value": "7,832",
+          "label": "fingerprint pairs"
+        },
+        {
+          "value": "5",
+          "label": "multimodal models"
+        },
+        {
+          "value": "3",
+          "label": "prompting strategies"
+        },
+        {
+          "value": "3",
+          "label": "fairness attributes probed"
+        }
+      ],
+      "contribution": "First author. Designed the benchmark and protocol, ran all experiments, wrote the paper, and released the code and data."
     },
     {
       "id": "pixel-level-pavement-distress-assessment",
       "title": "Pixel-Level Pavement Distress Assessment Using Instance Segmentation",
-      "authors": ["Logan Dewick", "Bibesh Pyakurel", "Kong Pheng Yang", "Nazim Choudhury", "M. G. Sarwar Murshed"],
+      "authors": [
+        "Logan Dewick",
+        "Bibesh Pyakurel",
+        "Kong Pheng Yang",
+        "Nazim Choudhury",
+        "M. G. Sarwar Murshed"
+      ],
       "venue": "arXiv preprint",
       "status": "Preprint",
       "date": "May 25, 2026",
       "meta": "May 25, 2026 · revised Jul 13, 2026 · arXiv preprint · cs.CV",
       "summary": "Evaluates Mask R-CNN instance segmentation on the field-collected UWGB-StreetCrack dataset across longitudinal, transverse, and alligator cracks plus potholes. The ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1, with predicted crack-area fraction within 0.006 points of ground truth.",
-      "links": { "doi": "https://doi.org/10.48550/arXiv.2605.26095", "arxiv": "https://arxiv.org/abs/2605.26095", "pdf": "https://arxiv.org/pdf/2605.26095", "code": "" }
+      "links": {
+        "doi": "https://doi.org/10.48550/arXiv.2605.26095",
+        "arxiv": "https://arxiv.org/abs/2605.26095",
+        "pdf": "https://arxiv.org/pdf/2605.26095",
+        "code": ""
+      },
+      "arxivId": "2605.26095",
+      "primaryClass": "cs.CV",
+      "year": "2026",
+      "bibkey": "dewick2026pavement",
+      "tldr": "Mask R-CNN with a ResNet-101 FPN backbone segments field-collected pavement distress well enough to recover crack area to within 0.006 points of ground truth.",
+      "abstract": "The paper presents a Mask R-CNN instance-segmentation system for pixel-level pavement distress assessment, evaluated on the custom UWGB-StreetCrack dataset of field-collected images covering longitudinal, transverse, and alligator cracks plus potholes. Among the backbones compared, ResNet-101 FPN performed best with 84.23% precision, 90.04% recall, and 87.04% F1 under the paper's bounding-box matching protocol. Aggregate predicted crack-area fraction was 2.164% against 2.170% ground truth. A CSPDarknet53-based YOLO comparison reached 27.5% precision and 20.7% recall on the same data.",
+      "results": [
+        {
+          "value": "87.04%",
+          "label": "F1, ResNet-101 FPN"
+        },
+        {
+          "value": "90.04%",
+          "label": "recall"
+        },
+        {
+          "value": "1,874",
+          "label": "field images"
+        },
+        {
+          "value": "0.006",
+          "label": "pt. crack-area error"
+        }
+      ],
+      "contribution": "Second author. Trained and compared the backbone variants, curated and annotated the dataset, and contributed to the write-up."
     }
-  ]
+  ],
+  "research": {
+    "hero": "Applied AI for problems in the physical world.",
+    "lead": "I work on applied computer vision and multimodal model evaluation, with a secondary focus on benchmarking methodology for foundation models. I care about evaluation rigor: how task framing, prompt sensitivity, and metric selection change what we conclude about a model, and how conclusions survive the shift from controlled evaluation to deployment.",
+    "statement": [
+      "My current work spans two projects. SLAPBench is the first structured benchmark for evaluating multimodal large language models on biometric image analysis. The pavement distress project builds instance-segmentation systems for real-world infrastructure assessment from field-collected imagery.",
+      "Across both, the question I keep returning to is whether an evaluation result means what it appears to mean. SLAPBench shows that a single change of prompt can collapse a verifier to near-total false acceptance while the same model separates classes almost perfectly under a different framing. The pavement work shows that pixel-level metrics and bounding-box metrics can tell different stories about the same predictions.",
+      "My goal is to develop evaluation frameworks and vision systems whose conclusions are reproducible and meaningful in low-resource, real-world contexts."
+    ],
+    "glance": [
+      {
+        "label": "Affiliation",
+        "value": "Research Lead, Dept. of Computer Science, UW–Green Bay"
+      },
+      {
+        "label": "Advisor",
+        "value": "Prof. Md Golam Sarwar Murshed"
+      },
+      {
+        "label": "Preprints",
+        "value": "2 on arXiv, 1 as first author"
+      },
+      {
+        "label": "Looking for",
+        "value": "PhD and research positions in computer vision and multimodal evaluation"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Research Lead",
+        "organization": "University of Wisconsin–Green Bay, Dept. of Computer Science",
+        "dates": "Feb 2026 – Present",
+        "advisor": "Prof. Md Golam Sarwar Murshed",
+        "highlights": [
+          "Designed SLAPBench as first author: 7,832 four-finger SLAP pairs from NIST SD302b (176 mated, 7,656 non-mated) and an evaluation protocol spanning five multimodal models and three prompting strategies.",
+          "Showed that prompting governs verification collapse while model capability governs discrimination; ran matched-resolution and demographic fairness probes; documented dataset limits that affect how perfect separation should be read.",
+          "Released the code and pair manifests publicly and led the pavement study through its arXiv revision."
+        ]
+      },
+      {
+        "role": "Research Assistant, Pavement Crack Detection",
+        "organization": "WiSys Technology Foundation",
+        "dates": "Sep 2024 – Dec 2024",
+        "advisor": "Prof. Md Golam Sarwar Murshed",
+        "highlights": [
+          "Trained and compared five Mask R-CNN variants (ResNet-50/101 FPN, ResNet-101 C4/DC, ResNeXt-101 FPN) in Detectron2 on UWGB-StreetCrack (1,874 images, four distress classes). The ResNet-101 FPN model reached 84.23% precision, 90.04% recall, and 87.04% F1, five points over the ResNet-50 baseline.",
+          "Curated and annotated the dataset in Label Studio with polygon masks across longitudinal, transverse, and alligator cracks and potholes. Pixel-level predictions recovered a 2.164% crack-area fraction against 2.170% ground truth."
+        ]
+      },
+      {
+        "role": "Senior Research, B.S. Computer Science",
+        "organization": "University of Wisconsin–Green Bay",
+        "dates": "2024 – 2025",
+        "advisor": "Prof. Md Golam Sarwar Murshed",
+        "highlights": [
+          "WiSys-funded senior research on instance segmentation for pavement distress assessment, which became the arXiv preprint with Logan Dewick, Kong Pheng Yang, and Nazim Choudhury."
+        ]
+      }
+    ],
+    "teaching": [
+      {
+        "role": "Teaching Assistant",
+        "organization": "UW–Green Bay",
+        "dates": "Jan 2024 – May 2024",
+        "text": "Led weekly Python labs and office hours for 30+ students, graded with written feedback, and helped raise the lab pass rate from 20% to 45%."
+      },
+      {
+        "role": "Resident Assistant",
+        "organization": "UW–Green Bay Housing",
+        "dates": "Jan 2023 – Dec 2025",
+        "text": "Advised a residential community on academic and personal challenges across three academic years."
+      }
+    ],
+    "tools": [
+      {
+        "category": "Modeling",
+        "items": [
+          "PyTorch",
+          "Detectron2",
+          "Mask R-CNN",
+          "Hugging Face Transformers",
+          "scikit-learn",
+          "CUDA"
+        ]
+      },
+      {
+        "category": "Evaluation & data",
+        "items": [
+          "Multimodal LLM prompting",
+          "ROC / AUC / EER analysis",
+          "Fairness probes",
+          "Label Studio",
+          "NumPy",
+          "Pandas",
+          "Matplotlib"
+        ]
+      },
+      {
+        "category": "Writing & reproducibility",
+        "items": [
+          "LaTeX",
+          "Overleaf",
+          "Git",
+          "Linux / Bash",
+          "Docker",
+          "Python packaging"
+        ]
+      }
+    ],
+    "honors": [
+      {
+        "title": "Dean's List, Honors to Highest Honors",
+        "detail": "Six semesters, Fall 2022 – Fall 2025 · College of Science, Engineering and Technology, UW–Green Bay"
+      },
+      {
+        "title": "Top Graduate, 2021",
+        "detail": "Top 5 of 5,000+ graduates · Trinity International College, Nepal"
+      },
+      {
+        "title": "WiSys research funding",
+        "detail": "Senior research on pavement distress assessment funded through the WiSys Technology Foundation"
+      }
+    ],
+    "coursework": [
+      "Artificial Intelligence",
+      "Linear Algebra and Matrix Theory",
+      "Introductory Statistics",
+      "Data Structures",
+      "Discrete Mathematics",
+      "Database Design & Management",
+      "Cloud Computing",
+      "Computer Architecture",
+      "Advanced Software Design",
+      "Theory of Programming Languages"
+    ]
+  }
 }

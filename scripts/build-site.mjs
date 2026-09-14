@@ -80,7 +80,7 @@ const header = (page) => `<a class="skip-link" href="#main">Skip to content</a>
     ${page === "index" ? `<nav class="site-nav" aria-label="Sections">
       <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a><a class="site-nav__switch" href="research.html">Research portfolio →</a>
     </nav>` : `<nav class="site-nav" aria-label="Sections">
-      <a href="#interests">Interests</a><a href="#papers">Papers</a><a href="#profiles">Profiles</a><a class="site-nav__switch" href="index.html">Industry portfolio →</a>
+      <a href="#statement">Statement</a><a href="#papers">Papers</a><a href="#research-experience">Experience</a><a href="#teaching">Teaching</a><a href="#profiles">Profiles</a><a class="site-nav__switch" href="index.html">Industry portfolio →</a>
     </nav>`}
     <div class="site-header__actions">
       <nav class="portfolio-switch" aria-label="Portfolio paths">
@@ -150,6 +150,40 @@ const paperCard = (x, i) => `<article class="paper-card reveal" aria-labelledby=
     <div class="paper-links">${ext(x.links.arxiv, "arXiv")}${ext(x.links.pdf, "PDF")}${ext(x.links.doi, "DOI")}${ext(x.links.code, "Code & data")}</div>
   </div>
 </article>`;
+
+
+const bibtex = (x) => {
+  const authors = x.authors.map((a) => { const parts = a.trim().split(/\s+/); return parts.length > 1 ? `${parts[parts.length - 1]}, ${parts.slice(0, -1).join(" ")}` : a; }).join(" and ");
+  return `@misc{${x.bibkey},
+  title         = {${x.title}},
+  author        = {${authors}},
+  year          = {${x.year}},
+  eprint        = {${x.arxivId}},
+  archivePrefix = {arXiv},
+  primaryClass  = {${x.primaryClass}},
+  doi           = {10.48550/arXiv.${x.arxivId}},
+  url           = {https://arxiv.org/abs/${x.arxivId}}
+}`;
+};
+
+const pubCard = (x, i) => `<article class="pub reveal" aria-labelledby="${esc(x.id)}-title">
+  <div class="pub__marker"><span>${esc(x.year)}</span><span>0${i + 1}</span></div>
+  <div class="pub__content">
+    <p class="paper-meta">${esc(x.meta)}</p>
+    <h3 id="${esc(x.id)}-title">${esc(x.title)}</h3>
+    <p class="paper-authors">${x.authors.map((a) => (a === p.name ? `<strong>${esc(a)}</strong>` : esc(a))).join(" · ")}</p>
+    <p class="pub__tldr">${esc(x.tldr)}</p>
+    <dl class="pub__results" aria-label="Key results">
+      ${x.results.map((r) => `<div><dt>${esc(r.label)}</dt><dd>${esc(r.value)}</dd></div>`).join("")}
+    </dl>
+    <details class="pub__abstract"><summary>Abstract</summary><p>${esc(x.abstract)}</p></details>
+    <p class="pub__contribution"><strong>My role.</strong> ${esc(x.contribution)}</p>
+    <div class="pub__links">${ext(x.links.arxiv, "arXiv")}${ext(x.links.pdf, "PDF")}${ext(x.links.doi, "DOI")}${ext(x.links.code, "Code & data")}</div>
+    <details class="bibtex"><summary>BibTeX</summary><pre>${esc(bibtex(x))}</pre><button class="link-button" type="button" data-copy="${esc(bibtex(x))}" aria-describedby="${esc(x.id)}-copy">Copy BibTeX</button><span id="${esc(x.id)}-copy" class="copy-status" aria-live="polite"></span></details>
+  </div>
+</article>`;
+
+const r = data.research;
 
 const featured = data.projects.filter((x) => x.featured);
 const more = data.projects.filter((x) => !x.featured);
@@ -271,19 +305,24 @@ ${header("index")}
 </main>
 ${footer("index")}`;
 
-const researchHtml = `${head({ title: `${p.name} | Research Portfolio`, description: "Research interests, papers, and academic profiles in computer vision and multimodal AI.", path: "research.html", ogImage: "assets/img/og-image.jpg" })}
+const researchHtml = `${head({ title: `${p.name} | Research Portfolio`, description: "Research statement, papers with key results and BibTeX, research experience, and academic profiles of Bibesh Pyakurel in applied computer vision and multimodal model evaluation.", path: "research.html", ogImage: "assets/img/og-image.jpg" })}
 <body>
 ${header("research")}
 <main id="main" tabindex="-1">
   <section class="hero" aria-labelledby="hero-title">
     <div>
-      <p class="eyebrow">Research portfolio · Graduate study</p>
-      <h1 id="hero-title">Applied AI for problems in the physical world.</h1>
-      <p class="lead">I am ${esc(p.name)}. My current work combines computer vision, multimodal model evaluation, and careful measurement of systems used outside the lab.</p>
+      <p class="eyebrow">Research portfolio · Computer vision &amp; multimodal evaluation</p>
+      <h1 id="hero-title">${esc(r.hero)}</h1>
+      <p class="lead">${esc(r.lead)}</p>
       <div class="actions">
         <a class="button button--primary" href="#papers">Read the papers</a>
-        <a class="button" href="#profiles">Academic profiles</a>
+        <a class="button" href="#statement">Research statement</a>
       </div>
+      <ul class="hero__links" aria-label="Academic profiles">
+        <li><a href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}Google Scholar</a></li>
+        <li><a href="${url(p.links.semanticScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}Semantic Scholar</a></li>
+        <li><a href="${url(p.links.github)}" target="_blank" rel="noopener noreferrer">${ICONS.github}GitHub</a></li>
+      </ul>
     </div>
     <figure class="hero__portrait">
       <img src="assets/img/portrait-800.jpg" srcset="assets/img/portrait-480.jpg 480w, assets/img/portrait-800.jpg 800w" sizes="(max-width: 820px) 300px, 380px" width="800" height="800" alt="Portrait of ${esc(p.name)}" fetchpriority="high" decoding="async">
@@ -291,27 +330,94 @@ ${header("research")}
     </figure>
   </section>
 
-  <section id="interests" class="section" aria-labelledby="direction-title">
-    ${heading("01", "Direction", "Research interests")}
-    <div class="interests-grid">
-      ${p.researchInterests.map((r, i) => `<article class="interest-card reveal"><span class="interest-card__number">0${i + 1}</span><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p></article>`).join("\n      ")}
+  <dl class="glance" aria-label="At a glance">
+    ${r.glance.map((g) => `<div class="reveal"><dt>${esc(g.label)}</dt><dd>${esc(g.value)}</dd></div>`).join("\n    ")}
+  </dl>
+
+  <section id="statement" class="section" aria-labelledby="statement-title">
+    ${heading("01", "Statement", "What I study, and why")}
+    <div class="statement">
+      <div class="statement__copy reveal">
+        ${r.statement.map((t) => `<p>${esc(t)}</p>`).join("\n        ")}
+      </div>
+      <div class="interests-grid">
+        ${p.researchInterests.map((x, i) => `<article class="interest-card reveal"><span class="interest-card__number">0${i + 1}</span><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></article>`).join("\n        ")}
+      </div>
     </div>
   </section>
 
-  <section id="papers" class="section" aria-labelledby="work-title">
-    ${heading("02", "Work", "Research papers", "Two arXiv preprints that show the methods and questions shaping my research.")}
+  <section id="papers" class="section" aria-labelledby="papers-title">
+    ${heading("02", "Papers", "Publications", "Two arXiv preprints. Each entry has a one-line takeaway, the headline numbers, the abstract, my role, and a BibTeX entry.")}
     <div class="paper-list">
-      ${data.publications.map(paperCard).join("\n      ")}
+      ${data.publications.map(pubCard).join("\n      ")}
     </div>
   </section>
 
-  <section id="profiles" class="section" aria-labelledby="connect-title">
-    ${heading("03", "Connect", "Research profiles", "Find my papers, follow new work, or get in touch about research opportunities.")}
-    <div class="profile-links">
-      <a href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer"><span>Google Scholar</span>${ARROW}</a>
-      <a href="${url(p.links.semanticScholar)}" target="_blank" rel="noopener noreferrer"><span>Semantic Scholar</span>${ARROW}</a>
-      <a href="${url(p.links.linkedin)}" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span>${ARROW}</a>
-      <a href="${url(p.links.github)}" target="_blank" rel="noopener noreferrer"><span>GitHub</span>${ARROW}</a>
+  <section id="research-experience" class="section" aria-labelledby="research-experience-title">
+    ${heading("03", "Research experience", "Where the work happened")}
+    <ol class="rtimeline">
+      ${r.experience.map((x) => `<li class="rtimeline-item reveal">
+        <div class="rtimeline-item__when">${esc(x.dates)}</div>
+        <div>
+          <h3>${esc(x.role)}</h3>
+          <p class="rtimeline-item__org"><strong>${esc(x.organization)}</strong> · Advisor: ${esc(x.advisor)}</p>
+          ${bullets(x.highlights, "")}
+        </div>
+      </li>`).join("\n      ")}
+    </ol>
+  </section>
+
+  <section id="teaching" class="section" aria-labelledby="teaching-title">
+    ${heading("04", "Teaching", "Teaching, mentorship, and recognition")}
+    <div class="two-col">
+      <div class="plain-card reveal">
+        <h3>Teaching &amp; mentorship</h3>
+        <ul>
+          ${r.teaching.map((t) => `<li><strong>${esc(t.role)} · ${esc(t.organization)}</strong><span>${esc(t.dates)}. ${esc(t.text)}</span></li>`).join("\n          ")}
+        </ul>
+      </div>
+      <div class="plain-card reveal">
+        <h3>Honors</h3>
+        <ul>
+          ${r.honors.map((h) => `<li><strong>${esc(h.title)}</strong><span>${esc(h.detail)}</span></li>`).join("\n          ")}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools" class="section" aria-labelledby="tools-title">
+    ${heading("05", "Tools", "Methods and tools")}
+    <div class="two-col">
+      ${r.tools.map((g) => `<div class="plain-card reveal"><h3>${esc(g.category)}</h3>${chips(g.items)}</div>`).join("\n      ")}
+      <div class="plain-card reveal">
+        <h3>Education</h3>
+        <ul><li><strong>${esc(p.education.degree)} · ${esc(p.education.school)}</strong><span>${esc(p.education.dates)}</span></li></ul>
+        <p class="coursework"><strong>Coursework:</strong> ${esc(r.coursework.join(" · "))}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="profiles" class="section" aria-labelledby="profiles-title">
+    <div class="contact reveal">
+      <div class="contact__intro">
+        <p class="eyebrow">06 / Connect</p>
+        <h2 id="profiles-title">Open to research collaborations and PhD opportunities.</h2>
+        <p class="lead">If you work on computer vision, multimodal evaluation, or benchmarking methodology and want to talk, email is the fastest way to reach me.</p>
+      </div>
+      <ul class="contact-grid" aria-label="Ways to reach me">
+        <li><a class="contact-tile" href="mailto:bibespyakurel1100@gmail.com">${ICONS.mail}<span class="contact-tile__label">Email</span><span class="contact-tile__value">Send a message</span>${ARROW}</a></li>
+        <li><a class="contact-tile" href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}<span class="contact-tile__label">Google Scholar</span><span class="contact-tile__value">Papers and citations</span>${ARROW}</a></li>
+        <li><a class="contact-tile" href="${url(p.links.semanticScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}<span class="contact-tile__label">Semantic Scholar</span><span class="contact-tile__value">Author profile</span>${ARROW}</a></li>
+        <li><a class="contact-tile" href="${url(p.links.linkedin)}" target="_blank" rel="noopener noreferrer">${ICONS.linkedin}<span class="contact-tile__label">LinkedIn</span><span class="contact-tile__value">in/bibeshpyakurel</span>${ARROW}</a></li>
+      </ul>
+      <p class="contact__foot">
+        <button class="link-button" type="button" data-copy="bibespyakurel1100@gmail.com" aria-describedby="copy-status">Copy email address</button>
+        <span>·</span>
+        <a href="${url(p.links.github)}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span>·</span>
+        <span>${esc(p.location)}</span>
+      </p>
+      <p id="copy-status" class="copy-status" aria-live="polite"></p>
     </div>
   </section>
 </main>
