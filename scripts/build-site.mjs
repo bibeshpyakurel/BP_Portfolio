@@ -96,11 +96,15 @@ const header = (page) => `<a class="skip-link" href="#main">Skip to content</a>
 const footer = (page) => `<footer class="site-footer">
   <span>© ${new Date().getFullYear()} ${esc(p.name)} · ${esc(p.location)}</span>
   <span>${page === "index" ? `<a href="research.html">Research portfolio</a>` : `<a href="index.html">Industry portfolio</a>`} · <a href="https://github.com/bibeshpyakurel/BP_Portfolio" target="_blank" rel="noopener noreferrer">Source on GitHub</a></span>
+  <span class="site-footer__sig">Hand-built with HTML, CSS, and about 150 lines of JavaScript. No frameworks, no trackers. Press <kbd>T</kbd> to switch theme.</span>
 </footer>
 <script defer src="assets/js/site/site.js?v=${JS_V}"></script>
 </body>
 </html>
 `;
+
+const term = (cmd, words) => `<p class="term" aria-label="${esc(cmd)}: ${esc(words.join(", "))}"><span class="term__prompt">$</span><span>${esc(cmd)}</span><span class="term__arrow">→</span><span class="term__word" data-words='${esc(JSON.stringify(words))}'>${esc(words[0])}</span><span class="term__caret" aria-hidden="true"></span></p>`;
+const status = (text) => `<p class="status"><span class="status__dot" aria-hidden="true"></span>${esc(text)}</p>`;
 
 const heading = (n, eyebrow, title, intro = "") => `<div class="section-heading reveal">
   <p class="eyebrow">${n} / ${esc(eyebrow)}</p>
@@ -201,6 +205,8 @@ ${header("index")}
         <a class="button button--primary" href="#projects">Selected projects</a>
         <a class="button" href="research.html">Read the research</a>
       </div>
+      ${term("whoami", ["backend engineer", "data engineer", "applied AI researcher", "first author, SLAPBench", "poet at heart"])}
+      ${status(p.availability)}
       <ul class="hero__links" aria-label="Profiles">
         <li><a href="${url(p.links.github)}" target="_blank" rel="noopener noreferrer">${ICONS.github}GitHub</a></li>
         <li><a href="${url(p.links.linkedin)}" target="_blank" rel="noopener noreferrer">${ICONS.linkedin}LinkedIn</a></li>
@@ -318,6 +324,8 @@ ${header("research")}
         <a class="button button--primary" href="#papers">Read the papers</a>
         <a class="button" href="#statement">Research statement</a>
       </div>
+      ${term("research --focus", ["computer vision for infrastructure", "multimodal model evaluation", "benchmark design", "prompt sensitivity", "fairness probes", "reproducible ML"])}
+      ${status("Open to research collaborations and PhD opportunities.")}
       <ul class="hero__links" aria-label="Academic profiles">
         <li><a href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}Google Scholar</a></li>
         <li><a href="${url(p.links.semanticScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}Semantic Scholar</a></li>
