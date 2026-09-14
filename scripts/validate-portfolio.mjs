@@ -21,5 +21,10 @@ const walk = (value, trail = "root") => {
 };
 walk(data);
 const categories = new Set(["backend", "data", "ai", "web", "research", "security", "mobile"]);
-for (const project of data.projects) if (!project.name || !project.summary || project.categories.some((category) => !categories.has(category))) fail(`project ${project.id} is invalid`);
+for (const project of data.projects) if (!project.name || !project.summary || !project.kind || !project.date || project.categories.some((category) => !categories.has(category))) fail(`project ${project.id} is invalid`);
+for (const key of ["hero", "lead", "tagline", "availability", "location"]) if (typeof data.profile[key] !== "string" || !data.profile[key]) fail(`profile.${key} is required`);
+if (!Array.isArray(data.profile.stats) || data.profile.stats.length !== 4) fail("profile.stats must have exactly 4 entries");
+if (!data.profile.education?.degree || !data.profile.education?.school) fail("profile.education is required");
+if (data.projects.filter((project) => project.featured).length < 3) fail("at least 3 projects must be featured");
+for (const publication of data.publications) if (!publication.meta || !publication.summary || !publication.links?.arxiv) fail(`publication ${publication.id} is invalid`);
 console.log(`Validated ${data.experience.length} experiences, ${data.projects.length} projects, and ${data.publications.length} publications.`);
