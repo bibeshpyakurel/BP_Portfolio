@@ -1,8 +1,9 @@
-name: Deploy static content to Pages
+name: Verify and deploy
 
 on:
   push:
     branches: ["main"]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -15,16 +16,39 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate portfolio content
+        run: node scripts/validate-portfolio.mjs data/portfolio.json
+      - name: Build pages from data
+        run: node scripts/build-site.mjs
+      - name: Built pages must match the committed pages
+        run: git diff --exit-code -- index.html research.html || (echo "::error::index.html or research.html is stale. Run node scripts/build-site.mjs and commit." && exit 1)
+      - name: Lighthouse (mobile) against a local server
+        run: |
+          python3 -m http.server 8765 >/dev/null 2>&1 &
+          sleep 1
+          npx --yes lighthouse "http://localhost:8765/index.html" --quiet --chrome-flags="--headless=new --no-sandbox" --form-factor=mobile --output=json --output-path=./lh.json
+          node scripts/check-lighthouse.mjs ./lh.json
+      - name: Upload Lighthouse report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-mobile
+          path: lh.json
+          retention-days: 14
+
   deploy:
+    needs: verify
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Validate portfolio content
-        run: node scripts/validate-portfolio.mjs data/portfolio.json
+      - uses: actions/checkout@v4
       - name: Build pages from data
         run: node scripts/build-site.mjs
       - name: Setup Pages

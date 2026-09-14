@@ -43,6 +43,15 @@ Source photos are resized with `sips` on macOS. Current assets:
 | `og-image.jpg` | 1200×630 Open Graph and Twitter card image |
 | `apple-touch-icon.png`, `favicon.ico` | Icons |
 
-## Deployment
+## Deployment and checks
 
-`.github/workflows/static.yml` validates the data, builds the pages, and deploys to GitHub Pages on every push to `main`.
+`.github/workflows/static.yml` runs a `verify` job on every push and pull request:
+data validation, a build, a check that the committed HTML matches the build, and a
+mobile Lighthouse run that must score at least 85 performance, 100 accessibility,
+95 best practices, and 95 SEO (`scripts/check-lighthouse.mjs`). On `main`, a
+passing verify job is followed by the GitHub Pages deploy.
+
+## License
+
+Code is MIT licensed. Written content, `data/portfolio.json`, photographs, and the
+Open Graph image are © Bibesh Pyakurel and not licensed for reuse. See `LICENSE`.
