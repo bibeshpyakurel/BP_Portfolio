@@ -335,7 +335,7 @@ ${header("research")}
         <a class="button" href="#statement">Research statement</a>
       </div>
       ${term("research --focus", ["computer vision for infrastructure", "multimodal model evaluation", "benchmark design", "prompt sensitivity", "fairness probes", "reproducible ML"])}
-      ${status("Open to research collaborations and PhD opportunities.")}
+      ${status("Open to research collaborations and graduate study.")}
       <ul class="hero__links" aria-label="Academic profiles">
         <li><a href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}Google Scholar</a></li>
         <li><a href="${url(p.links.semanticScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}Semantic Scholar</a></li>
@@ -416,7 +416,7 @@ ${header("research")}
     <div class="contact reveal">
       <div class="contact__intro">
         <p class="eyebrow">06 / Connect</p>
-        <h2 id="profiles-title">Open to research collaborations and PhD opportunities.</h2>
+        <h2 id="profiles-title">Open to research collaborations and graduate study.</h2>
         <p class="lead">If you work on computer vision, multimodal evaluation, or benchmarking methodology and want to talk, email is the fastest way to reach me.</p>
       </div>
       <ul class="contact-grid" aria-label="Ways to reach me">
