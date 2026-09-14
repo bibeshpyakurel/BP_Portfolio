@@ -1,22 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-11T00:00:00.000Z",
-  "sourceCommit": "initial-migration",
+  "generatedAt": "2026-09-14T00:00:00.000Z",
+  "sourceCommit": "elite-redesign",
   "profile": {
     "name": "Bibesh Pyakurel",
     "headline": "Software, data, and AI engineer building reliable systems and applied research.",
+    "tagline": "Software · Data · Applied AI",
+    "hero": "I build systems that connect software, data, and applied AI.",
+    "lead": "Computer science graduate from the University of Wisconsin–Green Bay. Five industry internships across backend engineering, cloud data pipelines, and AI integration, plus two arXiv preprints in computer vision and multimodal model evaluation. Currently leading applied research at UW–Green Bay.",
+    "location": "Green Bay, Wisconsin · United States",
+    "availability": "Open to software, backend, data, and applied-AI roles.",
     "about": [
-      "I build systems that connect software, data, and applied AI—from production-oriented APIs and data pipelines to computer-vision research.",
-      "My work includes Redis-backed observability services, Azure data engineering, multi-tenant applications, and machine-learning systems designed around measurable real-world outcomes.",
-      "I approach unfamiliar problems with curiosity, careful experimentation, and an emphasis on people and impact."
+      "I build systems that connect software, data, and applied AI: production-oriented APIs and data pipelines, multi-tenant web applications, and computer-vision research that ships as reproducible code.",
+      "At Schneider I built a Spring Boot library that publishes Redis metrics to Dynatrace across on-premise and Azure environments. At Faith Technologies I moved millions of records through Azure Data Factory pipelines into Power BI dashboards. On my own time I ship multi-tenant products with database-enforced isolation.",
+      "I care about why a system exists as much as how it works. In 2020 I published यथार्थ (Reality), a Nepali book on love, society, and inequality. It taught me that empathy and nuance matter as much as functionality, and that the best solutions connect with people."
+    ],
+    "stats": [
+      { "value": "2", "label": "arXiv preprints" },
+      { "value": "5", "label": "industry internships" },
+      { "value": "87.04%", "label": "best crack-detection F1" },
+      { "value": "7,832", "label": "SLAPBench fingerprint pairs" }
+    ],
+    "education": {
+      "degree": "B.S. Computer Science",
+      "school": "University of Wisconsin–Green Bay",
+      "schoolUrl": "https://www.uwgb.edu/",
+      "dates": "Sep 2022 – Dec 2025",
+      "notes": [
+        "Dean's List with High or Highest Honors, six semesters",
+        "Senior research: instance segmentation for pavement distress assessment, WiSys-funded",
+        "Coursework: AI, Data Structures & Algorithms, Database Design, Cloud Computing, Advanced Software Design, Theory of Programming Languages"
+      ]
+    },
+    "beyond": [
+      { "title": "Author", "text": "Published यथार्थ (Reality) in 2020, a Nepali book exploring love, society, and inequality." },
+      { "title": "Community", "text": "Founded and led the Nepalese Students' Association at UW–Green Bay. Three years as a Resident Assistant." },
+      { "title": "Teaching", "text": "Teaching Assistant for Python labs, mentoring 30+ students and helping raise the lab pass rate from 20% to 45%." }
     ],
     "links": {
       "github": "https://github.com/bibeshpyakurel",
       "linkedin": "https://www.linkedin.com/in/bibeshpyakurel/",
-      "portfolio": "https://bibesh.digital/",
+      "portfolio": "https://bibeshpyakurel.github.io/BP_Portfolio/",
       "googleScholar": "https://scholar.google.com/citations?user=Kea7cmgAAAAJ&hl=en",
       "semanticScholar": "https://www.semanticscholar.org/author/Bibesh-Pyakurel/2438713157"
-    }
+    },
+    "researchInterests": [
+      { "title": "Computer vision for infrastructure", "text": "Instance segmentation and field-collected imagery for more precise pavement distress assessment." },
+      { "title": "Multimodal model evaluation", "text": "Benchmarks that reveal how prompting changes model behavior on demanding visual verification tasks." },
+      { "title": "Trustworthy biometric AI", "text": "Reliability, failure modes, and subgroup fairness in fingerprint verification with multimodal models." }
+    ]
   },
   "experience": [
     {
@@ -26,8 +58,11 @@
       "location": "Green Bay, WI",
       "startDate": "Feb 2026",
       "endDate": "Present",
-      "summary": "Leading applied AI research spanning pavement distress assessment and multimodal benchmark evaluation.",
-      "highlights": ["Led pavement crack detection research published on arXiv using Mask R-CNN with a ResNet-101 FPN backbone.", "Achieved 84.23% precision, 90.04% recall, and 87.04% F1 on the UWGB-STREETCRACK dataset.", "Co-authored SLAPBench, a benchmark of multimodal large language models for four-finger SLAP fingerprint verification."],
+      "summary": "Leading applied AI research with Prof. M. G. Sarwar Murshed across pavement distress assessment and multimodal benchmark evaluation.",
+      "highlights": [
+        "First-authored SLAPBench, the first benchmark of multimodal LLMs for four-finger SLAP fingerprint verification: 7,832 NIST SD302b pairs, five models, three prompting strategies, and a demographic fairness probe.",
+        "Led the pavement crack detection study to an arXiv preprint. Mask R-CNN with a ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1 on UWGB-StreetCrack."
+      ],
       "skills": ["Computer Vision", "Mask R-CNN", "Detectron2", "Multimodal LLMs", "Model Evaluation"],
       "url": "https://www.uwgb.edu/"
     },
@@ -38,8 +73,12 @@
       "location": "Green Bay, WI · Hybrid",
       "startDate": "May 2025",
       "endDate": "Aug 2025",
-      "summary": "Built Redis observability integrations and supported internal application improvements and Azure migration work.",
-      "highlights": ["Developed a Spring Boot client library that publishes Redis key metrics to Dynatrace.", "Designed support for on-premise and Azure-hosted Redis configurations.", "Improved React interfaces and supported application migration to Azure."],
+      "summary": "Built Redis observability tooling and supported an Azure migration for offer-management applications.",
+      "highlights": [
+        "Engineered a Spring Boot client library that collects Redis key metrics and publishes them to Dynatrace for real-time telemetry across on-premise and Azure-hosted Redis.",
+        "Designed integration logic that supports multiple Redis configurations dynamically, cutting deployment time by about 40% during the Azure migration.",
+        "Maintained the SNIConfig React application, fixing UI bugs and improving reliability in production workflows."
+      ],
       "skills": ["Java", "Spring Boot", "Redis", "Dynatrace", "React", "Microsoft Azure"],
       "url": "https://schneider.com/"
     },
@@ -50,21 +89,27 @@
       "location": "Green Bay, WI · Remote",
       "startDate": "Feb 2025",
       "endDate": "Apr 2025",
-      "summary": "Collaborated on an ERP implementation using Odoo, Python, and PostgreSQL.",
-      "highlights": ["Implemented backend workflows and coordinated integration across ERP modules."],
+      "summary": "Built ERP backend modules on Odoo for county operations.",
+      "highlights": [
+        "Implemented and integrated five Odoo modules in Python with PostgreSQL spanning HR, procurement, inventory, finance, and operations.",
+        "Refactored queries and data-access patterns to bring inter-module API response time from 125 ms to 100 ms."
+      ],
       "skills": ["Python", "Odoo", "PostgreSQL", "ERP"],
       "url": "https://www.browncountywi.gov/"
     },
     {
       "id": "wisys-research-assistant",
-      "role": "Research Assistant – Pavement Crack Detection",
+      "role": "Research Assistant, Pavement Crack Detection",
       "organization": "WiSys",
       "location": "Green Bay, WI · Remote",
       "startDate": "Sep 2024",
       "endDate": "Dec 2024",
-      "summary": "Contributed to a vision-based pavement crack detection system and its publication workflow.",
-      "highlights": ["Collected and annotated field data in Label Studio.", "Supported model comparisons and research writing in LaTeX and Overleaf."],
-      "skills": ["Deep Learning", "Label Studio", "LaTeX", "Computer Vision"],
+      "summary": "Contributed to a vision-based pavement crack detection system and its publication.",
+      "highlights": [
+        "Collected and annotated field imagery in Label Studio to build the UWGB-StreetCrack training set.",
+        "Trained and compared Mask R-CNN backbone variants in Detectron2 and supported the LaTeX write-up."
+      ],
+      "skills": ["Deep Learning", "Label Studio", "Detectron2", "LaTeX"],
       "url": "https://www.wisys.org/"
     },
     {
@@ -74,59 +119,245 @@
       "location": "Menasha, WI · Hybrid",
       "startDate": "May 2024",
       "endDate": "Aug 2024",
-      "summary": "Developed Azure data pipelines, analytics dashboards, predictive models, and internal AI agents.",
-      "highlights": ["Processed millions of records through ETL pipelines.", "Delivered Power BI dashboards supporting operational decisions."],
-      "skills": ["Azure Data Factory", "SQL", "Power BI", "Machine Learning", "Azure AI"],
+      "summary": "Built Azure data pipelines, analytics dashboards, predictive models, and internal AI agents.",
+      "highlights": [
+        "Built and optimized ETL/ELT pipelines in Azure Data Factory across five source systems, processing millions of records and cutting the reporting cycle from 3 hours to 30 minutes.",
+        "Delivered Power BI dashboards used by five business departments for day-to-day decisions.",
+        "Built an internal AI assistant with GPT-4 and Microsoft Copilot Studio that reduced employee lookup time by about 55%."
+      ],
+      "skills": ["Azure Data Factory", "SQL", "Power BI", "Machine Learning", "Copilot Studio"],
       "url": "https://www.faithtechinc.com/"
+    },
+    {
+      "id": "uwgb-cs-intern-security",
+      "role": "Computer Science Intern, Security",
+      "organization": "University of Wisconsin–Green Bay",
+      "location": "Green Bay, WI",
+      "startDate": "Feb 2024",
+      "endDate": "May 2024",
+      "summary": "Ran offensive-security labs on Linux and documented them for future students.",
+      "highlights": [
+        "Completed labs on buffer overflow, return-to-libc, ROP, format-string, and race-condition vulnerabilities on Ubuntu and Kali Linux.",
+        "Wrote lab manuals covering exploit setup, execution path, and mitigation strategies."
+      ],
+      "skills": ["Linux", "Vulnerability Analysis", "Technical Writing"],
+      "url": "https://www.uwgb.edu/resch-school-of-engineering/"
+    },
+    {
+      "id": "uwgb-teaching-assistant",
+      "role": "Teaching Assistant",
+      "organization": "University of Wisconsin–Green Bay",
+      "location": "Green Bay, WI",
+      "startDate": "Jan 2024",
+      "endDate": "May 2024",
+      "summary": "Mentored students in Python, debugging, and data analysis.",
+      "highlights": [
+        "Led weekly lab sessions and office hours for 30+ students; the lab pass rate rose from 20% to 45%."
+      ],
+      "skills": ["Python", "Teaching", "Mentoring"],
+      "url": "https://www.uwgb.edu/"
     }
+  ],
+  "alsoExperience": [
+    "Founder & President, Nepalese Students' Association at UW–Green Bay (2024–2025)",
+    "Resident Assistant, UW–Green Bay Housing (2023–2025)",
+    "Student PEEP, The Weidner Center: ELT of ticket-buyer data into Salesforce and website updates (2023–2025)"
   ],
   "projects": [
     {
       "id": "clearerp",
       "name": "ClearERP",
+      "featured": true,
+      "kind": "Full-stack product",
       "date": "Feb 2026 – Mar 2026",
-      "summary": "Production-oriented multi-tenant ERP for inventory and procurement workflows across six industry verticals.",
-      "highlights": ["Implemented company-level data isolation and role-based access control.", "Built procurement, inventory audit, KPI, and low-stock workflows."],
-      "technologies": [".NET 9", "ASP.NET Core", "Entity Framework Core", "PostgreSQL", "React", "TypeScript", "Docker"],
+      "summary": "Multi-tenant ERP for inventory and procurement workflows across six industry verticals, with per-company data isolation enforced at the database layer.",
+      "highlights": [
+        "Tenant-scoped EF Core global query filters isolate every company's data; JWT auth with Admin, Inventory Manager, and Warehouse Staff roles.",
+        "Full purchase-order lifecycle from draft through approval, partial receipt, completion, and cancellation, with a complete audit trail.",
+        "Clean Architecture backend, Testcontainers integration tests against real PostgreSQL, Docker multi-stage builds, and GitHub Actions CI/CD."
+      ],
+      "metric": { "value": "6", "label": "industry verticals seeded" },
+      "technologies": [".NET 9", "ASP.NET Core", "EF Core", "PostgreSQL", "React 19", "TypeScript", "Docker"],
       "categories": ["backend", "data", "web"],
-      "links": { "github": "https://github.com/bibeshpyakurel/ClearERP", "live": "https://frontend-production-dad7.up.railway.app", "publication": "" }
-    },
-    {
-      "id": "jobinsight",
-      "name": "JobInsight",
-      "date": "Jan 2026 – Feb 2026",
-      "summary": "Chrome extension and secure backend that use AI to extract structured insights from job postings.",
-      "highlights": ["Architected a Chrome MV3 extension with content script, service worker, and popup UI.", "Built an Express backend proxy, Google OAuth flow, and seven-day result cache."],
-      "technologies": ["Chrome MV3", "JavaScript", "Node.js", "Express.js", "OpenAI API", "Google OAuth"],
-      "categories": ["ai", "backend", "web"],
-      "links": { "github": "https://github.com/bibeshpyakurel/JobInsight", "live": "", "publication": "" }
+      "links": { "github": "https://github.com/bibeshpyakurel/ClearERP", "live": "", "publication": "" }
     },
     {
       "id": "trainlytics",
       "name": "Trainlytics",
+      "featured": true,
+      "kind": "Full-stack product",
       "date": "Dec 2025 – Jan 2026",
-      "summary": "Multi-tenant fitness analytics platform with database-enforced user isolation and contextual AI insights.",
-      "highlights": ["Enforced per-user data isolation with PostgreSQL row-level security.", "Built authenticated tracking, analytics, monitoring, tests, and CI validation."],
-      "technologies": ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "OpenAI API", "GitHub Actions"],
+      "summary": "Multi-tenant fitness analytics platform with PostgreSQL row-level security for per-user isolation and an AI insights layer on top of workout, bodyweight, and calorie data.",
+      "highlights": [
+        "Row Level Security policies guarantee zero cross-tenant reads; Supabase Auth with OTP verification and session preflight checks.",
+        "Dashboard analytics in Recharts for strength, muscle-group balance, and energy trends; AI insights endpoint with validation, rate limiting, and timeouts.",
+        "CI runs lint, typecheck, unit tests, and database migration plan validation on every push."
+      ],
+      "metric": { "value": "RLS", "label": "database-enforced isolation" },
+      "technologies": ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "OpenAI API", "Tailwind CSS", "GitHub Actions"],
       "categories": ["backend", "data", "ai", "web"],
       "links": { "github": "https://github.com/bibeshpyakurel/Trainlytics", "live": "https://trainlytics-two.vercel.app/login/", "publication": "" }
     },
     {
+      "id": "slapbench",
+      "name": "SLAPBench",
+      "featured": true,
+      "kind": "Research benchmark",
+      "date": "2026",
+      "summary": "The first benchmark for evaluating multimodal large language models on four-finger SLAP fingerprint verification, built on NIST SD302b and released with code and pair manifests.",
+      "highlights": [
+        "7,832 exhaustive pairs (176 mated, 7,656 non-mated) across InternVL3-8B, Qwen2.5-VL-7B, Qwen3-VL-8B, Gemma-3-12B, and Claude Opus 4.8.",
+        "Shows prompt-driven verification collapse under binary prompting and recovers discrimination with similarity-scoring prompts.",
+        "Includes matched-resolution and demographic fairness probes over gender, race, and age."
+      ],
+      "metric": { "value": "7,832", "label": "fingerprint pairs evaluated" },
+      "technologies": ["Python", "PyTorch", "Multimodal LLMs", "NIST SD302b", "Evaluation"],
+      "categories": ["research", "ai"],
+      "links": { "github": "https://github.com/bibeshpyakurel/SLAPBench", "live": "", "publication": "https://arxiv.org/abs/2607.15517" }
+    },
+    {
+      "id": "jobinsight",
+      "name": "JobInsight",
+      "featured": true,
+      "kind": "Chrome extension + backend",
+      "date": "Jan 2026 – Feb 2026",
+      "summary": "Chrome extension that analyzes LinkedIn job postings in real time and surfaces sponsorship, citizenship, experience level, and keywords in a draggable overlay.",
+      "highlights": [
+        "Chrome MV3 architecture with content script, service worker, and popup UI; keywords highlighted directly in the job description.",
+        "Node.js/Express proxy keeps the OpenAI key server-side behind a Google OAuth gate; seven-day cache makes repeat views instant.",
+        "GPT-4o-mini keeps each analysis under $0.0005."
+      ],
+      "metric": { "value": "<$0.0005", "label": "cost per job analysis" },
+      "technologies": ["Chrome MV3", "JavaScript", "Node.js", "Express", "OpenAI API", "Google OAuth"],
+      "categories": ["ai", "backend", "web"],
+      "links": { "github": "https://github.com/bibeshpyakurel/JobInsight", "live": "", "publication": "" }
+    },
+    {
       "id": "pavement-distress-assessment",
       "name": "Pixel-Level Pavement Distress Assessment",
-      "date": "2024 – Present",
-      "summary": "Instance-segmentation research for field-collected pavement distress assessment using the UWGB-STREETCRACK dataset.",
-      "highlights": ["Compared ResNet-50 and ResNet-101 FPN backbones in Detectron2.", "The best model achieved 87.04% F1."],
-      "technologies": ["Python", "PyTorch", "Detectron2", "Mask R-CNN", "Label Studio"],
+      "featured": false,
+      "kind": "Research",
+      "date": "2024 – 2026",
+      "summary": "Mask R-CNN instance segmentation on the field-collected UWGB-StreetCrack dataset; the ResNet-101 FPN backbone reached 87.04% F1.",
+      "highlights": [],
+      "technologies": ["Python", "PyTorch", "Detectron2", "Label Studio"],
       "categories": ["research", "ai", "data"],
       "links": { "github": "", "live": "", "publication": "https://arxiv.org/abs/2605.26095" }
+    },
+    {
+      "id": "music-emotion-predictor",
+      "name": "Music Emotion Predictor",
+      "featured": false,
+      "kind": "Machine learning",
+      "date": "Jan 2025 – May 2025",
+      "summary": "Classifies 278K+ tracks into Calm, Sad, Energetic, and Happy with Decision Tree, KNN, and K-Means; evaluated with accuracy and Adjusted Rand Index, visualized with PCA.",
+      "highlights": [],
+      "technologies": ["Python", "scikit-learn", "Pandas", "Matplotlib"],
+      "categories": ["ai", "data"],
+      "links": { "github": "https://github.com/bibeshpyakurel/Music-Emotion-Predictor", "live": "", "publication": "" }
+    },
+    {
+      "id": "resume-job-matcher",
+      "name": "Resume–Job Description Matcher",
+      "featured": false,
+      "kind": "NLP automation",
+      "date": "Sep 2024 – Dec 2024",
+      "summary": "Parses PDF resumes, scores them against a job description with keyword matching and cosine similarity, and batch-ranks candidates.",
+      "highlights": [],
+      "technologies": ["Python", "scikit-learn", "NLTK", "PyPDF2"],
+      "categories": ["ai", "data"],
+      "links": { "github": "https://github.com/bibeshpyakurel/Resume-Job-Description-Matching-System", "live": "", "publication": "" }
+    },
+    {
+      "id": "script-viewer",
+      "name": "Script Viewer",
+      "featured": false,
+      "kind": "Web tool",
+      "date": "2026",
+      "summary": "Parses call-center script XML into JSON and renders it for review while preserving every element, attribute, namespace, and sibling order.",
+      "highlights": [],
+      "technologies": ["TypeScript", "Vite"],
+      "categories": ["web"],
+      "links": { "github": "https://github.com/bibeshpyakurel/script-viewer", "live": "", "publication": "" }
+    },
+    {
+      "id": "cybersecurity-labs",
+      "name": "Cybersecurity Labs",
+      "featured": false,
+      "kind": "Security",
+      "date": "Spring 2024",
+      "summary": "Hands-on buffer overflow, return-to-libc, ROP, and format-string exploitation on Linux, written up as reusable lab manuals.",
+      "highlights": [],
+      "technologies": ["Linux", "Kali", "GDB"],
+      "categories": ["security"],
+      "links": { "github": "", "live": "", "publication": "" }
+    },
+    {
+      "id": "typing-speed-game",
+      "name": "Typing Speed Game",
+      "featured": false,
+      "kind": "Desktop app",
+      "date": "2024",
+      "summary": "Monkeytype-inspired JavaFX trainer with real-time WPM, accuracy, and error tracking in an MVC structure.",
+      "highlights": [],
+      "technologies": ["Java", "JavaFX"],
+      "categories": ["web"],
+      "links": { "github": "", "live": "", "publication": "" }
+    },
+    {
+      "id": "blackjack",
+      "name": "Blackjack",
+      "featured": false,
+      "kind": "Desktop game",
+      "date": "Fall 2023",
+      "summary": "Collaborative Java desktop Blackjack with a card engine, betting logic, and Scene Builder GUI.",
+      "highlights": [],
+      "technologies": ["Java", "Scene Builder"],
+      "categories": ["web"],
+      "links": { "github": "", "live": "", "publication": "" }
+    },
+    {
+      "id": "student-budget-calculator",
+      "name": "Student Budget Calculator",
+      "featured": false,
+      "kind": "Desktop app",
+      "date": "Fall 2023",
+      "summary": "Java budgeting tool with category grouping, remaining-balance tracking, and input validation.",
+      "highlights": [],
+      "technologies": ["Java", "Scene Builder"],
+      "categories": ["web"],
+      "links": { "github": "", "live": "", "publication": "" }
+    },
+    {
+      "id": "smart-student-app",
+      "name": "Smart Student App",
+      "featured": false,
+      "kind": "Mobile",
+      "date": "Fall 2023",
+      "summary": "Android utility app for students with native features such as one-tap emergency calling.",
+      "highlights": [],
+      "technologies": ["Android Studio", "Java"],
+      "categories": ["mobile"],
+      "links": { "github": "", "live": "", "publication": "" }
+    },
+    {
+      "id": "database-design",
+      "name": "Online Service Database",
+      "featured": false,
+      "kind": "Database design",
+      "date": "Fall 2023",
+      "summary": "ER modeling, normalized schema with constraints, and a SQL query set for an online service system.",
+      "highlights": [],
+      "technologies": ["SQL", "ER modeling"],
+      "categories": ["data"],
+      "links": { "github": "", "live": "", "publication": "" }
     }
   ],
   "skills": [
-    { "category": "Software Engineering (Backend & APIs)", "items": ["Java", "Spring Boot", "Python", "C#", ".NET", "Node.js", "REST APIs", "Redis", "PostgreSQL", "Authentication and RBAC", "CI/CD"] },
-    { "category": "Data Engineering & Analytics", "items": ["SQL", "Azure Data Factory", "ETL/ELT", "PySpark", "Pandas", "Data Modeling", "Data Warehousing", "Power BI"] },
-    { "category": "AI & Machine Learning", "items": ["PyTorch", "TensorFlow", "Scikit-Learn", "Computer Vision", "Mask R-CNN", "Detectron2", "Multimodal LLMs", "Model Evaluation", "OpenAI API"] },
-    { "category": "Cloud & Web", "items": ["Microsoft Azure", "AWS", "Docker", "Kubernetes", "GitHub Actions", "React", "Next.js", "TypeScript", "Tailwind CSS"] }
+    { "category": "Backend & APIs", "items": ["Java", "Spring Boot", "C#", ".NET 9", "ASP.NET Core", "Python", "Node.js", "Express", "REST APIs", "Redis", "PostgreSQL", "SQL Server", "Supabase", "JWT / OAuth 2.0", "Row Level Security", "RBAC"] },
+    { "category": "Data Engineering", "items": ["Azure Data Factory", "ETL / ELT", "PySpark", "Pandas", "Data Modeling", "Data Warehousing", "Power BI", "Snowflake", "BigQuery"] },
+    { "category": "AI & Machine Learning", "items": ["PyTorch", "TensorFlow", "scikit-learn", "Detectron2", "Mask R-CNN", "Multimodal LLMs", "Model Evaluation", "OpenAI API", "Label Studio"] },
+    { "category": "Cloud, DevOps & Web", "items": ["Microsoft Azure", "AWS", "Docker", "Kubernetes", "GitHub Actions", "Dynatrace", "React", "Next.js", "TypeScript", "Tailwind CSS"] }
   ],
   "publications": [
     {
@@ -136,8 +367,9 @@
       "venue": "arXiv preprint",
       "status": "Preprint",
       "date": "Jul 17, 2026",
-      "summary": "Introduces a benchmark of 7,832 four-finger SLAP fingerprint pairs and evaluates how prompting affects multimodal model verification behavior and fairness.",
-      "links": { "doi": "https://doi.org/10.48550/arXiv.2607.15517", "arxiv": "https://arxiv.org/abs/2607.15517", "pdf": "https://arxiv.org/pdf/2607.15517" }
+      "meta": "Jul 17, 2026 · arXiv preprint · cs.CV, cs.AI · first author",
+      "summary": "Introduces the first benchmark for MLLM-based four-finger SLAP fingerprint verification on NIST SD302b: 7,832 pairs, five models, and zero-shot, task-description, and similarity-scoring prompts. Shows prompt-driven verification collapse and includes a demographic fairness probe.",
+      "links": { "doi": "https://doi.org/10.48550/arXiv.2607.15517", "arxiv": "https://arxiv.org/abs/2607.15517", "pdf": "https://arxiv.org/pdf/2607.15517", "code": "https://github.com/bibeshpyakurel/SLAPBench" }
     },
     {
       "id": "pixel-level-pavement-distress-assessment",
@@ -146,8 +378,9 @@
       "venue": "arXiv preprint",
       "status": "Preprint",
       "date": "May 25, 2026",
-      "summary": "Evaluates Mask R-CNN instance segmentation on field-collected UWGB-StreetCrack images; the best model reached 87.04% F1 under the paper's bounding-box matching protocol.",
-      "links": { "doi": "https://doi.org/10.48550/arXiv.2605.26095", "arxiv": "https://arxiv.org/abs/2605.26095", "pdf": "https://arxiv.org/pdf/2605.26095" }
+      "meta": "May 25, 2026 · revised Jul 13, 2026 · arXiv preprint · cs.CV",
+      "summary": "Evaluates Mask R-CNN instance segmentation on the field-collected UWGB-StreetCrack dataset across longitudinal, transverse, and alligator cracks plus potholes. The ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1, with predicted crack-area fraction within 0.006 points of ground truth.",
+      "links": { "doi": "https://doi.org/10.48550/arXiv.2605.26095", "arxiv": "https://arxiv.org/abs/2605.26095", "pdf": "https://arxiv.org/pdf/2605.26095", "code": "" }
     }
   ]
 }
