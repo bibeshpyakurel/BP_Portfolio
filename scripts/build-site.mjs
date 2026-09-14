@@ -106,6 +106,19 @@ const footer = (page) => `<footer class="site-footer">
 const term = (cmd, words) => `<p class="term" aria-label="${esc(cmd)}: ${esc(words.join(", "))}"><span class="term__prompt">$</span><span>${esc(cmd)}</span><span class="term__arrow">→</span><span class="term__word" data-words='${esc(JSON.stringify(words))}'>${esc(words[0])}</span><span class="term__caret" aria-hidden="true"></span></p>`;
 const status = (text) => `<p class="status"><span class="status__dot" aria-hidden="true"></span>${esc(text)}</p>`;
 
+const portrait = (chip, tag) => `<figure class="frame" aria-label="Portrait of ${esc(p.name)}">
+      <span class="frame__ring" aria-hidden="true"></span>
+      <span class="frame__ghost" aria-hidden="true"></span>
+      <div class="frame__inner">
+        <img src="assets/img/portrait-800.jpg" srcset="assets/img/portrait-480.jpg 480w, assets/img/portrait-800.jpg 800w" sizes="(max-width: 820px) 300px, 380px" width="800" height="800" alt="Portrait of ${esc(p.name)}" fetchpriority="high" decoding="async">
+        <span class="frame__grid" aria-hidden="true"></span>
+        <span class="frame__scan" aria-hidden="true"></span>
+        <span class="frame__corner frame__corner--tl" aria-hidden="true"></span><span class="frame__corner frame__corner--tr" aria-hidden="true"></span><span class="frame__corner frame__corner--bl" aria-hidden="true"></span><span class="frame__corner frame__corner--br" aria-hidden="true"></span>
+        <span class="frame__tag" aria-hidden="true">${esc(tag)} <b>0.99</b></span>
+        <figcaption class="frame__loc">${esc(chip)}</figcaption>
+      </div>
+    </figure>`;
+
 const heading = (n, eyebrow, title, intro = "") => `<div class="section-heading reveal">
   <p class="eyebrow">${n} / ${esc(eyebrow)}</p>
   <h2 id="${eyebrow.toLowerCase().replace(/[^a-z]+/g, "-")}-title">${esc(title)}</h2>
@@ -197,7 +210,7 @@ const indexHtml = `${head({ title: `${p.name} | Software, Data & AI Engineer`, d
 ${header("index")}
 <main id="main" tabindex="-1">
   <section class="hero" aria-labelledby="hero-title">
-    <div>
+    <div class="hero__copy">
       <p class="eyebrow">${esc(p.tagline)}</p>
       <h1 id="hero-title">${esc(p.hero)}</h1>
       <p class="lead">${esc(p.lead)}</p>
@@ -213,10 +226,7 @@ ${header("index")}
         <li><a href="${url(p.links.googleScholar)}" target="_blank" rel="noopener noreferrer">${ICONS.scholar}Google Scholar</a></li>
       </ul>
     </div>
-    <figure class="hero__portrait">
-      <img src="assets/img/portrait-800.jpg" srcset="assets/img/portrait-480.jpg 480w, assets/img/portrait-800.jpg 800w" sizes="(max-width: 820px) 300px, 380px" width="800" height="800" alt="Portrait of ${esc(p.name)}" fetchpriority="high" decoding="async">
-      <span>${esc(p.location.split(" · ")[0])}</span>
-    </figure>
+    ${portrait(p.locationLabel, "bibesh · person")}
   </section>
 
   <dl class="stats" aria-label="Highlights">
@@ -316,7 +326,7 @@ const researchHtml = `${head({ title: `${p.name} | Research Portfolio`, descript
 ${header("research")}
 <main id="main" tabindex="-1">
   <section class="hero" aria-labelledby="hero-title">
-    <div>
+    <div class="hero__copy">
       <p class="eyebrow">Research portfolio · Computer vision &amp; multimodal evaluation</p>
       <h1 id="hero-title">${esc(r.hero)}</h1>
       <p class="lead">${esc(r.lead)}</p>
@@ -332,10 +342,7 @@ ${header("research")}
         <li><a href="${url(p.links.github)}" target="_blank" rel="noopener noreferrer">${ICONS.github}GitHub</a></li>
       </ul>
     </div>
-    <figure class="hero__portrait">
-      <img src="assets/img/portrait-800.jpg" srcset="assets/img/portrait-480.jpg 480w, assets/img/portrait-800.jpg 800w" sizes="(max-width: 820px) 300px, 380px" width="800" height="800" alt="Portrait of ${esc(p.name)}" fetchpriority="high" decoding="async">
-      <span>Research · Software · Data</span>
-    </figure>
+    ${portrait("Research · Software · Data", "bibesh · researcher")}
   </section>
 
   <dl class="glance" aria-label="At a glance">

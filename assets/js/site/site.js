@@ -96,6 +96,19 @@
     }, { passive: true });
   }
 
+  // Portrait tilt toward the cursor (hover devices only).
+  var frame = document.querySelector(".frame");
+  if (frame && !reduceMotion && window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+    var inner = frame.querySelector(".frame__inner");
+    frame.addEventListener("pointermove", function (e) {
+      var r = frame.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      inner.style.setProperty("--rx", (x * 10).toFixed(2) + "deg");
+      inner.style.setProperty("--ry", (-y * 10).toFixed(2) + "deg");
+    });
+    frame.addEventListener("pointerleave", function () { inner.style.setProperty("--rx", "0deg"); inner.style.setProperty("--ry", "0deg"); });
+  }
+
   // Rotating word in the terminal line.
   document.querySelectorAll(".term__word[data-words]").forEach(function (el) {
     var words; try { words = JSON.parse(el.getAttribute("data-words")); } catch (e) { return; }
@@ -139,15 +152,26 @@
     countTargets.forEach(function (el) { countObserver.observe(el); });
   }
 
-  // Copy email.
+  // Copy to clipboard: async API first, execCommand fallback, then a plain message.
+  var legacyCopy = function (value) {
+    var ta = document.createElement("textarea");
+    ta.value = value; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "-1000px";
+    document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, value.length);
+    var ok = false; try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta); return ok;
+  };
   document.querySelectorAll("[data-copy]").forEach(function (button) {
     var status = document.getElementById(button.getAttribute("aria-describedby") || "") || null;
+    var what = /bibtex/i.test(button.textContent) ? "BibTeX entry" : "email address";
     button.addEventListener("click", function () {
       var value = button.getAttribute("data-copy");
-      var done = function (ok) { if (status) { status.textContent = ok ? "Copied " + value + " to your clipboard." : "Copy failed. The address is " + value + "."; } };
+      var done = function (ok) {
+        if (!status) return;
+        status.textContent = ok ? "Copied the " + what + " to your clipboard." : (what === "email address" ? "Copy is blocked in this browser. The address is " + value + "." : "Copy is blocked in this browser. Select the text above to copy it.");
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(value).then(function () { done(true); }, function () { done(false); });
-      } else { done(false); }
+        navigator.clipboard.writeText(value).then(function () { done(true); }, function () { done(legacyCopy(value)); });
+      } else { done(legacyCopy(value)); }
     });
   });
 }());
