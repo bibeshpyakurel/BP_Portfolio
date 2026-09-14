@@ -26,5 +26,6 @@ for (const key of ["hero", "lead", "tagline", "availability", "location"]) if (t
 if (!Array.isArray(data.profile.stats) || data.profile.stats.length !== 4) fail("profile.stats must have exactly 4 entries");
 if (!data.profile.education?.degree || !data.profile.education?.school) fail("profile.education is required");
 if (data.projects.filter((project) => project.featured).length < 3) fail("at least 3 projects must be featured");
+for (const project of data.projects) if (project.metric !== null && project.metric !== undefined && (!project.metric.value || !project.metric.label)) fail(`project ${project.id} has an incomplete metric`);
 for (const publication of data.publications) if (!publication.meta || !publication.summary || !publication.links?.arxiv) fail(`publication ${publication.id} is invalid`);
 console.log(`Validated ${data.experience.length} experiences, ${data.projects.length} projects, and ${data.publications.length} publications.`);

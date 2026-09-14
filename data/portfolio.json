@@ -396,7 +396,8 @@
         "github": "",
         "live": "",
         "publication": "https://arxiv.org/abs/2605.26095"
-      }
+      },
+      "metric": null
     },
     {
       "id": "music-emotion-predictor",
@@ -420,7 +421,8 @@
         "github": "https://github.com/bibeshpyakurel/Music-Emotion-Predictor",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "resume-job-matcher",
@@ -444,7 +446,8 @@
         "github": "https://github.com/bibeshpyakurel/Resume-Job-Description-Matching-System",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "script-viewer",
@@ -465,7 +468,8 @@
         "github": "https://github.com/bibeshpyakurel/script-viewer",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "cybersecurity-labs",
@@ -487,7 +491,8 @@
         "github": "",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "typing-speed-game",
@@ -508,7 +513,8 @@
         "github": "",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "blackjack",
@@ -529,7 +535,8 @@
         "github": "",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "student-budget-calculator",
@@ -550,7 +557,8 @@
         "github": "",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "smart-student-app",
@@ -571,7 +579,8 @@
         "github": "",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     },
     {
       "id": "database-design",
@@ -592,7 +601,8 @@
         "github": "",
         "live": "",
         "publication": ""
-      }
+      },
+      "metric": null
     }
   ],
   "skills": [
