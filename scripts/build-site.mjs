@@ -1,10 +1,14 @@
 // Renders index.html and research.html from data/portfolio.json.
 // Run: node scripts/build-site.mjs
 import fs from "node:fs/promises";
+import { createHash } from "node:crypto";
 
 const SITE = "https://bibeshpyakurel.github.io/BP_Portfolio/";
 const data = JSON.parse(await fs.readFile("data/portfolio.json", "utf8"));
 const p = data.profile;
+const hash = async (file) => createHash("sha256").update(await fs.readFile(file)).digest("hex").slice(0, 10);
+const CSS_V = await hash("assets/css/site/site.css");
+const JS_V = await hash("assets/js/site/site.js");
 
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const url = (v) => (/^https:\/\//.test(v || "") ? esc(v) : "");
@@ -56,7 +60,7 @@ ${themeScript}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
-<link rel="stylesheet" href="assets/css/site/site.css">
+<link rel="stylesheet" href="assets/css/site/site.css?v=${CSS_V}">
 <script type="application/ld+json">${JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Person",
@@ -93,7 +97,7 @@ const footer = (page) => `<footer class="site-footer">
   <span>© ${new Date().getFullYear()} ${esc(p.name)} · ${esc(p.location)}</span>
   <span>${page === "index" ? `<a href="research.html">Research portfolio</a>` : `<a href="index.html">Industry portfolio</a>`} · <a href="https://github.com/bibeshpyakurel/BP_Portfolio" target="_blank" rel="noopener noreferrer">Source on GitHub</a></span>
 </footer>
-<script defer src="assets/js/site/site.js"></script>
+<script defer src="assets/js/site/site.js?v=${JS_V}"></script>
 </body>
 </html>
 `;
