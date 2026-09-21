@@ -31,14 +31,16 @@ jobs:
         run: |
           python3 -m http.server 8765 >/dev/null 2>&1 &
           sleep 1
-          npx --yes lighthouse "http://localhost:8765/index.html" --quiet --chrome-flags="--headless=new --no-sandbox" --form-factor=mobile --output=json --output-path=./lh.json
-          node scripts/check-lighthouse.mjs ./lh.json
+          for run in 1 2 3; do
+            npx --yes lighthouse "http://localhost:8765/index.html" --quiet --chrome-flags="--headless=new --no-sandbox" --form-factor=mobile --output=json --output-path="./lh-$run.json"
+          done
+          node scripts/check-lighthouse.mjs ./lh-1.json ./lh-2.json ./lh-3.json
       - name: Upload Lighthouse report
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: lighthouse-mobile
-          path: lh.json
+          path: lh-*.json
           retention-days: 14
 
   deploy:
