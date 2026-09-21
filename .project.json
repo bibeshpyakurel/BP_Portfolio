@@ -1,0 +1,8 @@
+{
+  "headlineMetric": "CI gate on every push: mobile Lighthouse at least 85 performance, 100 accessibility, 95 best practices, 95 SEO",
+  "role": "Sole author and maintainer",
+  "resumeEligible": false,
+  "stack": ["HTML", "CSS", "JavaScript", "Node.js", "GitHub Actions", "GitHub Pages"],
+  "oneLiner": "A framework-free static portfolio and research site rendered from one JSON file and deployed to GitHub Pages.",
+  "startDate": "2026-02"
+}
