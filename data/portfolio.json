@@ -83,6 +83,30 @@
   },
   "experience": [
     {
+      "id": "anser-ai-systems-engineer",
+      "role": "AI Systems Engineer",
+      "organization": "AnSer",
+      "location": "Ashwaubenon, WI · On-site",
+      "startDate": "Aug 2026",
+      "endDate": "Present",
+      "summary": "Building a backend engine that resolves client support requests end to end, with every automated change held for human review before it reaches production.",
+      "highlights": [
+        "Architecting an end-to-end backend processing engine that resolves client support requests by making the configuration and code changes each one calls for.",
+        "Integrating multiple foundation models to parse natural-language feedback and translate stated requirements into executable logic changes.",
+        "Engineering secure data pipelines that apply automated updates into an isolated staging environment rather than running them against production.",
+        "Designing a human-in-the-loop deployment framework that holds every automated change in a staging interface for manual QA before it goes live, and provisioning the virtual machines and database tuning underneath it."
+      ],
+      "skills": [
+        "Backend Architecture",
+        "Foundation Model Integration",
+        "AI Agents",
+        "Human-in-the-Loop Systems",
+        "Data Pipelines (ETL)",
+        "Database Management",
+        "Virtual Machines"
+      ]
+    },
+    {
       "id": "uwgb-research-lead",
       "role": "Research Lead",
       "organization": "University of Wisconsin–Green Bay",
