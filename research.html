@@ -113,7 +113,7 @@
     <div class="section-heading reveal">
   <p class="eyebrow">02 / Papers</p>
   <h2 id="papers-title">Publications</h2>
-  <p class="section-intro">Two arXiv preprints. Each entry has a one-line takeaway, the headline numbers, the abstract, my role, and a BibTeX entry.</p>
+  <p class="section-intro">Two arXiv preprints and a journal manuscript in revision. Each entry has a one-line takeaway, the headline numbers, and the abstract; the preprints add my role and a BibTeX entry.</p>
 </div>
     <div class="paper-list">
       <article class="pub reveal" aria-labelledby="slapbench-fingerprint-verification-title">
@@ -153,7 +153,7 @@
       <article class="pub reveal" aria-labelledby="pixel-level-pavement-distress-assessment-title">
   <div class="pub__marker"><span>2026</span><span>02</span></div>
   <div class="pub__content">
-    <p class="paper-meta">May 25, 2026 · revised Jul 13, 2026 · arXiv preprint · cs.CV</p>
+    <p class="paper-meta">May 25, 2026 · revised Jul 13, 2026 · accepted to IEEE ICMLA 2026 · arXiv · cs.CV</p>
     <h3 id="pixel-level-pavement-distress-assessment-title">Pixel-Level Pavement Distress Assessment Using Instance Segmentation</h3>
     <p class="paper-authors">Logan Dewick · <strong>Bibesh Pyakurel</strong> · Kong Pheng Yang · Nazim Choudhury · M. G. Sarwar Murshed</p>
     <p class="pub__tldr">Mask R-CNN with a ResNet-101 FPN backbone segments field-collected pavement distress well enough to recover crack area to within 0.006 points of ground truth.</p>
@@ -182,6 +182,22 @@
   doi           = {10.48550/arXiv.2605.26095},
   url           = {https://arxiv.org/abs/2605.26095}
 }" aria-describedby="pixel-level-pavement-distress-assessment-copy">Copy BibTeX</button><span id="pixel-level-pavement-distress-assessment-copy" class="copy-status" aria-live="polite"></span></details>
+  </div>
+</article>
+      <article class="pub reveal" aria-labelledby="explainable-face-presentation-attack-detection-ensemble-cam-title">
+  <div class="pub__marker"><span>2026</span><span>03</span></div>
+  <div class="pub__content">
+    <p class="paper-meta">2026 · in revision after peer review · IET Biometrics · journal manuscript</p>
+    <h3 id="explainable-face-presentation-attack-detection-ensemble-cam-title">Explainable Face Presentation Attack Detection via Ensemble-CAM</h3>
+    <p class="paper-authors">Rashik Shadman · <strong>Bibesh Pyakurel</strong> · M. G. Sarwar Murshed · Faraz Hussain</p>
+    <p class="pub__tldr">Three class-activation methods fused into one explanation map for a face anti-spoofing classifier, judged by what the classifier still sees when only the highlighted region is kept.</p>
+    <dl class="pub__results" aria-label="Key results">
+      <div><dt>accuracy, DenseNet-161</dt><dd>93.33%</dd></div><div><dt>BPCER, ISO/IEC 30107-3</dt><dd>0.95%</dd></div><div><dt>images in the retention test</dt><dd>4,000</dd></div><div><dt>CAM methods fused</dt><dd>3</dd></div>
+    </dl>
+    <details class="pub__abstract"><summary>Abstract</summary><p>Ensemble-CAM is a visual explanation method for a fixed face presentation attack detection classifier, not a new detector. It normalizes Grad-CAM, HiResCAM, and Grad-CAM++ maps, averages them pixel-wise, and keeps the top decile. The classifier is a DenseNet-161 fine-tuned on a balanced CelebA-Spoof subset, reaching 93.33% accuracy, 12.4% APCER, and 0.95% BPCER under ISO/IEC 30107-3. The explanation maps are evaluated with a retention test over 4,000 images, compared against each single method and an area-matched shifted-mask control, and a three-case ablation examines what each component contributes.</p></details>
+    
+    <div class="pub__links"><a class="button button--small" href="https://github.com/rashikshadman/Ensemble-CAM" target="_blank" rel="noopener noreferrer">Code &amp; data<svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div>
+    
   </div>
 </article>
     </div>
