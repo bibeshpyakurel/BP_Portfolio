@@ -194,9 +194,9 @@ const pubCard = (x, i) => `<article class="pub reveal" aria-labelledby="${esc(x.
       ${x.results.map((r) => `<div><dt>${esc(r.label)}</dt><dd>${esc(r.value)}</dd></div>`).join("")}
     </dl>
     <details class="pub__abstract"><summary>Abstract</summary><p>${esc(x.abstract)}</p></details>
-    <p class="pub__contribution"><strong>My role.</strong> ${esc(x.contribution)}</p>
+    ${x.contribution ? `<p class="pub__contribution"><strong>My role.</strong> ${esc(x.contribution)}</p>` : ""}
     <div class="pub__links">${ext(x.links.arxiv, "arXiv")}${ext(x.links.pdf, "PDF")}${ext(x.links.doi, "DOI")}${ext(x.links.code, "Code & data")}</div>
-    <details class="bibtex"><summary>BibTeX</summary><pre>${esc(bibtex(x))}</pre><button class="link-button" type="button" data-copy="${esc(bibtex(x))}" aria-describedby="${esc(x.id)}-copy">Copy BibTeX</button><span id="${esc(x.id)}-copy" class="copy-status" aria-live="polite"></span></details>
+    ${x.arxivId ? `<details class="bibtex"><summary>BibTeX</summary><pre>${esc(bibtex(x))}</pre><button class="link-button" type="button" data-copy="${esc(bibtex(x))}" aria-describedby="${esc(x.id)}-copy">Copy BibTeX</button><span id="${esc(x.id)}-copy" class="copy-status" aria-live="polite"></span></details>` : ""}
   </div>
 </article>`;
 
@@ -362,7 +362,7 @@ ${header("research")}
   </section>
 
   <section id="papers" class="section" aria-labelledby="papers-title">
-    ${heading("02", "Papers", "Publications", "Two arXiv preprints. Each entry has a one-line takeaway, the headline numbers, the abstract, my role, and a BibTeX entry.")}
+    ${heading("02", "Papers", "Publications", "Two arXiv preprints and a journal manuscript in revision. Each entry has a one-line takeaway, the headline numbers, and the abstract; the preprints add my role and a BibTeX entry.")}
     <div class="paper-list">
       ${data.publications.map(pubCard).join("\n      ")}
     </div>

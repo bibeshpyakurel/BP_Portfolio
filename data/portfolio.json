@@ -750,10 +750,10 @@
         "Nazim Choudhury",
         "M. G. Sarwar Murshed"
       ],
-      "venue": "arXiv preprint",
-      "status": "Preprint",
+      "venue": "IEEE ICMLA 2026",
+      "status": "Accepted",
       "date": "May 25, 2026",
-      "meta": "May 25, 2026 · revised Jul 13, 2026 · arXiv preprint · cs.CV",
+      "meta": "May 25, 2026 · revised Jul 13, 2026 · accepted to IEEE ICMLA 2026 · arXiv · cs.CV",
       "summary": "Evaluates Mask R-CNN instance segmentation on the field-collected UWGB-StreetCrack dataset across longitudinal, transverse, and alligator cracks plus potholes. The ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1, with predicted crack-area fraction within 0.006 points of ground truth.",
       "links": {
         "doi": "https://doi.org/10.48550/arXiv.2605.26095",
@@ -786,6 +786,52 @@
         }
       ],
       "contribution": "Second author. Trained and compared the backbone variants, curated and annotated the dataset, and contributed to the write-up."
+    },
+    {
+      "id": "explainable-face-presentation-attack-detection-ensemble-cam",
+      "title": "Explainable Face Presentation Attack Detection via Ensemble-CAM",
+      "authors": [
+        "Rashik Shadman",
+        "Bibesh Pyakurel",
+        "M. G. Sarwar Murshed",
+        "Faraz Hussain"
+      ],
+      "venue": "IET Biometrics",
+      "status": "In revision",
+      "date": "2026",
+      "meta": "2026 · in revision after peer review · IET Biometrics · journal manuscript",
+      "summary": "Ensemble-CAM explains a fixed face presentation attack detection classifier by fusing Grad-CAM, HiResCAM, and Grad-CAM++ into one map. It is evaluated with a retention test over 4,000 CelebA-Spoof images against each single method and an area-matched control.",
+      "links": {
+        "doi": "",
+        "arxiv": "",
+        "pdf": "",
+        "code": "https://github.com/rashikshadman/Ensemble-CAM"
+      },
+      "arxivId": "",
+      "primaryClass": "",
+      "year": "2026",
+      "bibkey": "",
+      "tldr": "Three class-activation methods fused into one explanation map for a face anti-spoofing classifier, judged by what the classifier still sees when only the highlighted region is kept.",
+      "abstract": "Ensemble-CAM is a visual explanation method for a fixed face presentation attack detection classifier, not a new detector. It normalizes Grad-CAM, HiResCAM, and Grad-CAM++ maps, averages them pixel-wise, and keeps the top decile. The classifier is a DenseNet-161 fine-tuned on a balanced CelebA-Spoof subset, reaching 93.33% accuracy, 12.4% APCER, and 0.95% BPCER under ISO/IEC 30107-3. The explanation maps are evaluated with a retention test over 4,000 images, compared against each single method and an area-matched shifted-mask control, and a three-case ablation examines what each component contributes.",
+      "results": [
+        {
+          "value": "93.33%",
+          "label": "accuracy, DenseNet-161"
+        },
+        {
+          "value": "0.95%",
+          "label": "BPCER, ISO/IEC 30107-3"
+        },
+        {
+          "value": "4,000",
+          "label": "images in the retention test"
+        },
+        {
+          "value": "3",
+          "label": "CAM methods fused"
+        }
+      ],
+      "contribution": ""
     }
   ],
   "research": {
