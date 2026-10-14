@@ -753,7 +753,7 @@
       "venue": "IEEE ICMLA 2026",
       "status": "Accepted",
       "date": "May 25, 2026",
-      "meta": "May 25, 2026 · revised Jul 13, 2026 · accepted to IEEE ICMLA 2026 · arXiv · cs.CV",
+      "meta": "May 25, 2026 · revised Oct 9, 2026 · accepted to IEEE ICMLA 2026 · arXiv · cs.CV",
       "summary": "Evaluates Mask R-CNN instance segmentation on the field-collected UWGB-StreetCrack dataset across longitudinal, transverse, and alligator cracks plus potholes. The ResNet-101 FPN backbone reached 84.23% precision, 90.04% recall, and 87.04% F1, with predicted crack-area fraction within 0.006 points of ground truth.",
       "links": {
         "doi": "https://doi.org/10.48550/arXiv.2605.26095",
